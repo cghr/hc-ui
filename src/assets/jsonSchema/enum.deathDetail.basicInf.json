@@ -18,6 +18,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -43,6 +46,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -68,6 +74,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -81,24 +90,27 @@
 
         {
         "name":"age",
-        "type":"duration",
+        "type":"select_text",
         "valdn":"between[1:99],required",
         "label":"Age at the time of death? (in completed years)",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Days","value":"Days"},
+            {"text":"Days","value":"Days","valdn":"between[1:30],required"},
         
-            {"text":"Months","value":"Months"},
+            {"text":"Months","value":"Months","valdn":"between[1:12],required"},
         
-            {"text":"Years","value":"Years"}
+            {"text":"Years","value":"Years","valdn":"between[1:99],required"}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -119,15 +131,18 @@
         "value":"",
         "items":[
         
-            {"text":"Male","value":"Male"},
+            {"text":"Male","value":"Male","valdn":""},
         
-            {"text":"Female","value":"Female"}
+            {"text":"Female","value":"Female","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -148,21 +163,24 @@
         "value":"",
         "items":[
         
-            {"text":"Pregnant when she died","value":"Pregnant when she died"},
+            {"text":"Pregnant when she died","value":"Pregnant when she died","valdn":""},
         
-            {"text":"Had a child birth","value":"Had a child birth"},
+            {"text":"Had a child birth","value":"Had a child birth","valdn":""},
         
-            {"text":"Had an abortion","value":"Had an abortion"},
+            {"text":"Had an abortion","value":"Had an abortion","valdn":""},
         
-            {"text":"Died within 42 days of childbirth","value":"Died within 42 days of childbirth"},
+            {"text":"Died within 42 days of childbirth","value":"Died within 42 days of childbirth","valdn":""},
         
-            {"text":"None of the above","value":"None of the above"}
+            {"text":"None of the above","value":"None of the above","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],

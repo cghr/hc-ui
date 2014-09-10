@@ -18,6 +18,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -43,6 +46,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -68,6 +74,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -93,6 +102,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -108,7 +120,7 @@
         "name":"bp2Systolic",
         "type":"text",
         "valdn":"between[60:250],required",
-        "label":"Systolic Blood pressure 2(left arm – sitting) of the respondent (mm/hg)",
+        "label":"Systolic Blood pressure 2(left arm – sitting) of the respondent (mm/Hg)",
         "flow":"",
         "value":"",
         "items":[
@@ -118,6 +130,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -133,7 +148,7 @@
         "name":"bp2Diastolic",
         "type":"text",
         "valdn":"between[40:{data.bp2Systolic}],required",
-        "label":"Diastolic Blood pressure 2(left arm – sitting) of the respondent (mm/hg)",
+        "label":"Diastolic Blood pressure 2(left arm – sitting) of the respondent (mm/Hg)",
         "flow":"",
         "value":"",
         "items":[
@@ -143,6 +158,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -168,6 +186,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],

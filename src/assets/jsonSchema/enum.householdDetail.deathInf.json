@@ -18,6 +18,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -43,6 +46,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -58,20 +64,23 @@
         "name":"deathStatus",
         "type":"radio",
         "valdn":"required",
-        "label":"Did any usually residing adult household member die since 1 January 2007 till date?",
+        "label":"Did any usually residing adult household member die since 1 January 2009 till date?",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
+            {"text":"Yes","value":"Yes","valdn":""},
         
-            {"text":"No","value":"No"}
+            {"text":"No","value":"No","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -97,6 +106,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],

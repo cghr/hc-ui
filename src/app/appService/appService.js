@@ -1,10 +1,13 @@
 angular.module('appService', ['toaster'])
-    .service('AppService', function ($http, toaster, $location) {
+    .factory('AppService', function AppService($http, toaster, $location) {
 
-        this.cleanup = function () {
+        AppService.memberDetails = {}
+
+        AppService.cleanup = function () {
 
 
             return $http.get('api/data/cleanup')
+
                 .success(function () {
                     toaster.pop('success', '', 'Cleaned up Successfully')
                 })
@@ -12,5 +15,19 @@ angular.module('appService', ['toaster'])
                     toaster.pop('error', '', 'Failed to cleanup')
                 })
         }
+
+        AppService.getMemberDetails = function (memberId) {
+
+            return $http.get('api//data/dataAccessService/member/memberId/' + memberId)
+                .success(function (resp) {
+                    AppService.memberDetails = resp
+                })
+                .error(function () {
+                    toaster.pop('error', '', 'Failed to get MemberDetails')
+                })
+        }
+
+
+        return AppService
 
     })

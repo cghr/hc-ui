@@ -1,6 +1,6 @@
 {
 "schemaName":"enum.visitDetail.basicInf",
-"onSave":"enum.householdDetail.basicInf",
+"onSave":"",
 "properties":[
 
 
@@ -18,6 +18,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -43,6 +46,37 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"surveyor",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"user.id",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -63,19 +97,22 @@
         "value":"",
         "items":[
         
-            {"text":"Respondents Available","value":"Respondents Available"},
+            {"text":"Respondents Available","value":"Respondents Available","valdn":""},
         
-            {"text":"Door temporarily locked","value":"Door temporarily locked"},
+            {"text":"Door temporarily locked","value":"Door temporarily locked","valdn":""},
         
-            {"text":"Door permanently locked","value":"Door permanently locked"},
+            {"text":"Door permanently locked","value":"Door permanently locked","valdn":""},
         
-            {"text":"Refused to participate","value":"Refused to participate"}
+            {"text":"Refused to participate","value":"Refused to participate","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],

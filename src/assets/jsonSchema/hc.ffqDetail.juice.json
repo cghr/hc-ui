@@ -18,6 +18,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -43,6 +46,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -68,6 +74,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -88,17 +97,20 @@
         "value":"",
         "items":[
         
-            {"text":"Wati","value":"Wati"},
+            {"text":"Wati","value":"Wati","valdn":""},
         
-            {"text":"Glass","value":"Glass"},
+            {"text":"Glass","value":"Glass","valdn":""},
         
-            {"text":"Fulpatra","value":"Fulpatra"}
+            {"text":"Fulpatra","value":"Fulpatra","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -119,17 +131,20 @@
         "value":"",
         "items":[
         
-            {"text":"Wati","value":"Wati"},
+            {"text":"Wati","value":"Wati","valdn":""},
         
-            {"text":"Glass","value":"Glass"},
+            {"text":"Glass","value":"Glass","valdn":""},
         
-            {"text":"Fulpatra","value":"Fulpatra"}
+            {"text":"Fulpatra","value":"Fulpatra","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],

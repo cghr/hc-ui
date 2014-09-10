@@ -2,14 +2,13 @@ angular.module('stateTransitions', [])
     .constant('StateTransitions',
     {
         "enum.areaDetail.house": {to: "enum.houseDetail.basicInf", param: "houseId"},
-        "enum.houseDetail.household": {to: "enum.visitDetail.basicInf", param: "householdId"},
+        "enum.houseDetail.household": {to: "enum.householdDetail.visit", param: "householdId"},
         "enum.householdDetail.member": {to: "enum.memberDetail.basicInf", param: "memberId"},
-        "enum.householdDetail.member": {to: "enum.memberDetail.basicInf", param: "memberId"},
-        "enum.householdDetail.visit": {to: "enum.visitDetail.basicIf", param: "visitId"},
+        "enum.householdDetail.visit": {to: "enum.visitDetail.basicInf", param: "visitId"},
         "enum.householdDetail.head": {to: "enum.headDetail.basicInf", param: "memberId"},
         "enum.householdDetail.hosp": {to: "enum.hospDetail.basicInf", param: "memberId"},
-        "enum.householdDetail.member": {to: "enum.deathDetail.basicIf", param: "memberId"},
-        "hc.householdDetail.visit": {to: "hc.visitDetail", param: "basicInf"}
+        "enum.householdDetail.death": {to: "enum.deathDetail.basicInf", param: "memberId"},
+        "hc.householdDetail.visit": {to: "hc.visitDetail.basicInf", param: ""}
 
     }
 

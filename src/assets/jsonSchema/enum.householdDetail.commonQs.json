@@ -18,6 +18,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -43,6 +46,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -58,7 +64,7 @@
         "name":"roomCount",
         "type":"text",
         "valdn":"between[0:20],required",
-        "label":"How many rooms are there in your house? (including kitchen)",
+        "label":"How many rooms are there in your house? (excluding kitchen)",
         "flow":"",
         "value":"",
         "items":[
@@ -68,6 +74,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -88,24 +97,27 @@
         "value":"",
         "items":[
         
-            {"text":"Kuccha","value":"Kuccha"},
+            {"text":"Kuccha","value":"Kuccha","valdn":""},
         
-            {"text":"Pucca","value":"Pucca"},
+            {"text":"Pucca","value":"Pucca","valdn":""},
         
-            {"text":"Mixed","value":"Mixed"}
+            {"text":"Mixed","value":"Mixed","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
         },
-        "help":""
+        "help":"Record by observation of roof, walls and flooring. If all pucca then treat it as pucca, if one or both of them are pucca but other is kutcha then Mixed and if none of these are pucca then kutcha"
         },
 
 
@@ -119,21 +131,24 @@
         "value":"",
         "items":[
         
-            {"text":"Shared Tap","value":"Shared Tap"},
+            {"text":"Shared Tap","value":"Shared Tap","valdn":""},
         
-            {"text":"Handpump/Hapsa","value":"Handpump/Hapsa"},
+            {"text":"Handpump/Hapsa","value":"Handpump/Hapsa","valdn":""},
         
-            {"text":"Vihir","value":"Vihir"},
+            {"text":"Vihir","value":"Vihir","valdn":""},
         
-            {"text":"Own Tap","value":"Own Tap"},
+            {"text":"Own Tap","value":"Own Tap","valdn":""},
         
-            {"text":"Others","value":"Others"}
+            {"text":"Others","value":"Others","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -147,34 +162,37 @@
 
         {
         "name":"cookFuel",
-        "type":"radio",
+        "type":"checkbox",
         "valdn":"required",
         "label":"What is the main cooking fuel used in your household?",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Coal","value":"Coal"},
+            {"text":"Charcoal","value":"Charcoal","valdn":""},
         
-            {"text":"Wood","value":"Wood"},
+            {"text":"Wood","value":"Wood","valdn":""},
         
-            {"text":"Cowdung cakes","value":"Cowdung cakes"},
+            {"text":"Cowdung cakes","value":"Cowdung cakes","valdn":""},
         
-            {"text":"LPG/CNG/ PNG / Biogas","value":"LPG/CNG/ PNG / Biogas"},
+            {"text":"Coal","value":"Coal","valdn":""},
         
-            {"text":"Charcoal","value":"Charcoal"},
+            {"text":"Kerosene","value":"Kerosene","valdn":""},
         
-            {"text":"Kerosene","value":"Kerosene"},
+            {"text":"LPG/CNG/ PNG / Biogas","value":"LPG/CNG/ PNG / Biogas","valdn":""},
         
-            {"text":"Agricultural crop waste","value":"Agricultural crop waste"},
+            {"text":"Agricultural crop waste","value":"Agricultural crop waste","valdn":""},
         
-            {"text":"Electricity","value":"Electricity"}
+            {"text":"Electricity","value":"Electricity","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -195,19 +213,22 @@
         "value":"",
         "items":[
         
-            {"text":"Indoor, in the main living area","value":"Indoor, in the main living area"},
+            {"text":"Indoor, in the main living area","value":"Indoor, in the main living area","valdn":""},
         
-            {"text":"Indoor, in separate area used as kitchen","value":"Indoor, in separate area used as kitchen"},
+            {"text":"Indoor, in separate area used as kitchen","value":"Indoor, in separate area used as kitchen","valdn":""},
         
-            {"text":"Outdoor, in a shed","value":"Outdoor, in a shed"},
+            {"text":"Outdoor, in a shed","value":"Outdoor, in a shed","valdn":""},
         
-            {"text":"Outdoor, in the open air","value":"Outdoor, in the open air"}
+            {"text":"Outdoor, in the open air","value":"Outdoor, in the open air","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -228,21 +249,60 @@
         "value":"",
         "items":[
         
-            {"text":"Cooking done outside","value":"Cooking done outside"},
+            {"text":"Cooking done outside","value":"Cooking done outside","valdn":""},
         
-            {"text":"Exhaust Fan","value":"Exhaust Fan"},
+            {"text":"Exhaust Fan","value":"Exhaust Fan","valdn":""},
         
-            {"text":"Window","value":"Window"},
+            {"text":"Window","value":"Window","valdn":""},
         
-            {"text":"Chimney","value":"Chimney"},
+            {"text":"Chimney","value":"Chimney","valdn":""},
         
-            {"text":"No ventilation","value":"No ventilation"}
+            {"text":"No ventilation","value":"No ventilation","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"levelSmokiness",
+        "type":"radio",
+        "valdn":"required",
+        "label":"What is the level of smokiness due to cooking?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No smokiness","value":"No smokiness","valdn":""},
+        
+            {"text":"Little","value":"Little","valdn":""},
+        
+            {"text":"Much, but not enough to irritate the eyes","value":"Much, but not enough to irritate the eyes","valdn":""},
+        
+            {"text":"Smokiness enough to irritate the eyes","value":"Smokiness enough to irritate the eyes","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -272,6 +332,49 @@
             "ref":"householdId"
         
         },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":"Please specify who does most of the cooking in the household, other members can attend/help in the cooking"
+        },
+
+
+
+        {
+        "name":"cookingOil",
+        "type":"checkbox",
+        "valdn":"required",
+        "label":"What kind of cooking oil is used in the household?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Gingelly Oil","value":"Gingelly Oil","valdn":""},
+        
+            {"text":"Groundnut Oil","value":"Groundnut Oil","valdn":""},
+        
+            {"text":"Mustartd Oil","value":"Mustartd Oil","valdn":""},
+        
+            {"text":"Palm Oil","value":"Palm Oil","valdn":""},
+        
+            {"text":"Sunflower oil","value":"Sunflower oil","valdn":""},
+        
+            {"text":"Others","value":"Others","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],

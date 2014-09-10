@@ -8,7 +8,8 @@ angular.module('enumRoutes', [])
                 name: 'area',
                 url: '/area',
                 tpl: 'tpls/dataGrid.html',
-                title: 'Areas'
+                title: 'Areas',
+                msg: 'Select an Area'
 
             },
             {
@@ -23,7 +24,8 @@ angular.module('enumRoutes', [])
                         url: '/house',
                         tpl: 'tpls/dataGrid.html',
                         title: 'Houses',
-                        addNew: true
+                        addNew: true,
+                        msg: 'Add/Select a House'
                     }
                 ]
             },
@@ -37,7 +39,7 @@ angular.module('enumRoutes', [])
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyForm.html',
+                        tpl: 'tpls/surveyFormDirective.html',
                         title: 'Basic Inf'
                     },
                     {
@@ -45,7 +47,8 @@ angular.module('enumRoutes', [])
                         url: '/household',
                         tpl: 'tpls/dataGrid.html',
                         title: 'Households',
-                        addNew: true
+                        addNew: true,
+                        msg: 'Add/Select a Household'
                     }
                 ]
             },
@@ -62,12 +65,13 @@ angular.module('enumRoutes', [])
                         url: '/visit',
                         tpl: 'tpls/dataGrid.html',
                         title: 'Visits',
-                        addNew: true
+                        addNew: true,
+                        msg: 'Add a new visit'
                     },
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyForm.html',
+                        tpl: 'tpls/surveyFormDirective.html',
                         title: 'Basic Information'
                     },
                     {
@@ -75,45 +79,55 @@ angular.module('enumRoutes', [])
                         url: '/member',
                         tpl: 'tpls/dataGrid.html',
                         title: 'Members',
-                        addNew: true
+                        addNew: true,
+                        msg: 'Add new members'
                     },
                     {
                         name: 'commonQs',
                         url: '/commonQs',
-                        tpl: 'tpls/surveyForm.html',
+                        tpl: 'tpls/surveyFormDirective.html',
                         title: 'Common Qs'
                     },
                     {
                         name: 'foodItems',
                         url: '/foodItems',
-                        tpl: 'tpls/surveyForm.html',
+                        tpl: 'tpls/surveyFormDirective.html',
                         title: 'Food Items'
                     },
                     {
                         name: 'hospInf',
                         url: '/hospInf',
-                        tpl: 'enum/hospInf.html',
+                        tpl: 'tpls/surveyFormCustomNav.html',
                         title: 'Hospitalization Inf'
                     },
                     {
                         name: 'hosp',
                         url: '/hosp',
-                        tpl: 'enum/hosp.html',
+                        tpl: 'enum/hosp/hosp.html',
                         title: 'Hospitalization',
-                        addNew: true
+                        addNew: true,
+                        msg: 'Add new Hospitalized members'
                     },
                     {
                         name: 'deathInf',
                         url: '/deathInf',
-                        tpl: 'enum/deathInf.html',
+                        tpl: 'tpls/surveyFormCustomNav.html',
                         title: 'Death Inf'
                     },
                     {
                         name: 'death',
                         url: '/death',
-                        tpl: 'enum/death.html',
+                        tpl: 'enum/death/death.html',
                         title: 'Deaths',
-                        addNew: true
+                        addNew: true,
+                        msg: 'Add deaths in the household'
+                    },
+                    {
+                        name: 'contact',
+                        url: '/contact',
+                        tpl: 'tpls/surveyFormDirective.html',
+                        title: 'Contact Inf',
+                        stateChangeStartMsg: 'Enumeration of the Household Completed'
                     }
                 ]
             },
@@ -127,7 +141,7 @@ angular.module('enumRoutes', [])
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyForm.html',
+                        tpl: 'tpls/surveyFormCustomNav.html',
                         title: 'Basic Inf'
                     }
                 ]
@@ -143,7 +157,7 @@ angular.module('enumRoutes', [])
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyForm.html',
+                        tpl: 'tpls/surveyFormDirective.html',
                         title: 'Basic Inf'
                     }
                 ]
@@ -159,7 +173,7 @@ angular.module('enumRoutes', [])
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyForm.html',
+                        tpl: 'tpls/surveyFormDirective.html',
                         title: 'Basic Inf'
                     }
                 ]
@@ -175,7 +189,7 @@ angular.module('enumRoutes', [])
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyForm.html',
+                        tpl: 'tpls/surveyFormDirective.html',
                         title: 'Basic Inf'
                     }
                 ]

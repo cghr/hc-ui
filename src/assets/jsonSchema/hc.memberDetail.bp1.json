@@ -18,6 +18,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -43,6 +46,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -68,6 +74,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -93,6 +102,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -108,7 +120,7 @@
         "name":"bp1Systolic",
         "type":"text",
         "valdn":"between[60:250],required",
-        "label":"Systolic Blood pressure 1(left arm – sitting) of the respondent (mm/hg)",
+        "label":"Systolic Blood pressure 1(left arm – sitting) of the respondent (mm/Hg)",
         "flow":"",
         "value":"",
         "items":[
@@ -118,6 +130,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -133,7 +148,7 @@
         "name":"bp1Diastolic",
         "type":"text",
         "valdn":"between[40:{data.bp1Systolic}],required",
-        "label":"Diastolic Blood pressure 1(left arm – sitting) of the respondent (mm/hg)",
+        "label":"Diastolic Blood pressure 1(left arm – sitting) of the respondent (mm/Hg)",
         "flow":"",
         "value":"",
         "items":[
@@ -143,6 +158,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -168,6 +186,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -183,32 +204,35 @@
         "name":"education",
         "type":"radio",
         "valdn":"required",
-        "label":"Education Level of the respondent",
+        "label":"What is the highest level of school education you ever received?",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Illiterate","value":"Illiterate"},
+            {"text":"Illiterate","value":"Illiterate","valdn":""},
         
-            {"text":"Literate without formal education","value":"Literate without formal education"},
+            {"text":"Literate without formal education","value":"Literate without formal education","valdn":""},
         
-            {"text":"Below primary","value":"Below primary"},
+            {"text":"Below primary","value":"Below primary","valdn":""},
         
-            {"text":"Primary","value":"Primary"},
+            {"text":"Primary","value":"Primary","valdn":""},
         
-            {"text":"Middle","value":"Middle"},
+            {"text":"Middle","value":"Middle","valdn":""},
         
-            {"text":"Secondary/ Class-10/ Matric","value":"Secondary/ Class-10/ Matric"},
+            {"text":"Secondary/ Class-10/ Matric","value":"Secondary/ Class-10/ Matric","valdn":""},
         
-            {"text":"Hr. Sec/ Class XII/ Pre-Univ","value":"Hr. Sec/ Class XII/ Pre-Univ"},
+            {"text":"Hr. Sec/ Class XII/ Pre-Univ","value":"Hr. Sec/ Class XII/ Pre-Univ","valdn":""},
         
-            {"text":"Graduate and above","value":"Graduate and above"}
+            {"text":"Graduate and above","value":"Graduate and above","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -224,30 +248,33 @@
         "name":"mstatus",
         "type":"radio",
         "valdn":"required",
-        "label":"Marital status of the respondent",
+        "label":"What is your current marital status?",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Never Married","value":"Never Married"},
+            {"text":"Never Married","value":"Never Married","valdn":""},
         
-            {"text":"Married","value":"Married"},
+            {"text":"Married","value":"Married","valdn":""},
         
-            {"text":"Remarried","value":"Remarried"},
+            {"text":"Remarried","value":"Remarried","valdn":""},
         
-            {"text":"Window(er)","value":"Window(er)"},
+            {"text":"Window(er)","value":"Window(er)","valdn":""},
         
-            {"text":"Divorced","value":"Divorced"},
+            {"text":"Divorced","value":"Divorced","valdn":""},
         
-            {"text":"Separated","value":"Separated"},
+            {"text":"Separated","value":"Separated","valdn":""},
         
-            {"text":"Refused to Answer","value":"Refused to Answer"}
+            {"text":"Refused to Answer","value":"Refused to Answer","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -260,36 +287,11 @@
 
 
         {
-        "name":"noChildren",
-        "type":"text",
-        "valdn":"between[0:15],required",
-        "label":"How many children do you have?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"childName",
+        "name":"nameSpouse ",
         "type":"text",
         "valdn":"required",
-        "label":"What is your oldest child's name? ",
-        "flow":"data.noChildren!='0'",
+        "label":"If married, please provide your spouse’s name?",
+        "flow":"data.mstatus=='Married'",
         "value":"",
         "items":[
         
@@ -298,6 +300,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -313,30 +318,33 @@
         "name":"occupationMale",
         "type":"radio",
         "valdn":"required",
-        "label":"Occupation",
+        "label":"What is your current occupation?",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Salaried","value":"Salaried"},
+            {"text":"Wage earner","value":"Wage earner","valdn":""},
         
-            {"text":"Wage earner","value":"Wage earner"},
+            {"text":"Farmers","value":"Farmers","valdn":""},
         
-            {"text":"Professional business","value":"Professional business"},
+            {"text":"Agriculture labour","value":"Agriculture labour","valdn":""},
         
-            {"text":"Farmers","value":"Farmers"},
+            {"text":"Salaried","value":"Salaried","valdn":""},
         
-            {"text":"Agriculture labour","value":"Agriculture labour"},
+            {"text":"Professional business","value":"Professional business","valdn":""},
         
-            {"text":"Non worker","value":"Non worker"},
+            {"text":"Non worker","value":"Non worker","valdn":""},
         
-            {"text":"Others","value":"Others"}
+            {"text":"Others","value":"Others","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'"}
@@ -354,32 +362,35 @@
         "name":"occupationFemale",
         "type":"radio",
         "valdn":"required",
-        "label":"Occupation",
+        "label":"What is your current occupation?",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Salaried","value":"Salaried"},
+            {"text":"Housewife","value":"Housewife","valdn":""},
         
-            {"text":"Wage earner","value":"Wage earner"},
+            {"text":"Wage earner","value":"Wage earner","valdn":""},
         
-            {"text":"Professional business","value":"Professional business"},
+            {"text":"Farmers","value":"Farmers","valdn":""},
         
-            {"text":"Farmers","value":"Farmers"},
+            {"text":"Agriculture labour","value":"Agriculture labour","valdn":""},
         
-            {"text":"Agriculture labour","value":"Agriculture labour"},
+            {"text":"Non worker","value":"Non worker","valdn":""},
         
-            {"text":"Housewife","value":"Housewife"},
+            {"text":"Salaried","value":"Salaried","valdn":""},
         
-            {"text":"Non worker","value":"Non worker"},
+            {"text":"Professional business","value":"Professional business","valdn":""},
         
-            {"text":"Others","value":"Others"}
+            {"text":"Others","value":"Others","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"}

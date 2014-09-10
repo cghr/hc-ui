@@ -1,8 +1,23 @@
 angular.module('myApp')
-    .run(function ($rootScope, $state, $stateParams, SchemaFactory, _, SchemaLoader) {
+    .run(function ($rootScope, $state, $stateParams, SchemaFactory, _, SchemaLoader, toaster) {
 
         $rootScope.$state = $state
         $rootScope.$stateParams = $stateParams
+
+
+        $rootScope.$on("$stateChangeSuccess", function (event, next, current) {
+
+            if ($rootScope.$state.current.msg)
+                toaster.pop('info', '', $rootScope.$state.current.msg)
+
+        });
+
+        $rootScope.$on("$stateChangeStart", function (event, next, current) {
+
+            if ($rootScope.$state.current.stateChangeStartMsg)
+                toaster.pop('info', '', $rootScope.$state.current.stateChangeStartMsg)
+
+        });
 
         var states = [
             'hc.visitDetail.basicInf',
@@ -38,7 +53,14 @@ angular.module('myApp')
             'enum.householdDetail.hospInf',
             'enum.householdDetail.deathInf',
             'resamp.memberDetail.basicInf',
-            'hc.ffqDetail.invitationCard'
+            'hc.ffqDetail.invitationCard',
+            'enum.householdDetail.contact',
+            'hc.memberDetail.photo',
+            'hc.memberDetail.alcoholFreq',
+            'hc.memberDetail.alcohol2',
+            'hc.memberDetail.rh',
+            'hc.memberDetail.mood',
+            'hc.memberDetail.fmhDisease'
         ];
 
         SchemaLoader

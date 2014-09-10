@@ -93,8 +93,9 @@ module.exports = function(grunt) {
                 'vendor/lib-plusAsTab/release/scripts/emulatetab.joelpurra.js',
                 'vendor/lib-plusAsTab/release/scripts/plusastab.joelpurra.js',
                 'vendor/gridLib/release/scripts/dhtmlx.js',
-                'vendor/cgGrid/dist/cgGrid.js',
-                'vendor/cgForm/dist/cgForm-tpls.js',
+                'vendor/cgGrid/dist/cgGrid-tpls-0.1.0.js',
+                'vendor/cgForm/dist/cgForm-tpls-0.1.0.js',
+                'vendor/angular-scrollable-table/angular-scrollable-table.js',
                 //'vendor/webcam/webcam.min.js',
                 'vendor/angular-camera/dist/angular-camera.js'
             ],

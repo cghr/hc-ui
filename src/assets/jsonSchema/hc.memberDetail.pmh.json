@@ -1,6 +1,6 @@
 {
 "schemaName":"hc.memberDetail.pmh",
-"onSave":"hc.memberDetail.fmh",
+"onSave":"",
 "properties":[
 
 
@@ -18,6 +18,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -43,6 +46,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -68,6 +74,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -93,6 +102,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -108,24 +120,195 @@
         "name":"rateHealthStatus",
         "type":"radio",
         "valdn":"required",
-        "label":"How would you rate your current general health status?",
+        "label":"How is your current general health status? Self rated",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Excellent","value":"Excellent"},
+            {"text":"Excellent","value":"Excellent","valdn":""},
         
-            {"text":"Good","value":"Good"},
+            {"text":"Good","value":"Good","valdn":""},
         
-            {"text":"Fair","value":"Fair"},
+            {"text":"Fair","value":"Fair","valdn":""},
         
-            {"text":"Poor","value":"Poor"}
+            {"text":"Poor","value":"Poor","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"compareHsOthers",
+        "type":"radio",
+        "valdn":"required",
+        "label":"How would you rate your current general health status compared to someone of your own age?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Better","value":"Better","valdn":""},
+        
+            {"text":"About the same","value":"About the same","valdn":""},
+        
+            {"text":"Worse","value":"Worse","valdn":""},
+        
+            {"text":"Don’t know","value":"Don’t know","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"statusWalkLevelGround",
+        "type":"radio",
+        "valdn":"required",
+        "label":"If you were walking on level ground with other healthy people of the same age, would you usually:",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Become short of breath","value":"Become short of breath","valdn":""},
+        
+            {"text":"Slow down due to chest discomfort","value":"Slow down due to chest discomfort","valdn":""},
+        
+            {"text":"Both 1 & 2","value":"Both 1 & 2","valdn":""},
+        
+            {"text":"No change","value":"No change","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"During the past 12 months, have you usually had the following symptoms?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"coughFrequently",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Cough frequently?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Yes, for <3 months","value":"Yes, for <3 months","valdn":""},
+        
+            {"text":"Yes, for >3months","value":"Yes, for >3months","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"coughSputum",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Cough up sputum after getting up in the morning?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Yes, for <3 months","value":"Yes, for <3 months","valdn":""},
+        
+            {"text":"Yes, for >3months","value":"Yes, for >3months","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -151,6 +334,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -171,19 +357,22 @@
         "value":"",
         "items":[
         
-            {"text":"No","value":"No"},
+            {"text":"No","value":"No","valdn":""},
         
-            {"text":"Yes, on medications","value":"Yes, on medications"},
+            {"text":"Yes, on medications","value":"Yes, on medications","valdn":""},
         
-            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications","valdn":""},
         
-            {"text":"Unknown","value":"Unknown"}
+            {"text":"Unknown","value":"Unknown","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -191,6 +380,34 @@
         
         },
         "help":"Hypertension (or) high blood pressure is a chronic medical condition in which the blood pressure in the arteries is elevated."
+        },
+
+
+
+        {
+        "name":"htnMed",
+        "type":"text",
+        "valdn":"required",
+        "label":"Medication details ",
+        "flow":"data.htn=='Yes, on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -209,13 +426,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -234,19 +454,22 @@
         "value":"",
         "items":[
         
-            {"text":"No","value":"No"},
+            {"text":"No","value":"No","valdn":""},
         
-            {"text":"Yes, on medications","value":"Yes, on medications"},
+            {"text":"Yes, on medications","value":"Yes, on medications","valdn":""},
         
-            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications","valdn":""},
         
-            {"text":"Unknown","value":"Unknown"}
+            {"text":"Unknown","value":"Unknown","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -254,6 +477,34 @@
         
         },
         "help":"Diabetes is a group of metabolic diseases in which a person has high blood sugar"
+        },
+
+
+
+        {
+        "name":"dmMed",
+        "type":"text",
+        "valdn":"required",
+        "label":"Medication details ",
+        "flow":"data.dm=='Yes, on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -272,13 +523,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -292,24 +546,27 @@
         "name":"hd",
         "type":"radio",
         "valdn":"required",
-        "label":"c. Heart disease",
+        "label":"c. Coronary Heart disease",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"No","value":"No"},
+            {"text":"No","value":"No","valdn":""},
         
-            {"text":"Yes, on medications","value":"Yes, on medications"},
+            {"text":"Yes, on medications","value":"Yes, on medications","valdn":""},
         
-            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications","valdn":""},
         
-            {"text":"Unknown","value":"Unknown"}
+            {"text":"Unknown","value":"Unknown","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -317,6 +574,34 @@
         
         },
         "help":"Heart disease is a class of diseases that involve the heart, the blood vessels (arteries,capillaries, and veins) or both"
+        },
+
+
+
+        {
+        "name":"hdMed",
+        "type":"text",
+        "valdn":"required",
+        "label":"Medication details ",
+        "flow":"data.hd=='Yes, on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -335,13 +620,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -355,24 +643,55 @@
         "name":"stroke",
         "type":"radio",
         "valdn":"required",
-        "label":"d. Stroke",
+        "label":"d. Stroke or Transient Ischemic Attack",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"No","value":"No"},
+            {"text":"No","value":"No","valdn":""},
         
-            {"text":"Yes, on medications","value":"Yes, on medications"},
+            {"text":"Yes, on medications","value":"Yes, on medications","valdn":""},
         
-            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications","valdn":""},
         
-            {"text":"Unknown","value":"Unknown"}
+            {"text":"Unknown","value":"Unknown","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"strokeMed",
+        "type":"text",
+        "valdn":"required",
+        "label":"Medication details ",
+        "flow":"data.stroke=='Yes, on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -398,13 +717,113 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
+            "ref":"memberId",
+            "condition":"between[10:{value}],required"
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"rhd",
+        "type":"radio",
+        "valdn":"required",
+        "label":"e. Rheumatic Heart disease",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications","valdn":""},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications","valdn":""},
+        
+            {"text":"Unknown","value":"Unknown","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"rhdMed",
+        "type":"text",
+        "valdn":"required",
+        "label":"Medication details ",
+        "flow":"data.rhd=='Yes, on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"ageRhd",
+        "type":"text",
+        "valdn":"between[0:69],required",
+        "label":"How long ago were you diagnosed (In completed years)",
+        "flow":"data.rhd=='Yes, on medications' || data.rhd=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+            "entity":"member",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -418,24 +837,55 @@
         "name":"tb",
         "type":"radio",
         "valdn":"required",
-        "label":"e. Tuberculosis",
+        "label":"f. Tuberculosis (TB)",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"No","value":"No"},
+            {"text":"No","value":"No","valdn":""},
         
-            {"text":"Yes, on medications","value":"Yes, on medications"},
+            {"text":"Yes, on medications","value":"Yes, on medications","valdn":""},
         
-            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications","valdn":""},
         
-            {"text":"Unknown","value":"Unknown"}
+            {"text":"Unknown","value":"Unknown","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"tbMed",
+        "type":"text",
+        "valdn":"required",
+        "label":"Medication details ",
+        "flow":"data.tb=='Yes, on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -461,13 +911,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -481,24 +934,27 @@
         "name":"asthma",
         "type":"radio",
         "valdn":"required",
-        "label":"f. Asthma",
+        "label":"g. Asthma",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"No","value":"No"},
+            {"text":"No","value":"No","valdn":""},
         
-            {"text":"Yes, on medications","value":"Yes, on medications"},
+            {"text":"Yes, on medications","value":"Yes, on medications","valdn":""},
         
-            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications","valdn":""},
         
-            {"text":"Unknown","value":"Unknown"}
+            {"text":"Unknown","value":"Unknown","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -506,6 +962,34 @@
         
         },
         "help":"Asthma is a common chronic inflammatory disease of the airways characterized by variable and recurring symptoms, reversible airflow obstruction and bronchospasm"
+        },
+
+
+
+        {
+        "name":"asthmaMed",
+        "type":"text",
+        "valdn":"required",
+        "label":"Medication details ",
+        "flow":"data.asthma=='Yes, on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -524,13 +1008,792 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
+            "ref":"memberId",
+            "condition":"between[10:{value}],required"
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bronchitis",
+        "type":"radio",
+        "valdn":"required",
+        "label":"h. Emphysema/bronchitis",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications","valdn":""},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications","valdn":""},
+        
+            {"text":"Unknown","value":"Unknown","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"bronchitisMed",
+        "type":"text",
+        "valdn":"required",
+        "label":"Medication details ",
+        "flow":"data.bronchitis=='Yes, on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"ageBronchitis",
+        "type":"text",
+        "valdn":"between[0:69],required",
+        "label":"How long ago were you diagnosed (In completed years)",
+        "flow":"data.bronchitis=='Yes, on medications' || data.bronchitis=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+            "entity":"member",
+            "field":"age_value",
+            "ref":"memberId",
+            "condition":"between[10:{value}],required"
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"hepatitis",
+        "type":"radio",
+        "valdn":"required",
+        "label":"i. Cirrhosis/chronic hepatitis",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications","valdn":""},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications","valdn":""},
+        
+            {"text":"Unknown","value":"Unknown","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"hepatitisMed",
+        "type":"text",
+        "valdn":"required",
+        "label":"Medication details ",
+        "flow":"data.hepatitis=='Yes, on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"ageHepatitis",
+        "type":"text",
+        "valdn":"between[0:69],required",
+        "label":"How long ago were you diagnosed (In completed years)",
+        "flow":"data.hepatitis=='Yes, on medications' || data.hepatitis=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+            "entity":"member",
+            "field":"age_value",
+            "ref":"memberId",
+            "condition":"between[10:{value}],required"
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"pepticUlcer",
+        "type":"radio",
+        "valdn":"required",
+        "label":"j. Peptic ulcer",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications","valdn":""},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications","valdn":""},
+        
+            {"text":"Unknown","value":"Unknown","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"pepticUlcerMed",
+        "type":"text",
+        "valdn":"required",
+        "label":"Medication details ",
+        "flow":"data.pepticUlcer=='Yes, on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"agePepticUlcer",
+        "type":"text",
+        "valdn":"between[0:69],required",
+        "label":"How long ago were you diagnosed (In completed years)",
+        "flow":"data.pepticUlcer=='Yes, on medications' || data.pepticUlcer=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+            "entity":"member",
+            "field":"age_value",
+            "ref":"memberId",
+            "condition":"between[10:{value}],required"
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"gallBladderDis",
+        "type":"radio",
+        "valdn":"required",
+        "label":"k. Gallstone/gallbladder dis",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications","valdn":""},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications","valdn":""},
+        
+            {"text":"Unknown","value":"Unknown","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"gallBladderDisMed",
+        "type":"text",
+        "valdn":"required",
+        "label":"Medication details ",
+        "flow":"data.gallBladderDis=='Yes, on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"ageGallBladderDis",
+        "type":"text",
+        "valdn":"between[0:69],required",
+        "label":"How long ago were you diagnosed (In completed years)",
+        "flow":"data.gallBladderDis=='Yes, on medications' || data.gallBladderDis=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+            "entity":"member",
+            "field":"age_value",
+            "ref":"memberId",
+            "condition":"between[10:{value}],required"
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"kidneyDis",
+        "type":"radio",
+        "valdn":"required",
+        "label":"l. Kidney disease",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications","valdn":""},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications","valdn":""},
+        
+            {"text":"Unknown","value":"Unknown","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"kidneyDisMed",
+        "type":"text",
+        "valdn":"required",
+        "label":"Medication details ",
+        "flow":"data.kidneyDis=='Yes, on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"ageKidneyDis",
+        "type":"text",
+        "valdn":"between[0:69],required",
+        "label":"How long ago were you diagnosed (In completed years)",
+        "flow":"data.kidneyDis=='Yes, on medications' || data.kidneyDis=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+            "entity":"member",
+            "field":"age_value",
+            "ref":"memberId",
+            "condition":"between[10:{value}],required"
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"fracture",
+        "type":"radio",
+        "valdn":"required",
+        "label":"m. Fracture ",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications","valdn":""},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications","valdn":""},
+        
+            {"text":"Unknown","value":"Unknown","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"fractureMed",
+        "type":"text",
+        "valdn":"required",
+        "label":"Medication details ",
+        "flow":"data.fracture=='Yes, on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"ageFracture",
+        "type":"text",
+        "valdn":"between[0:69],required",
+        "label":"How long ago were you diagnosed (In completed years)",
+        "flow":"data.fracture=='Yes, on medications' || data.fracture=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+            "entity":"member",
+            "field":"age_value",
+            "ref":"memberId",
+            "condition":"between[10:{value}],required"
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"ra",
+        "type":"radio",
+        "valdn":"required",
+        "label":"n. Rheumatoid arthritis",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications","valdn":""},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications","valdn":""},
+        
+            {"text":"Unknown","value":"Unknown","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"raMed",
+        "type":"text",
+        "valdn":"required",
+        "label":"Medication details ",
+        "flow":"data.ra=='Yes, on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"ageRa",
+        "type":"text",
+        "valdn":"between[0:69],required",
+        "label":"How long ago were you diagnosed (In completed years)",
+        "flow":"data.ra=='Yes, on medications' || data.ra=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+            "entity":"member",
+            "field":"age_value",
+            "ref":"memberId",
+            "condition":"between[10:{value}],required"
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"psychiatricDis",
+        "type":"radio",
+        "valdn":"required",
+        "label":"o. Psychiatric disorders",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Yes, on medications","value":"Yes, on medications","valdn":""},
+        
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications","valdn":""},
+        
+            {"text":"Unknown","value":"Unknown","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"psychiatricDisMed",
+        "type":"text",
+        "valdn":"required",
+        "label":"Medication details ",
+        "flow":"data.psychiatricDis=='Yes, on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"agePsyDis",
+        "type":"text",
+        "valdn":"between[0:69],required",
+        "label":"How long ago were you diagnosed (In completed years)",
+        "flow":"data.psychiatricDis=='Yes, on medications' || data.psychiatricDis=='Yes, but not on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+            "entity":"member",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -544,24 +1807,27 @@
         "name":"cancer",
         "type":"radio",
         "valdn":"required",
-        "label":"g. Cancer",
+        "label":"p. Cancer",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"No","value":"No"},
+            {"text":"No","value":"No","valdn":""},
         
-            {"text":"Yes, on medications","value":"Yes, on medications"},
+            {"text":"Yes, on medications","value":"Yes, on medications","valdn":""},
         
-            {"text":"Yes, but not on medications","value":"Yes, but not on medications"},
+            {"text":"Yes, but not on medications","value":"Yes, but not on medications","valdn":""},
         
-            {"text":"Unknown","value":"Unknown"}
+            {"text":"Unknown","value":"Unknown","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -569,6 +1835,34 @@
         
         },
         "help":"Cancer is a broad group of diseases involving unregulated cell growth. In cancer, cells divide and grow uncontrollably, forming malignant tumors, which may invade nearby parts of the body"
+        },
+
+
+
+        {
+        "name":"cancerMed",
+        "type":"text",
+        "valdn":"required",
+        "label":"Medication details ",
+        "flow":"data.cancer=='Yes, on medications'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -587,13 +1881,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -612,31 +1909,34 @@
         "value":"",
         "items":[
         
-            {"text":"Prostrate","value":"Prostrate"},
+            {"text":"Prostrate","value":"Prostrate","valdn":""},
         
-            {"text":"Mouth","value":"Mouth"},
+            {"text":"Mouth","value":"Mouth","valdn":""},
         
-            {"text":"Lung","value":"Lung"},
+            {"text":"Lung","value":"Lung","valdn":""},
         
-            {"text":"Liver","value":"Liver"},
+            {"text":"Liver","value":"Liver","valdn":""},
         
-            {"text":"Throat","value":"Throat"},
+            {"text":"Throat","value":"Throat","valdn":""},
         
-            {"text":"Oesophagus","value":"Oesophagus"},
+            {"text":"Oesophagus","value":"Oesophagus","valdn":""},
         
-            {"text":"Abdomen","value":"Abdomen"},
+            {"text":"Abdomen","value":"Abdomen","valdn":""},
         
-            {"text":"Blood","value":"Blood"},
+            {"text":"Blood","value":"Blood","valdn":""},
         
-            {"text":"Penis","value":"Penis"},
+            {"text":"Penis","value":"Penis","valdn":""},
         
-            {"text":"Others","value":"Others"}
+            {"text":"Others","value":"Others","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'"}
@@ -659,33 +1959,36 @@
         "value":"",
         "items":[
         
-            {"text":"Cervix","value":"Cervix"},
+            {"text":"Cervix","value":"Cervix","valdn":""},
         
-            {"text":"Breast","value":"Breast"},
+            {"text":"Breast","value":"Breast","valdn":""},
         
-            {"text":"Ovary","value":"Ovary"},
+            {"text":"Ovary","value":"Ovary","valdn":""},
         
-            {"text":"Lung","value":"Lung"},
+            {"text":"Lung","value":"Lung","valdn":""},
         
-            {"text":"Abdomen","value":"Abdomen"},
+            {"text":"Abdomen","value":"Abdomen","valdn":""},
         
-            {"text":"Blood","value":"Blood"},
+            {"text":"Blood","value":"Blood","valdn":""},
         
-            {"text":"Liver","value":"Liver"},
+            {"text":"Liver","value":"Liver","valdn":""},
         
-            {"text":"Mouth","value":"Mouth"},
+            {"text":"Mouth","value":"Mouth","valdn":""},
         
-            {"text":"Throat","value":"Throat"},
+            {"text":"Throat","value":"Throat","valdn":""},
         
-            {"text":"Oesophagus","value":"Oesophagus"},
+            {"text":"Oesophagus","value":"Oesophagus","valdn":""},
         
-            {"text":"Others","value":"Others"}
+            {"text":"Others","value":"Others","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"}
@@ -713,6 +2016,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -733,15 +2039,18 @@
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
+            {"text":"Yes","value":"Yes","valdn":""},
         
-            {"text":"No","value":"No"}
+            {"text":"No","value":"No","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -762,15 +2071,18 @@
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
+            {"text":"Yes","value":"Yes","valdn":""},
         
-            {"text":"No","value":"No"}
+            {"text":"No","value":"No","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -783,10 +2095,10 @@
 
 
         {
-        "name":"",
-        "type":"heading",
-        "valdn":"",
-        "label":"Reproductive History - FOR FEMALES ONLY",
+        "name":"bloodTransfusion",
+        "type":"text",
+        "valdn":"between[0:50],required",
+        "label":"Have many blood transfusions have you ever received?",
         "flow":"",
         "value":"",
         "items":[
@@ -796,816 +2108,52 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
         
         ],
         "crossCheck":{
         
         },
-        "help":"The questions under reproductive section should be asked to female respondents only. Female respondents should not be interviewed in presence of her husband or relative or any other person accompanying her."
+        "help":""
         },
 
 
 
         {
-        "name":"ageMenarche",
-        "type":"text",
-        "valdn":"between[10:50],required",
-        "label":"How old were you when you first got your period (reached menarche)?",
+        "name":"bowelMovmentsWeek",
+        "type":"radio",
+        "valdn":"required",
+        "label":"About how often do you have bowel movements each week?",
         "flow":"",
         "value":"",
         "items":[
         
+            {"text":"More than once on most days","value":"More than once on most days","valdn":""},
+        
+            {"text":"About daily","value":"About daily","valdn":""},
+        
+            {"text":"Once every 2-3 days","value":"Once every 2-3 days","valdn":""},
+        
+            {"text":"Less than 3 times a week","value":"Less than 3 times a week","valdn":""}
+        
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
         
         ],
         "crossCheck":{
         
         },
         "help":""
-        },
-
-
-
-        {
-        "name":"pregnantCurrent",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Are you currently pregnant?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"pregnantPast",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Have you ever been pregnant in the past?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"noTimesPregnantPast",
-        "type":"text",
-        "valdn":"between[1:20],required",
-        "label":"If yes, how many times have you been pregnant in the past?",
-        "flow":"data.pregnantPast=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":"Report the number of pregnancies from all marriages including pregnancies such as 1.Baby was born alive, 2.Miscarriage, 3.Abortion, 4.Current Pregnant"
-        },
-
-
-
-        {
-        "name":"age1stPregnant",
-        "type":"text",
-        "valdn":"between[10:50],required",
-        "label":"At what age did you have your 1st pregnancy? (In completed years)",
-        "flow":"data.pregnantPast=='Yes' && data.noTimesPregnantPast>0",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"outcome1stPregnant",
-        "type":"radio",
-        "valdn":"required",
-        "label":"How did the Pregnancy end?",
-        "flow":"data.pregnantPast=='Yes' && data.noTimesPregnantPast>0",
-        "value":"",
-        "items":[
-        
-            {"text":"Baby was born alive","value":"Baby was born alive"},
-        
-            {"text":"Miscarriage","value":"Miscarriage"},
-        
-            {"text":"Abortion","value":"Abortion"},
-        
-            {"text":"Currently Pregnant","value":"Currently Pregnant"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"bf1stBaby",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Did you breastfeed the baby?",
-        "flow":"data.outcome1stPregnant=='Baby was born alive'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"nomnths1stBf",
-        "type":"text",
-        "valdn":"between[1:36],required",
-        "label":"How many months did you breast-feed the baby? (In months)",
-        "flow":"data.bf1stBaby=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"age2ndPregnant",
-        "type":"text",
-        "valdn":"between[{data.age1stPregnant}:50],required",
-        "label":"At what age did you have your 2nd pregnancy? (In completed years)",
-        "flow":"data.pregnantPast=='Yes' && data.noTimesPregnantPast>1 ",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"outcome2ndPregnant",
-        "type":"radio",
-        "valdn":"required",
-        "label":"How did the Pregnancy end?",
-        "flow":"data.pregnantPast=='Yes' && data.noTimesPregnantPast>1",
-        "value":"",
-        "items":[
-        
-            {"text":"Baby was born alive","value":"Baby was born alive"},
-        
-            {"text":"Miscarriage","value":"Miscarriage"},
-        
-            {"text":"Abortion","value":"Abortion"},
-        
-            {"text":"Currently Pregnant","value":"Currently Pregnant"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"bf2ndBaby",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Did you breastfeed the baby?",
-        "flow":"data.outcome2ndPregnant=='Baby was born alive'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"nomnths2ndBf",
-        "type":"text",
-        "valdn":"between[1:36],required",
-        "label":"How many months did you breast-feed the baby? (In months)",
-        "flow":"data.bf2ndBaby=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"age3rdPregnant",
-        "type":"text",
-        "valdn":"between[{data.age2ndPregnant}:50],required",
-        "label":"At what age did you have your 3rd pregnancy? (In completed years)",
-        "flow":"data.pregnantPast=='Yes' && data.noTimesPregnantPast>2",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"outcome3rdPregnant",
-        "type":"radio",
-        "valdn":"required",
-        "label":"How did the Pregnancy end?",
-        "flow":"data.pregnantPast=='Yes' && data.noTimesPregnantPast>2",
-        "value":"",
-        "items":[
-        
-            {"text":"Baby was born alive","value":"Baby was born alive"},
-        
-            {"text":"Miscarriage","value":"Miscarriage"},
-        
-            {"text":"Abortion","value":"Abortion"},
-        
-            {"text":"Currently Pregnant","value":"Currently Pregnant"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"bf3rdBaby",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Did you breastfeed the baby?",
-        "flow":"data.outcome3rdPregnant=='Baby was born alive'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"nomnths3rdBf",
-        "type":"text",
-        "valdn":"between[1:36],required",
-        "label":"How many months did you breast-feed the baby? (In months)",
-        "flow":"data.bf3rdBaby=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"age4thPregnant",
-        "type":"text",
-        "valdn":"between[{data.age3rdPregnant}:50],required",
-        "label":"At what age did you have your 4th pregnancy? (In completed years)",
-        "flow":"data.pregnantPast=='Yes' && data.noTimesPregnantPast>3",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"outcome4thPregnant",
-        "type":"radio",
-        "valdn":"required",
-        "label":"How did the Pregnancy end?",
-        "flow":"data.pregnantPast=='Yes' && data.noTimesPregnantPast>3",
-        "value":"",
-        "items":[
-        
-            {"text":"Baby was born alive","value":"Baby was born alive"},
-        
-            {"text":"Miscarriage","value":"Miscarriage"},
-        
-            {"text":"Abortion","value":"Abortion"},
-        
-            {"text":"Currently Pregnant","value":"Currently Pregnant"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"bf4thBaby",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Did you breastfeed the baby?",
-        "flow":"data.outcome4thPregnant=='Baby was born alive'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"nomnths4thBf",
-        "type":"text",
-        "valdn":"between[1:36],required",
-        "label":"How many months did you breast-feed the baby? (In months)",
-        "flow":"data.bf4thBaby=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"contraceptives",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Have you ever used the contraceptives to avoid pregnancy?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"None","value":"None"},
-        
-            {"text":"Natural calendar method","value":"Natural calendar method"},
-        
-            {"text":"IUD/Copper T/Loop","value":"IUD/Copper T/Loop"},
-        
-            {"text":"Tubal ligation","value":"Tubal ligation"},
-        
-            {"text":"Male condom","value":"Male condom"},
-        
-            {"text":"Oral contraceptive/pills","value":"Oral contraceptive/pills"},
-        
-            {"text":"Others","value":"Others"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"othersContraceptives",
-        "type":"text",
-        "valdn":"required",
-        "label":"If you use any other method of contraceptives, please specify-",
-        "flow":"data.contraceptives=='Others'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"periodsStatus",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Are your periods (or were your periods) usually regular?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"ageStopPeriods",
-        "type":"text",
-        "valdn":"between[30:50],required",
-        "label":"If no, age at stopped?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>29 && age<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"ageMenopause",
-        "type":"text",
-        "valdn":"between[30:50],required",
-        "label":"Age of menopause (In completed years)",
-        "flow":"data.periodsStatus=='No'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age","ref":"memberId","condition":"age>45"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":"This is to be asked only to Woman age above 45 years. Report the completed age of respondent at her first menstruation cycle. Age should be irrespective of further irregularity or discontinuation in menstruation cycle."
         }
 
 

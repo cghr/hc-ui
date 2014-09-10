@@ -18,6 +18,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -43,6 +46,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -68,6 +74,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -93,6 +102,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -118,6 +130,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -133,7 +148,7 @@
         "name":"name",
         "type":"text",
         "valdn":"alpha,minlength[3],required",
-        "label":"Name",
+        "label":"Name of member in the Household",
         "flow":"",
         "value":"",
         "items":[
@@ -143,6 +158,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -158,20 +176,23 @@
         "name":"gender",
         "type":"radio",
         "valdn":"required",
-        "label":"Gender",
+        "label":"Gender of the member in the Household",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Male","value":"Male"},
+            {"text":"Male","value":"Male","valdn":""},
         
-            {"text":"Female","value":"Female"}
+            {"text":"Female","value":"Female","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -185,18 +206,27 @@
 
         {
         "name":"age",
-        "type":"text",
+        "type":"select_text",
         "valdn":"between[1:99],required",
-        "label":"Age",
+        "label":"Age of the member in the Household",
         "flow":"",
         "value":"",
         "items":[
         
+            {"text":"Days","value":"Days","valdn":"between[1:30],required"},
+        
+            {"text":"Months","value":"Months","valdn":"between[1:12],required"},
+        
+            {"text":"Years","value":"Years","valdn":"between[1:99],required"}
+        
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -209,48 +239,26 @@
 
 
         {
-        "name":"signedConsent",
+        "name":"head",
         "type":"radio",
         "valdn":"required",
-        "label":"Detailed consent form signed",
-        "flow":"data.member=='Available'",
+        "label":"Is Head of the Household?",
+        "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
+            {"text":"No","value":"No","valdn":""},
         
-            {"text":"No","value":"No"}
+            {"text":"Yes","value":"Yes","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"reasonNoConsent",
-        "type":"text",
-        "valdn":"required",
-        "label":"If no, please provide a reason for no consent",
-        "flow":"data.member=='Available' && data.signedConsent=='No'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],

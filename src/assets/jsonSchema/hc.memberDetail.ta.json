@@ -1,6 +1,6 @@
 {
 "schemaName":"hc.memberDetail.ta",
-"onSave":"hc.memberDetail.pmh",
+"onSave":"",
 "properties":[
 
 
@@ -18,6 +18,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -43,6 +46,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -68,6 +74,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -93,6 +102,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -118,6 +130,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -138,19 +153,22 @@
         "value":"",
         "items":[
         
-            {"text":"Daily","value":"Daily"},
+            {"text":"Daily","value":"Daily","valdn":""},
         
-            {"text":"Less than daily","value":"Less than daily"},
+            {"text":"Less than daily","value":"Less than daily","valdn":""},
         
-            {"text":"Not at all","value":"Not at all"},
+            {"text":"Not at all","value":"Not at all","valdn":""},
         
-            {"text":"Refused to answer","value":"Refused to answer"}
+            {"text":"Refused to answer","value":"Refused to answer","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -163,10 +181,10 @@
 
 
         {
-        "name":"ageStartSmokeCurrent",
+        "name":"ageStartSmoke",
         "type":"text",
-        "valdn":"",
-        "label":"What age have you started smoking tobacco? (In completed years)",
+        "valdn":"between[10:69],required",
+        "label":"What age did you first start smoking on most days? (In completed years)",
         "flow":"data.smokeTobacco=='Daily' || data.smokeTobacco=='Less than daily'",
         "value":"",
         "items":[
@@ -176,13 +194,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -206,6 +227,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -231,6 +255,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -256,6 +283,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -281,6 +311,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -306,6 +339,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -331,6 +367,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -356,6 +395,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -381,6 +423,109 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"smokeInhale",
+        "type":"radio",
+        "valdn":"required",
+        "label":"How deeply do you usually inhale the smoke?",
+        "flow":"data.smokeTobacco=='Daily' || data.smokeTobacco=='Less than daily'",
+        "value":"",
+        "items":[
+        
+            {"text":"Mouth only","value":"Mouth only","valdn":""},
+        
+            {"text":"Throat only","value":"Throat only","valdn":""},
+        
+            {"text":"Lung","value":"Lung","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"smokeInhaleLung",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Have you always inhaled the smoking into your lung during smoking?",
+        "flow":"data.smokeInhale=='Lung'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"tobaccoConsumpChange",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Has your tobacco consumption changed significantly compared with that some years ago?",
+        "flow":"data.smokeTobacco=='Daily' || data.smokeTobacco=='Less than daily'",
+        "value":"",
+        "items":[
+        
+            {"text":"About the same as before","value":"About the same as before","valdn":""},
+        
+            {"text":"Has increased a lot","value":"Has increased a lot","valdn":""},
+        
+            {"text":"Has decreased a lot","value":"Has decreased a lot","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -406,6 +551,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -426,17 +574,20 @@
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
+            {"text":"Yes","value":"Yes","valdn":""},
         
-            {"text":"No","value":"No"},
+            {"text":"No","value":"No","valdn":""},
         
-            {"text":"Refused to Answer","value":"Refused to Answer"}
+            {"text":"Refused to Answer","value":"Refused to Answer","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -452,7 +603,7 @@
         "name":"ageStartSmokingPast",
         "type":"text",
         "valdn":"between[10:69],required",
-        "label":"What age did you first start smoking? (In completed years)",
+        "label":"What age did you first start smoking on most days? (In completed years)",
         "flow":"data.smokeTobacco=='Not at all' && data.smokeTobaccoPast=='Yes'",
         "value":"",
         "items":[
@@ -462,13 +613,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -481,8 +635,8 @@
         {
         "name":"ageStopSmokingPast",
         "type":"text",
-        "valdn":"between[10:{data.ageStartSmoking}],required",
-        "label":"How long ago were you stopped smoking? (In completed years)",
+        "valdn":"between[10:{data.ageStartSmokingPast}],required",
+        "label":"How long has it been since you stopped smoking?",
         "flow":"data.smokeTobacco=='Not at all' && data.smokeTobaccoPast=='Yes'",
         "value":"",
         "items":[
@@ -492,13 +646,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -510,30 +667,161 @@
 
         {
         "name":"reasonStopSmoking",
-        "type":"radio",
+        "type":"checkbox",
         "valdn":"required",
-        "label":"Why did you stop smoking?",
+        "label":"What was your main reason for stopping? (Multiple response possible) Check all that apply",
         "flow":"data.smokeTobacco=='Not at all' && data.smokeTobaccoPast=='Yes'",
         "value":"",
         "items":[
         
-            {"text":"Illness or ill health","value":"Illness or ill health"},
+            {"text":"Illness or ill health","value":"Illness or ill health","valdn":""},
         
-            {"text":"Doctors advice","value":"Doctors advice"},
+            {"text":"Doctors advice","value":"Doctors advice","valdn":""},
         
-            {"text":"Health Precautions","value":"Health Precautions"},
+            {"text":"Health Precautions","value":"Health Precautions","valdn":""},
         
-            {"text":"Financial reasons","value":"Financial reasons"},
+            {"text":"Financial reasons","value":"Financial reasons","valdn":""},
         
-            {"text":"Other","value":"Other"},
+            {"text":"Other","value":"Other","valdn":""},
         
-            {"text":"Do not know","value":"Do not know"}
+            {"text":"Do not know","value":"Do not know","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"Passive Smoking",
+        "flow":"data.smokeTobacco!='Daily' || data.smokeTobacco!='Less than daily'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"livedSmokersHome",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Have you ever lived with smoker in the same house for at least 6 months?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Never","value":"Never","valdn":""},
+        
+            {"text":"Yes, but not now","value":"Yes, but not now","valdn":""},
+        
+            {"text":"Yes, at present","value":"Yes, at present","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"exposeOtherSmoke",
+        "type":"radio",
+        "valdn":"required",
+        "label":"How frequently are you exposed to other people’s tobacco smoke either at home, workplace or in public places? (i.e. a minimum of 5 consecutive minutes each time)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Never or almost never","value":"Never or almost never","valdn":""},
+        
+            {"text":"Occasionally (<1 time/week)","value":"Occasionally (<1 time/week)","valdn":""},
+        
+            {"text":"1-2 days/week","value":"1-2 days/week","valdn":""},
+        
+            {"text":"3-5 days/week","value":"3-5 days/week","valdn":""},
+        
+            {"text":"Daily or almost every day","value":"Daily or almost every day","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"durationExposure",
+        "type":"text",
+        "valdn":"between[1:99],required",
+        "label":"What is the usual duration of your exposure per week? (in hours)",
+        "flow":"data.exposeOtherSmoke!='Never or almost never'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -559,6 +847,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -579,19 +870,22 @@
         "value":"",
         "items":[
         
-            {"text":"Daily","value":"Daily"},
+            {"text":"Daily","value":"Daily","valdn":""},
         
-            {"text":"Less than daily","value":"Less than daily"},
+            {"text":"Less than daily","value":"Less than daily","valdn":""},
         
-            {"text":"Not at all","value":"Not at all"},
+            {"text":"Not at all","value":"Not at all","valdn":""},
         
-            {"text":"Refused to answer","value":"Refused to answer"}
+            {"text":"Refused to answer","value":"Refused to answer","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -604,10 +898,10 @@
 
 
         {
-        "name":"ageSmokelessTobaccoCurrent",
+        "name":"ageStartSmokeless",
         "type":"text",
         "valdn":"between[10:69],required",
-        "label":"What age have you started using smokeless tobacco?",
+        "label":"What age did you first start using smokeless tobacco?",
         "flow":"data.smokelessTobacco=='Daily' || data.smokelessTobacco=='Less than daily'",
         "value":"",
         "items":[
@@ -617,13 +911,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -647,6 +944,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -672,6 +972,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -697,6 +1000,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -722,6 +1028,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -747,6 +1056,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -772,6 +1084,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -797,6 +1112,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -822,6 +1140,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -847,6 +1168,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -872,6 +1196,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -897,6 +1224,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -922,6 +1252,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -947,6 +1280,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -972,6 +1308,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -997,6 +1336,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1022,6 +1364,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1047,6 +1392,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1067,17 +1415,20 @@
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
+            {"text":"Yes","value":"Yes","valdn":""},
         
-            {"text":"No","value":"No"},
+            {"text":"No","value":"No","valdn":""},
         
-            {"text":"Refused to Answer","value":"Refused to Answer"}
+            {"text":"Refused to Answer","value":"Refused to Answer","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1093,7 +1444,7 @@
         "name":"ageStartSmokelessTobaccoPast",
         "type":"text",
         "valdn":"between[10:69],required",
-        "label":"What age did you first start using smokeless tobacco? (In completed years)",
+        "label":"What age did you first start using smokeless tobacco daily? (In completed years)",
         "flow":"data.smokelessTobacco=='Not at all' && data.smokelessTobaccoPast=='Yes'",
         "value":"",
         "items":[
@@ -1103,13 +1454,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -1122,7 +1476,7 @@
         {
         "name":"ageStopSmokelessTobaccoPast",
         "type":"text",
-        "valdn":"between[10:{data.ageStartSmokelessTobacco}],required",
+        "valdn":"between[10:{data.ageStartSmokelessTobaccoPast}],required",
         "label":"How long ago were you stopped using smokeless tobacco? (In completed years)",
         "flow":"data.smokelessTobacco=='Not at all' && data.smokelessTobaccoPast=='Yes'",
         "value":"",
@@ -1133,13 +1487,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -1151,30 +1508,33 @@
 
         {
         "name":"reasonStopSmokelessTobacco",
-        "type":"radio",
+        "type":"checkbox",
         "valdn":"required",
-        "label":"Why did you stop using smokeless tobacco?",
+        "label":"What was your main reason for stopping? (Multiple response possible) check all that apply",
         "flow":"data.smokelessTobacco=='Not at all' && data.smokelessTobaccoPast=='Yes'",
         "value":"",
         "items":[
         
-            {"text":"Illness or ill health","value":"Illness or ill health"},
+            {"text":"Illness or ill health","value":"Illness or ill health","valdn":""},
         
-            {"text":"Doctors advice","value":"Doctors advice"},
+            {"text":"Doctors advice","value":"Doctors advice","valdn":""},
         
-            {"text":"Health Precautions","value":"Health Precautions"},
+            {"text":"Health Precautions","value":"Health Precautions","valdn":""},
         
-            {"text":"Financial reasons","value":"Financial reasons"},
+            {"text":"Financial reasons","value":"Financial reasons","valdn":""},
         
-            {"text":"Other","value":"Other"},
+            {"text":"Other","value":"Other","valdn":""},
         
-            {"text":"Do not know","value":"Do not know"}
+            {"text":"Do not know","value":"Do not know","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1200,6 +1560,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1212,19 +1575,28 @@
 
 
         {
-        "name":"",
-        "type":"heading",
-        "valdn":"",
-        "label":"Alcohol",
+        "name":"alcoholToday",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Have you drunk any alcohol today?",
         "flow":"",
         "value":"",
         "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""},
+        
+            {"text":"Refused to Answer","value":"Refused to Answer","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1240,22 +1612,25 @@
         "name":"consumeAlcohol",
         "type":"radio",
         "valdn":"required",
-        "label":"Do you consume alcoholic beverages?",
+        "label":"Do you consume alcoholic beverages on a regular basis?",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
+            {"text":"Yes","value":"Yes","valdn":""},
         
-            {"text":"No","value":"No"},
+            {"text":"No","value":"No","valdn":""},
         
-            {"text":"Refused to Answer","value":"Refused to Answer"}
+            {"text":"Refused to Answer","value":"Refused to Answer","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1268,7 +1643,7 @@
 
 
         {
-        "name":"ageStartDrinkingCurrent",
+        "name":"ageStartDrinking",
         "type":"text",
         "valdn":"between[10:69],required",
         "label":"What age did you first start drinking? (In completed years)",
@@ -1281,386 +1656,18 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"",
-        "type":"heading",
-        "valdn":"",
-        "label":"How many days of the week (1-7) of the following products do you drink?",
-        "flow":"data.consumeAlcohol=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"freqCountryliquor",
-        "type":"text",
-        "valdn":"between[0:7],required",
-        "label":"Frequency of Country Liquor/arrack/sugar cane (No of Days per week)",
-        "flow":"data.consumeAlcohol=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"freqSprit",
-        "type":"text",
-        "valdn":"between[0:7],required",
-        "label":"Frequency of Spirit (Rum, Whisky, Gin, Vodka, etc.) (No of Days per week)",
-        "flow":"data.consumeAlcohol=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"freqBeer",
-        "type":"text",
-        "valdn":"between[0:7],required",
-        "label":"Frequency of Beer (No of Days per week)",
-        "flow":"data.consumeAlcohol=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"freqWine",
-        "type":"text",
-        "valdn":"between[0:7],required",
-        "label":"Frequency of Wine (No of Days per week)",
-        "flow":"data.consumeAlcohol=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"",
-        "type":"heading",
-        "valdn":"",
-        "label":"Past Alcohol Drinker:",
-        "flow":"data.consumeAlcohol=='No'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"alcoholPast",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Did you drink alcohol regularly in the past?",
-        "flow":"data.consumeAlcohol=='No'",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes"},
-        
-            {"text":"No","value":"No"},
-        
-            {"text":"Refused to Answer","value":"Refused to Answer"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"ageStartAlcoholPast",
-        "type":"text",
-        "valdn":"between[10:69],required",
-        "label":"What age did you first start drinking? (In completed years)",
-        "flow":"data.consumeAlcohol=='No' && data.alcoholPast=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age",
-            "ref":"memberId",
-            "condition":"between[10:{value}],required"
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"ageStopAlcoholPast",
-        "type":"text",
-        "valdn":"between[10:{data.ageStartAlcohol}],required",
-        "label":"How long ago were you stopped drinking? (In completed years)",
-        "flow":"data.consumeAlcohol=='No' && data.alcoholPast=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age",
-            "ref":"memberId",
-            "condition":"between[10:{value}],required"
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"reasonStopAlcohol",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Why did you stop drinking?",
-        "flow":"data.consumeAlcohol=='No' && data.alcoholPast=='Yes'",
-        "value":"",
-        "items":[
-        
-            {"text":"Illness or ill health","value":"Illness or ill health"},
-        
-            {"text":"Doctors advice","value":"Doctors advice"},
-        
-            {"text":"Health Precautions","value":"Health Precautions"},
-        
-            {"text":"Financial reasons","value":"Financial reasons"},
-        
-            {"text":"Other","value":"Other"},
-        
-            {"text":"Do not know","value":"Do not know"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"",
-        "type":"heading",
-        "valdn":"",
-        "label":"Alcohol Drinker cross verified with Wife (Asked to a married female member)",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married'"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"drinkStatusHusband",
-        "type":"radio",
-        "valdn":"required",
-        "label":"How many days in a week does your husband drink alcohol?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"Does not drink at all","value":"Does not drink at all"},
-        
-            {"text":"Does not drink much (occasional drinker)","value":"Does not drink much (occasional drinker)"},
-        
-            {"text":"Heavy drinker (drinks almost every day)","value":"Heavy drinker (drinks almost every day)"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married'"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"freqDrinkHusband",
-        "type":"text",
-        "valdn":"between[0:7],required",
-        "label":"No of days he drinks in a week",
-        "flow":"data.drinkStatusHusband!='Does not drink at all'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married'"}
-        
-        ],
-        "crossCheck":{
         
         },
         "help":""

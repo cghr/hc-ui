@@ -1,4 +1,4 @@
-<div class="navbar navbar-fixed-top navbar-inverse" style='font-weight:bold'>
+<div class="navbar navbar-fixed-top" style='font-weight:bold'>
     <div class="navbar-inner">
         <div class="container">
             <a class="brand " href="#/">
@@ -11,11 +11,11 @@
                 <li ng-class="{ active: $state.includes('report') }"><a href="#/report/11">Reports</a></li>
                 <li access-level="accessLevels.manager" ng-class="{ active: $state.includes('dashboard') }"><a
                         href="#/dashboard">Dashboard</a></li>
-                <li ng-class=""><a href="" ng-click="cleanup()">Cleanup</a></li>
+                <!--<li ng-class=""><a href="" ng-click="AppCtrl.cleanup()">Cleanup</a></li>-->
             </ul>
             <ul class='nav pull-right'>
-                <li class=''><a href='#/sync'><i class='icon-refresh icon-white'></i> Synchronize</a></li>
-                <li class=''><a href='' ng-click='logout()'><i class='icon-off icon-white'></i> Logout</a></li>
+                <li class=''><a href='#/sync'><i class='icon-refresh'></i> Synchronize</a></li>
+                <li class=''><a href='' ng-click='NavCtrl.logout()'><i class='icon-off'></i> Logout</a></li>
             </ul>
         </div>
     </div>

@@ -18,6 +18,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -43,6 +46,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -68,6 +74,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -93,13 +102,540 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
         },
-        "help":"A normal day includes all days except festivals or any holidays."
+        "help":""
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"General physical activity level of working respondents",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"workingHrsWeek",
+        "type":"text",
+        "valdn":"between[1:112],required",
+        "label":"In a typical week, about how many hours did you usually work? (In hours)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"transport2Work",
+        "type":"radio",
+        "valdn":"required",
+        "label":"During the past 12 months, how did you usually go to work?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Mainly walk","value":"Mainly walk","valdn":""},
+        
+            {"text":"By motorbike","value":"By motorbike","valdn":""},
+        
+            {"text":"By bicycle","value":"By bicycle","valdn":""},
+        
+            {"text":"By bus/car/ferry/train","value":"By bus/car/ferry/train","valdn":""},
+        
+            {"text":"Mainly stay at home or work near home","value":"Mainly stay at home or work near home","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"traveltime2Work",
+        "type":"text",
+        "valdn":"between[1:360],required",
+        "label":"How much time did you spend each day on journey to & from work? (In minutes)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"Physical activities for Rural farmers ",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"farmingWorkChange",
+        "type":"radio",
+        "valdn":"required",
+        "label":"During the past 12 months, did your farming work change seasonally?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"During the farming season in the last 12 months",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"noMonthsFarmLast",
+        "type":"text",
+        "valdn":"between[0:12],required",
+        "label":"How many months did the farm season last? (In months)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"typeWork",
+        "type":"radio",
+        "valdn":"required",
+        "label":"What types of work did it usually involve?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Manual","value":"Manual","valdn":""},
+        
+            {"text":"Semi- Mechanized","value":"Semi- Mechanized","valdn":""},
+        
+            {"text":"Fully Mechanized","value":"Fully Mechanized","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"noHoursFarm",
+        "type":"text",
+        "valdn":"between[0:20],required",
+        "label":"How many hours did you usually work in the farm each day? (In hours)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"sweatFastHeartbeat",
+        "type":"text",
+        "valdn":"between[0:20],required",
+        "label":"Of your working hours, how many hours did you sweat or have a much faster heartbeat? (In hours)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"noHoursFieldWeek",
+        "type":"text",
+        "valdn":"between[1:120],required",
+        "label":"In a typical week, how many hours did you usually work in the field? (In hours)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"otherJob",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Apart from agriculture work, did you have any other job?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"activeOtherJob",
+        "type":"radio",
+        "valdn":"required",
+        "label":"How active were you at work with other job?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Mainly sedentary","value":"Mainly sedentary","valdn":""},
+        
+            {"text":"Mainly standing","value":"Mainly standing","valdn":""},
+        
+            {"text":"Mainly general manual work","value":"Mainly general manual work","valdn":""},
+        
+            {"text":"Mainly heavy manual work","value":"Mainly heavy manual work","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"noHoursOtherJob",
+        "type":"text",
+        "valdn":"between[1:120],required",
+        "label":"In a typical week, about how many hours did you work at other job?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"For the following questions, try to recall the amount of physical activity and time spent doing each activity during a normal day.",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
@@ -118,6 +654,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -138,15 +677,18 @@
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
+            {"text":"Yes","value":"Yes","valdn":""},
         
-            {"text":"No","value":"No"}
+            {"text":"No","value":"No","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -172,6 +714,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -197,6 +742,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -204,31 +752,6 @@
         
         },
         "help":"A full time servant is one who lives in employer’s household for 21 days in a month or more or who is working in employers house for 8 hours or more in a day"
-        },
-
-
-
-        {
-        "name":"",
-        "type":"heading",
-        "valdn":"",
-        "label":"For the following questions, try to recall the amount of physical activity and time spent doing each activity during a normal day.",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
         },
 
 
@@ -247,6 +770,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -260,68 +786,21 @@
 
         {
         "name":"hhMaintanence",
-        "type":"dropdown",
-        "valdn":"between[0:12],required",
-        "label":"Household maintenance(sweeping, dusting, mopping etc) (hours)",
+        "type":"text",
+        "valdn":"between[0:999],required",
+        "label":"Household maintenance(sweeping, dusting, mopping etc) (mins)",
         "flow":"",
         "value":"",
         "items":[
-        
-            {"text":"0","value":"0"},
-        
-            {"text":"0.5","value":"0.5"},
-        
-            {"text":"1","value":"1"},
-        
-            {"text":"1.5","value":"1.5"},
-        
-            {"text":"2","value":"2"},
-        
-            {"text":"2.5","value":"2.5"},
-        
-            {"text":"3","value":"3"},
-        
-            {"text":"3.5","value":"3.5"},
-        
-            {"text":"4","value":"4"},
-        
-            {"text":"4.5","value":"4.5"},
-        
-            {"text":"5","value":"5"},
-        
-            {"text":"5.5","value":"5.5"},
-        
-            {"text":"6","value":"6"},
-        
-            {"text":"6.5","value":"6.5"},
-        
-            {"text":"7","value":"7"},
-        
-            {"text":"7.5","value":"7.5"},
-        
-            {"text":"8","value":"8"},
-        
-            {"text":"8.5","value":"8.5"},
-        
-            {"text":"9","value":"9"},
-        
-            {"text":"9.5","value":"9.5"},
-        
-            {"text":"10","value":"10"},
-        
-            {"text":"10.5","value":"10.5"},
-        
-            {"text":"11","value":"11"},
-        
-            {"text":"11.5","value":"11.5"},
-        
-            {"text":"12","value":"12"}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -335,68 +814,21 @@
 
         {
         "name":"cooking",
-        "type":"dropdown",
-        "valdn":"between[0:12],required",
-        "label":"Cooking (hours)",
+        "type":"text",
+        "valdn":"between[0:999],required",
+        "label":"Cooking (mins)",
         "flow":"",
         "value":"",
         "items":[
-        
-            {"text":"0","value":"0"},
-        
-            {"text":"0.5","value":"0.5"},
-        
-            {"text":"1","value":"1"},
-        
-            {"text":"1.5","value":"1.5"},
-        
-            {"text":"2","value":"2"},
-        
-            {"text":"2.5","value":"2.5"},
-        
-            {"text":"3","value":"3"},
-        
-            {"text":"3.5","value":"3.5"},
-        
-            {"text":"4","value":"4"},
-        
-            {"text":"4.5","value":"4.5"},
-        
-            {"text":"5","value":"5"},
-        
-            {"text":"5.5","value":"5.5"},
-        
-            {"text":"6","value":"6"},
-        
-            {"text":"6.5","value":"6.5"},
-        
-            {"text":"7","value":"7"},
-        
-            {"text":"7.5","value":"7.5"},
-        
-            {"text":"8","value":"8"},
-        
-            {"text":"8.5","value":"8.5"},
-        
-            {"text":"9","value":"9"},
-        
-            {"text":"9.5","value":"9.5"},
-        
-            {"text":"10","value":"10"},
-        
-            {"text":"10.5","value":"10.5"},
-        
-            {"text":"11","value":"11"},
-        
-            {"text":"11.5","value":"11.5"},
-        
-            {"text":"12","value":"12"}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -410,68 +842,21 @@
 
         {
         "name":"walking",
-        "type":"dropdown",
-        "valdn":"between[0:12],required",
-        "label":"Walking (hours)",
+        "type":"text",
+        "valdn":"between[0:999],required",
+        "label":"Walking (to buy things/running errands/ to and from employment/school) (mins)",
         "flow":"",
         "value":"",
         "items":[
-        
-            {"text":"0","value":"0"},
-        
-            {"text":"0.5","value":"0.5"},
-        
-            {"text":"1","value":"1"},
-        
-            {"text":"1.5","value":"1.5"},
-        
-            {"text":"2","value":"2"},
-        
-            {"text":"2.5","value":"2.5"},
-        
-            {"text":"3","value":"3"},
-        
-            {"text":"3.5","value":"3.5"},
-        
-            {"text":"4","value":"4"},
-        
-            {"text":"4.5","value":"4.5"},
-        
-            {"text":"5","value":"5"},
-        
-            {"text":"5.5","value":"5.5"},
-        
-            {"text":"6","value":"6"},
-        
-            {"text":"6.5","value":"6.5"},
-        
-            {"text":"7","value":"7"},
-        
-            {"text":"7.5","value":"7.5"},
-        
-            {"text":"8","value":"8"},
-        
-            {"text":"8.5","value":"8.5"},
-        
-            {"text":"9","value":"9"},
-        
-            {"text":"9.5","value":"9.5"},
-        
-            {"text":"10","value":"10"},
-        
-            {"text":"10.5","value":"10.5"},
-        
-            {"text":"11","value":"11"},
-        
-            {"text":"11.5","value":"11.5"},
-        
-            {"text":"12","value":"12"}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -485,68 +870,21 @@
 
         {
         "name":"cycling",
-        "type":"dropdown",
-        "valdn":"between[0:12],required",
-        "label":"Cycling (hours)",
+        "type":"text",
+        "valdn":"between[0:999],required",
+        "label":"Cycling (to buy things/running errands/to and from employment/school) (mins)",
         "flow":"",
         "value":"",
         "items":[
-        
-            {"text":"0","value":"0"},
-        
-            {"text":"0.5","value":"0.5"},
-        
-            {"text":"1","value":"1"},
-        
-            {"text":"1.5","value":"1.5"},
-        
-            {"text":"2","value":"2"},
-        
-            {"text":"2.5","value":"2.5"},
-        
-            {"text":"3","value":"3"},
-        
-            {"text":"3.5","value":"3.5"},
-        
-            {"text":"4","value":"4"},
-        
-            {"text":"4.5","value":"4.5"},
-        
-            {"text":"5","value":"5"},
-        
-            {"text":"5.5","value":"5.5"},
-        
-            {"text":"6","value":"6"},
-        
-            {"text":"6.5","value":"6.5"},
-        
-            {"text":"7","value":"7"},
-        
-            {"text":"7.5","value":"7.5"},
-        
-            {"text":"8","value":"8"},
-        
-            {"text":"8.5","value":"8.5"},
-        
-            {"text":"9","value":"9"},
-        
-            {"text":"9.5","value":"9.5"},
-        
-            {"text":"10","value":"10"},
-        
-            {"text":"10.5","value":"10.5"},
-        
-            {"text":"11","value":"11"},
-        
-            {"text":"11.5","value":"11.5"},
-        
-            {"text":"12","value":"12"}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -560,68 +898,21 @@
 
         {
         "name":"takingcare",
-        "type":"dropdown",
-        "valdn":"between[0:12],required",
-        "label":"Taking care (actively) of children/ grandchildren (hours)",
+        "type":"text",
+        "valdn":"between[0:999],required",
+        "label":"Taking care (actively) of children/ grandchildren (mins)",
         "flow":"",
         "value":"",
         "items":[
-        
-            {"text":"0","value":"0"},
-        
-            {"text":"0.5","value":"0.5"},
-        
-            {"text":"1","value":"1"},
-        
-            {"text":"1.5","value":"1.5"},
-        
-            {"text":"2","value":"2"},
-        
-            {"text":"2.5","value":"2.5"},
-        
-            {"text":"3","value":"3"},
-        
-            {"text":"3.5","value":"3.5"},
-        
-            {"text":"4","value":"4"},
-        
-            {"text":"4.5","value":"4.5"},
-        
-            {"text":"5","value":"5"},
-        
-            {"text":"5.5","value":"5.5"},
-        
-            {"text":"6","value":"6"},
-        
-            {"text":"6.5","value":"6.5"},
-        
-            {"text":"7","value":"7"},
-        
-            {"text":"7.5","value":"7.5"},
-        
-            {"text":"8","value":"8"},
-        
-            {"text":"8.5","value":"8.5"},
-        
-            {"text":"9","value":"9"},
-        
-            {"text":"9.5","value":"9.5"},
-        
-            {"text":"10","value":"10"},
-        
-            {"text":"10.5","value":"10.5"},
-        
-            {"text":"11","value":"11"},
-        
-            {"text":"11.5","value":"11.5"},
-        
-            {"text":"12","value":"12"}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -635,68 +926,21 @@
 
         {
         "name":"carryingwater",
-        "type":"dropdown",
-        "valdn":"between[0:12],required",
-        "label":"Carrying water (hours)",
+        "type":"text",
+        "valdn":"between[0:999],required",
+        "label":"Carrying water (mins)",
         "flow":"",
         "value":"",
         "items":[
-        
-            {"text":"0","value":"0"},
-        
-            {"text":"0.5","value":"0.5"},
-        
-            {"text":"1","value":"1"},
-        
-            {"text":"1.5","value":"1.5"},
-        
-            {"text":"2","value":"2"},
-        
-            {"text":"2.5","value":"2.5"},
-        
-            {"text":"3","value":"3"},
-        
-            {"text":"3.5","value":"3.5"},
-        
-            {"text":"4","value":"4"},
-        
-            {"text":"4.5","value":"4.5"},
-        
-            {"text":"5","value":"5"},
-        
-            {"text":"5.5","value":"5.5"},
-        
-            {"text":"6","value":"6"},
-        
-            {"text":"6.5","value":"6.5"},
-        
-            {"text":"7","value":"7"},
-        
-            {"text":"7.5","value":"7.5"},
-        
-            {"text":"8","value":"8"},
-        
-            {"text":"8.5","value":"8.5"},
-        
-            {"text":"9","value":"9"},
-        
-            {"text":"9.5","value":"9.5"},
-        
-            {"text":"10","value":"10"},
-        
-            {"text":"10.5","value":"10.5"},
-        
-            {"text":"11","value":"11"},
-        
-            {"text":"11.5","value":"11.5"},
-        
-            {"text":"12","value":"12"}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -717,15 +961,18 @@
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
+            {"text":"Yes","value":"Yes","valdn":""},
         
-            {"text":"No","value":"No"}
+            {"text":"No","value":"No","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -751,6 +998,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -765,67 +1015,20 @@
         {
         "name":"othersActivityTime",
         "type":"dropdown",
-        "valdn":"between[0:12],required",
-        "label":"If others, please specify time spent on that activity (hours)",
+        "valdn":"between[0:999],required",
+        "label":"If others, please specify time spent on that activity (mins)",
         "flow":"data.othersActivity=='Yes'",
         "value":"",
         "items":[
-        
-            {"text":"0","value":"0"},
-        
-            {"text":"0.5","value":"0.5"},
-        
-            {"text":"1","value":"1"},
-        
-            {"text":"1.5","value":"1.5"},
-        
-            {"text":"2","value":"2"},
-        
-            {"text":"2.5","value":"2.5"},
-        
-            {"text":"3","value":"3"},
-        
-            {"text":"3.5","value":"3.5"},
-        
-            {"text":"4","value":"4"},
-        
-            {"text":"4.5","value":"4.5"},
-        
-            {"text":"5","value":"5"},
-        
-            {"text":"5.5","value":"5.5"},
-        
-            {"text":"6","value":"6"},
-        
-            {"text":"6.5","value":"6.5"},
-        
-            {"text":"7","value":"7"},
-        
-            {"text":"7.5","value":"7.5"},
-        
-            {"text":"8","value":"8"},
-        
-            {"text":"8.5","value":"8.5"},
-        
-            {"text":"9","value":"9"},
-        
-            {"text":"9.5","value":"9.5"},
-        
-            {"text":"10","value":"10"},
-        
-            {"text":"10.5","value":"10.5"},
-        
-            {"text":"11","value":"11"},
-        
-            {"text":"11.5","value":"11.5"},
-        
-            {"text":"12","value":"12"}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -851,6 +1054,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -863,219 +1069,118 @@
 
 
         {
-        "name":"hrsSleepNight",
-        "type":"dropdown",
-        "valdn":"between[0:12],required",
-        "label":"How many hours at night do your sleep normally? (hours)",
+        "name":"totalHrsSleep",
+        "type":"text",
+        "valdn":"between[1:24],required",
+        "label":"How many hours do you typically sleep per day (incl. naps)?",
         "flow":"",
         "value":"",
         "items":[
-        
-            {"text":"0","value":"0"},
-        
-            {"text":"0.5","value":"0.5"},
-        
-            {"text":"1","value":"1"},
-        
-            {"text":"1.5","value":"1.5"},
-        
-            {"text":"2","value":"2"},
-        
-            {"text":"2.5","value":"2.5"},
-        
-            {"text":"3","value":"3"},
-        
-            {"text":"3.5","value":"3.5"},
-        
-            {"text":"4","value":"4"},
-        
-            {"text":"4.5","value":"4.5"},
-        
-            {"text":"5","value":"5"},
-        
-            {"text":"5.5","value":"5.5"},
-        
-            {"text":"6","value":"6"},
-        
-            {"text":"6.5","value":"6.5"},
-        
-            {"text":"7","value":"7"},
-        
-            {"text":"7.5","value":"7.5"},
-        
-            {"text":"8","value":"8"},
-        
-            {"text":"8.5","value":"8.5"},
-        
-            {"text":"9","value":"9"},
-        
-            {"text":"9.5","value":"9.5"},
-        
-            {"text":"10","value":"10"},
-        
-            {"text":"10.5","value":"10.5"},
-        
-            {"text":"11","value":"11"},
-        
-            {"text":"11.5","value":"11.5"},
-        
-            {"text":"12","value":"12"}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
         },
-        "help":"Report frequency of duration in hours. Report sleeping for night"
+        "help":""
         },
 
 
 
         {
-        "name":"hrsSleepDaylight",
-        "type":"dropdown",
-        "valdn":"between[0:12],required",
-        "label":"How many hours during the daylight hours do you sleep? (hours)",
+        "name":"snoreSleep",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Do you snore during sleep?",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"0","value":"0"},
+            {"text":"Yes, Frequently","value":"Yes, Frequently","valdn":""},
         
-            {"text":"0.5","value":"0.5"},
+            {"text":"Yes, Sometimes","value":"Yes, Sometimes","valdn":""},
         
-            {"text":"1","value":"1"},
-        
-            {"text":"1.5","value":"1.5"},
-        
-            {"text":"2","value":"2"},
-        
-            {"text":"2.5","value":"2.5"},
-        
-            {"text":"3","value":"3"},
-        
-            {"text":"3.5","value":"3.5"},
-        
-            {"text":"4","value":"4"},
-        
-            {"text":"4.5","value":"4.5"},
-        
-            {"text":"5","value":"5"},
-        
-            {"text":"5.5","value":"5.5"},
-        
-            {"text":"6","value":"6"},
-        
-            {"text":"6.5","value":"6.5"},
-        
-            {"text":"7","value":"7"},
-        
-            {"text":"7.5","value":"7.5"},
-        
-            {"text":"8","value":"8"},
-        
-            {"text":"8.5","value":"8.5"},
-        
-            {"text":"9","value":"9"},
-        
-            {"text":"9.5","value":"9.5"},
-        
-            {"text":"10","value":"10"},
-        
-            {"text":"10.5","value":"10.5"},
-        
-            {"text":"11","value":"11"},
-        
-            {"text":"11.5","value":"11.5"},
-        
-            {"text":"12","value":"12"}
+            {"text":"No / Don’t know","value":"No / Don’t know","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
         },
-        "help":"Report frequency of duration in hours. Report sleeping for day"
+        "help":""
+        },
+
+
+
+        {
+        "name":"dayTimeNap",
+        "type":"radio",
+        "valdn":"between[0:6],required",
+        "label":"Do you usually take a daytime nap?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes usually","value":"Yes usually","valdn":""},
+        
+            {"text":"Yes ,but only in summer","value":"Yes ,but only in summer","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         },
 
 
 
         {
         "name":"hrsSleepAfterEat",
-        "type":"dropdown",
+        "type":"text",
         "valdn":"between[0:12],required",
         "label":"How many hours after eating you go to sleep?",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"0","value":"0"},
-        
-            {"text":"0.5","value":"0.5"},
-        
-            {"text":"1","value":"1"},
-        
-            {"text":"1.5","value":"1.5"},
-        
-            {"text":"2","value":"2"},
-        
-            {"text":"2.5","value":"2.5"},
-        
-            {"text":"3","value":"3"},
-        
-            {"text":"3.5","value":"3.5"},
-        
-            {"text":"4","value":"4"},
-        
-            {"text":"4.5","value":"4.5"},
-        
-            {"text":"5","value":"5"},
-        
-            {"text":"5.5","value":"5.5"},
-        
-            {"text":"6","value":"6"},
-        
-            {"text":"6.5","value":"6.5"},
-        
-            {"text":"7","value":"7"},
-        
-            {"text":"7.5","value":"7.5"},
-        
-            {"text":"8","value":"8"},
-        
-            {"text":"8.5","value":"8.5"},
-        
-            {"text":"9","value":"9"},
-        
-            {"text":"9.5","value":"9.5"},
-        
-            {"text":"10","value":"10"},
-        
-            {"text":"10.5","value":"10.5"},
-        
-            {"text":"11","value":"11"},
-        
-            {"text":"11.5","value":"11.5"},
-        
-            {"text":"12","value":"12"}
-        
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1089,68 +1194,21 @@
 
         {
         "name":"hrsWatchtvDay",
-        "type":"dropdown",
-        "valdn":"between[0:12],required",
+        "type":"text",
+        "valdn":"between[1:24],required",
         "label":"How many hours per day do you watch TV/movies (hours)",
         "flow":"",
         "value":"",
         "items":[
-        
-            {"text":"0","value":"0"},
-        
-            {"text":"0.5","value":"0.5"},
-        
-            {"text":"1","value":"1"},
-        
-            {"text":"1.5","value":"1.5"},
-        
-            {"text":"2","value":"2"},
-        
-            {"text":"2.5","value":"2.5"},
-        
-            {"text":"3","value":"3"},
-        
-            {"text":"3.5","value":"3.5"},
-        
-            {"text":"4","value":"4"},
-        
-            {"text":"4.5","value":"4.5"},
-        
-            {"text":"5","value":"5"},
-        
-            {"text":"5.5","value":"5.5"},
-        
-            {"text":"6","value":"6"},
-        
-            {"text":"6.5","value":"6.5"},
-        
-            {"text":"7","value":"7"},
-        
-            {"text":"7.5","value":"7.5"},
-        
-            {"text":"8","value":"8"},
-        
-            {"text":"8.5","value":"8.5"},
-        
-            {"text":"9","value":"9"},
-        
-            {"text":"9.5","value":"9.5"},
-        
-            {"text":"10","value":"10"},
-        
-            {"text":"10.5","value":"10.5"},
-        
-            {"text":"11","value":"11"},
-        
-            {"text":"11.5","value":"11.5"},
-        
-            {"text":"12","value":"12"}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1164,68 +1222,21 @@
 
         {
         "name":"hrsWatchtvHoliday",
-        "type":"dropdown",
-        "valdn":"between[0:12],required",
+        "type":"text",
+        "valdn":"between[1:24],required",
         "label":"How many hours per day do you watch TV/movies on holidays?(hours)",
         "flow":"",
         "value":"",
         "items":[
-        
-            {"text":"0","value":"0"},
-        
-            {"text":"0.5","value":"0.5"},
-        
-            {"text":"1","value":"1"},
-        
-            {"text":"1.5","value":"1.5"},
-        
-            {"text":"2","value":"2"},
-        
-            {"text":"2.5","value":"2.5"},
-        
-            {"text":"3","value":"3"},
-        
-            {"text":"3.5","value":"3.5"},
-        
-            {"text":"4","value":"4"},
-        
-            {"text":"4.5","value":"4.5"},
-        
-            {"text":"5","value":"5"},
-        
-            {"text":"5.5","value":"5.5"},
-        
-            {"text":"6","value":"6"},
-        
-            {"text":"6.5","value":"6.5"},
-        
-            {"text":"7","value":"7"},
-        
-            {"text":"7.5","value":"7.5"},
-        
-            {"text":"8","value":"8"},
-        
-            {"text":"8.5","value":"8.5"},
-        
-            {"text":"9","value":"9"},
-        
-            {"text":"9.5","value":"9.5"},
-        
-            {"text":"10","value":"10"},
-        
-            {"text":"10.5","value":"10.5"},
-        
-            {"text":"11","value":"11"},
-        
-            {"text":"11.5","value":"11.5"},
-        
-            {"text":"12","value":"12"}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1251,6 +1262,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1263,48 +1277,32 @@
 
 
         {
-        "name":"sportsExsCurrent",
+        "name":"exercise",
         "type":"radio",
         "valdn":"required",
-        "label":"Are you currently doing any sports/ exercise?",
+        "label":"During the past 12 months, how often did you do exercise in your leisure time?",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
+            {"text":"Never or almost never","value":"Never or almost never","valdn":""},
         
-            {"text":"No","value":"No"}
+            {"text":"1-3 times/month","value":"1-3 times/month","valdn":""},
         
-        ],
-        "image":"",
-        "lookup":{
+            {"text":"1-2 times/week","value":"1-2 times/week","valdn":""},
         
-        },
-        "crossFlow":[
+            {"text":"3-5 times/week","value":"3-5 times/week","valdn":""},
         
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"",
-        "type":"heading",
-        "valdn":"",
-        "label":"Note to the interviewer: If subject is having difficulty in understanding what constitutes as sports/exercise please read examples from instruction manual",
-        "flow":"data.sportsExsCurrent=='Yes'",
-        "value":"",
-        "items":[
+            {"text":"Daily or almost every day","value":"Daily or almost every day","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1321,7 +1319,7 @@
         "type":"heading",
         "valdn":"",
         "label":"If you do sports or exercise now – which sport(s)/exercise?",
-        "flow":"data.sportsExsCurrent=='Yes'",
+        "flow":"data.exercise!='Never or almost never'",
         "value":"",
         "items":[
         
@@ -1330,6 +1328,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1345,102 +1346,105 @@
         "name":"sportExs1",
         "type":"dropdown",
         "valdn":"required",
-        "label":"Name of the Sport/exercise 1",
-        "flow":"data.sportsExsCurrent=='Yes'",
+        "label":"What is your main type of exercise?",
+        "flow":"data.exercise!='Never or almost never'",
         "value":"",
         "items":[
         
-            {"text":"Aerobics","value":"Aerobics"},
+            {"text":"Aerobics","value":"Aerobics","valdn":""},
         
-            {"text":"Andhala topi","value":"Andhala topi"},
+            {"text":"Andhala topi","value":"Andhala topi","valdn":""},
         
-            {"text":"Atayapataya","value":"Atayapataya"},
+            {"text":"Atayapataya","value":"Atayapataya","valdn":""},
         
-            {"text":"Badminton","value":"Badminton"},
+            {"text":"Badminton","value":"Badminton","valdn":""},
         
-            {"text":"Basketball","value":"Basketball"},
+            {"text":"Basketball","value":"Basketball","valdn":""},
         
-            {"text":"Bhajani Paul","value":"Bhajani Paul"},
+            {"text":"Bhajani Paul","value":"Bhajani Paul","valdn":""},
         
-            {"text":"Balla Phek","value":"Balla Phek"},
+            {"text":"Balla Phek","value":"Balla Phek","valdn":""},
         
-            {"text":"Bhukadi","value":"Bhukadi"},
+            {"text":"Bhukadi","value":"Bhukadi","valdn":""},
         
-            {"text":"Body Building","value":"Body Building"},
+            {"text":"Body Building","value":"Body Building","valdn":""},
         
-            {"text":"Boxing","value":"Boxing"},
+            {"text":"Boxing","value":"Boxing","valdn":""},
         
-            {"text":"Chikat Bhopala","value":"Chikat Bhopala"},
+            {"text":"Chikat Bhopala","value":"Chikat Bhopala","valdn":""},
         
-            {"text":"Cricket","value":"Cricket"},
+            {"text":"Cricket","value":"Cricket","valdn":""},
         
-            {"text":"Cycling","value":"Cycling"},
+            {"text":"Cycling","value":"Cycling","valdn":""},
         
-            {"text":"Dori","value":"Dori"},
+            {"text":"Dori","value":"Dori","valdn":""},
         
-            {"text":"Figadi","value":"Figadi"},
+            {"text":"Figadi","value":"Figadi","valdn":""},
         
-            {"text":"Football","value":"Football"},
+            {"text":"Football","value":"Football","valdn":""},
         
-            {"text":"Gajge","value":"Gajge"},
+            {"text":"Gajge","value":"Gajge","valdn":""},
         
-            {"text":"Gymnastics","value":"Gymnastics"},
+            {"text":"Gymnastics","value":"Gymnastics","valdn":""},
         
-            {"text":"Handball","value":"Handball"},
+            {"text":"Handball","value":"Handball","valdn":""},
         
-            {"text":"Holiball","value":"Holiball"},
+            {"text":"Holiball","value":"Holiball","valdn":""},
         
-            {"text":"Hututu","value":"Hututu"},
+            {"text":"Hututu","value":"Hututu","valdn":""},
         
-            {"text":"Jor Baithak","value":"Jor Baithak"},
+            {"text":"Jor Baithak","value":"Jor Baithak","valdn":""},
         
-            {"text":"Kabadi","value":"Kabadi"},
+            {"text":"Kabadi","value":"Kabadi","valdn":""},
         
-            {"text":"Karate","value":"Karate"},
+            {"text":"Karate","value":"Karate","valdn":""},
         
-            {"text":"Kho Kho","value":"Kho Kho"},
+            {"text":"Kho Kho","value":"Kho Kho","valdn":""},
         
-            {"text":"Kusti","value":"Kusti"},
+            {"text":"Kusti","value":"Kusti","valdn":""},
         
-            {"text":"Langadi","value":"Langadi"},
+            {"text":"Langadi","value":"Langadi","valdn":""},
         
-            {"text":"Lapamdaon","value":"Lapamdaon"},
+            {"text":"Lapamdaon","value":"Lapamdaon","valdn":""},
         
-            {"text":"Lezim","value":"Lezim"},
+            {"text":"Lezim","value":"Lezim","valdn":""},
         
-            {"text":"Lompat","value":"Lompat"},
+            {"text":"Lompat","value":"Lompat","valdn":""},
         
-            {"text":"Malkham","value":"Malkham"},
+            {"text":"Malkham","value":"Malkham","valdn":""},
         
-            {"text":"Running","value":"Running"},
+            {"text":"Running","value":"Running","valdn":""},
         
-            {"text":"Stretching exercises","value":"Stretching exercises"},
+            {"text":"Stretching exercises","value":"Stretching exercises","valdn":""},
         
-            {"text":"Sur Parumba","value":"Sur Parumba"},
+            {"text":"Sur Parumba","value":"Sur Parumba","valdn":""},
         
-            {"text":"Swimming","value":"Swimming"},
+            {"text":"Swimming","value":"Swimming","valdn":""},
         
-            {"text":"Talim","value":"Talim"},
+            {"text":"Talim","value":"Talim","valdn":""},
         
-            {"text":"Tennis","value":"Tennis"},
+            {"text":"Tennis","value":"Tennis","valdn":""},
         
-            {"text":"Throw Ball","value":"Throw Ball"},
+            {"text":"Throw Ball","value":"Throw Ball","valdn":""},
         
-            {"text":"Viti Dandu","value":"Viti Dandu"},
+            {"text":"Viti Dandu","value":"Viti Dandu","valdn":""},
         
-            {"text":"Walking","value":"Walking"},
+            {"text":"Walking","value":"Walking","valdn":""},
         
-            {"text":"Weight lifting","value":"Weight lifting"},
+            {"text":"Weight lifting","value":"Weight lifting","valdn":""},
         
-            {"text":"Yoga","value":"Yoga"},
+            {"text":"Yoga","value":"Yoga","valdn":""},
         
-            {"text":"Others","value":"Others"}
+            {"text":"Others","value":"Others","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1453,11 +1457,11 @@
 
 
         {
-        "name":"ageStartSportExs1",
+        "name":"durationSportExs1",
         "type":"text",
-        "valdn":"between[5:69],required",
-        "label":"At what age did you start doing it? (years)",
-        "flow":"data.sportsExsCurrent=='Yes'",
+        "valdn":"between[10:69],required",
+        "label":"How long have you been doing this exercise? (In years)",
+        "flow":"data.exercise!='Never or almost never'",
         "value":"",
         "items":[
         
@@ -1466,13 +1470,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -1483,11 +1490,11 @@
 
 
         {
-        "name":"timeSportExs1Wk",
+        "name":"noHrsSportExs1Wk",
         "type":"text",
         "valdn":"between[1:84],required",
-        "label":"How much time in total per week? (hours)",
-        "flow":"data.sportsExsCurrent=='Yes'",
+        "label":"About how many hours per week did you do such exercise in leisure time?",
+        "flow":"data.exercise!='Never or almost never'",
         "value":"",
         "items":[
         
@@ -1496,6 +1503,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1511,102 +1521,105 @@
         "name":"sportExs2",
         "type":"dropdown",
         "valdn":"",
-        "label":"Name of the Sport/exercise 2",
-        "flow":"data.sportsExsCurrent=='Yes'",
+        "label":"What is your main type of exercise, if any?",
+        "flow":"data.exercise!='Never or almost never'",
         "value":"",
         "items":[
         
-            {"text":"Aerobics","value":"Aerobics"},
+            {"text":"Aerobics","value":"Aerobics","valdn":""},
         
-            {"text":"Andhala topi","value":"Andhala topi"},
+            {"text":"Andhala topi","value":"Andhala topi","valdn":""},
         
-            {"text":"Atayapataya","value":"Atayapataya"},
+            {"text":"Atayapataya","value":"Atayapataya","valdn":""},
         
-            {"text":"Badminton","value":"Badminton"},
+            {"text":"Badminton","value":"Badminton","valdn":""},
         
-            {"text":"Basketball","value":"Basketball"},
+            {"text":"Basketball","value":"Basketball","valdn":""},
         
-            {"text":"Bhajani Paul","value":"Bhajani Paul"},
+            {"text":"Bhajani Paul","value":"Bhajani Paul","valdn":""},
         
-            {"text":"Balla Phek","value":"Balla Phek"},
+            {"text":"Balla Phek","value":"Balla Phek","valdn":""},
         
-            {"text":"Bhukadi","value":"Bhukadi"},
+            {"text":"Bhukadi","value":"Bhukadi","valdn":""},
         
-            {"text":"Body Building","value":"Body Building"},
+            {"text":"Body Building","value":"Body Building","valdn":""},
         
-            {"text":"Boxing","value":"Boxing"},
+            {"text":"Boxing","value":"Boxing","valdn":""},
         
-            {"text":"Chikat Bhopala","value":"Chikat Bhopala"},
+            {"text":"Chikat Bhopala","value":"Chikat Bhopala","valdn":""},
         
-            {"text":"Cricket","value":"Cricket"},
+            {"text":"Cricket","value":"Cricket","valdn":""},
         
-            {"text":"Cycling","value":"Cycling"},
+            {"text":"Cycling","value":"Cycling","valdn":""},
         
-            {"text":"Dori","value":"Dori"},
+            {"text":"Dori","value":"Dori","valdn":""},
         
-            {"text":"Figadi","value":"Figadi"},
+            {"text":"Figadi","value":"Figadi","valdn":""},
         
-            {"text":"Football","value":"Football"},
+            {"text":"Football","value":"Football","valdn":""},
         
-            {"text":"Gajge","value":"Gajge"},
+            {"text":"Gajge","value":"Gajge","valdn":""},
         
-            {"text":"Gymnastics","value":"Gymnastics"},
+            {"text":"Gymnastics","value":"Gymnastics","valdn":""},
         
-            {"text":"Handball","value":"Handball"},
+            {"text":"Handball","value":"Handball","valdn":""},
         
-            {"text":"Holiball","value":"Holiball"},
+            {"text":"Holiball","value":"Holiball","valdn":""},
         
-            {"text":"Hututu","value":"Hututu"},
+            {"text":"Hututu","value":"Hututu","valdn":""},
         
-            {"text":"Jor Baithak","value":"Jor Baithak"},
+            {"text":"Jor Baithak","value":"Jor Baithak","valdn":""},
         
-            {"text":"Kabadi","value":"Kabadi"},
+            {"text":"Kabadi","value":"Kabadi","valdn":""},
         
-            {"text":"Karate","value":"Karate"},
+            {"text":"Karate","value":"Karate","valdn":""},
         
-            {"text":"Kho Kho","value":"Kho Kho"},
+            {"text":"Kho Kho","value":"Kho Kho","valdn":""},
         
-            {"text":"Kusti","value":"Kusti"},
+            {"text":"Kusti","value":"Kusti","valdn":""},
         
-            {"text":"Langadi","value":"Langadi"},
+            {"text":"Langadi","value":"Langadi","valdn":""},
         
-            {"text":"Lapamdaon","value":"Lapamdaon"},
+            {"text":"Lapamdaon","value":"Lapamdaon","valdn":""},
         
-            {"text":"Lezim","value":"Lezim"},
+            {"text":"Lezim","value":"Lezim","valdn":""},
         
-            {"text":"Lompat","value":"Lompat"},
+            {"text":"Lompat","value":"Lompat","valdn":""},
         
-            {"text":"Malkham","value":"Malkham"},
+            {"text":"Malkham","value":"Malkham","valdn":""},
         
-            {"text":"Running","value":"Running"},
+            {"text":"Running","value":"Running","valdn":""},
         
-            {"text":"Stretching exercises","value":"Stretching exercises"},
+            {"text":"Stretching exercises","value":"Stretching exercises","valdn":""},
         
-            {"text":"Sur Parumba","value":"Sur Parumba"},
+            {"text":"Sur Parumba","value":"Sur Parumba","valdn":""},
         
-            {"text":"Swimming","value":"Swimming"},
+            {"text":"Swimming","value":"Swimming","valdn":""},
         
-            {"text":"Talim","value":"Talim"},
+            {"text":"Talim","value":"Talim","valdn":""},
         
-            {"text":"Tennis","value":"Tennis"},
+            {"text":"Tennis","value":"Tennis","valdn":""},
         
-            {"text":"Throw Ball","value":"Throw Ball"},
+            {"text":"Throw Ball","value":"Throw Ball","valdn":""},
         
-            {"text":"Viti Dandu","value":"Viti Dandu"},
+            {"text":"Viti Dandu","value":"Viti Dandu","valdn":""},
         
-            {"text":"Walking","value":"Walking"},
+            {"text":"Walking","value":"Walking","valdn":""},
         
-            {"text":"Weight lifting","value":"Weight lifting"},
+            {"text":"Weight lifting","value":"Weight lifting","valdn":""},
         
-            {"text":"Yoga","value":"Yoga"},
+            {"text":"Yoga","value":"Yoga","valdn":""},
         
-            {"text":"Others","value":"Others"}
+            {"text":"Others","value":"Others","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1619,11 +1632,11 @@
 
 
         {
-        "name":"ageStartSportExs2",
+        "name":"durationSportExs2",
         "type":"text",
-        "valdn":"between[5:69]",
-        "label":"At what age did you start doing it? (years)",
-        "flow":"data.sportsExsCurrent=='Yes' && data.sportExs2!=''",
+        "valdn":"between[10:69]",
+        "label":"How long have you been doing this exercise?(In years)",
+        "flow":"data.exercise!='Never or almost never'",
         "value":"",
         "items":[
         
@@ -1632,13 +1645,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -1649,11 +1665,11 @@
 
 
         {
-        "name":"timeSportExs2Wk",
+        "name":"noHrsSportExs2Wk",
         "type":"text",
         "valdn":"between[1:84]",
-        "label":"How much time in total per week? (hours)",
-        "flow":"data.sportsExsCurrent=='Yes' && data.sportExs2!=''",
+        "label":"About how many hours per week did you do such exercise in leisure time?",
+        "flow":"data.exercise!='Never or almost never'",
         "value":"",
         "items":[
         
@@ -1662,6 +1678,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1669,31 +1688,6 @@
         
         },
         "help":"Report the total duration of exercise per week using frequency in hours"
-        },
-
-
-
-        {
-        "name":"otherSportsExs",
-        "type":"text",
-        "valdn":"",
-        "label":"If you do some other sports or exercise (please specify)",
-        "flow":"data.sportExs1=='Others' || data.sportExs2=='Others'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
         },
 
 
@@ -1707,15 +1701,18 @@
         "value":"",
         "items":[
         
-            {"text":"Yes","value":"Yes"},
+            {"text":"Yes","value":"Yes","valdn":""},
         
-            {"text":"No","value":"No"}
+            {"text":"No","value":"No","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1741,6 +1738,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1761,97 +1761,100 @@
         "value":"",
         "items":[
         
-            {"text":"Aerobics","value":"Aerobics"},
+            {"text":"Aerobics","value":"Aerobics","valdn":""},
         
-            {"text":"Andhala topi","value":"Andhala topi"},
+            {"text":"Andhala topi","value":"Andhala topi","valdn":""},
         
-            {"text":"Atayapataya","value":"Atayapataya"},
+            {"text":"Atayapataya","value":"Atayapataya","valdn":""},
         
-            {"text":"Badminton","value":"Badminton"},
+            {"text":"Badminton","value":"Badminton","valdn":""},
         
-            {"text":"Basketball","value":"Basketball"},
+            {"text":"Basketball","value":"Basketball","valdn":""},
         
-            {"text":"Bhajani Paul","value":"Bhajani Paul"},
+            {"text":"Bhajani Paul","value":"Bhajani Paul","valdn":""},
         
-            {"text":"Balla Phek","value":"Balla Phek"},
+            {"text":"Balla Phek","value":"Balla Phek","valdn":""},
         
-            {"text":"Bhukadi","value":"Bhukadi"},
+            {"text":"Bhukadi","value":"Bhukadi","valdn":""},
         
-            {"text":"Body Building","value":"Body Building"},
+            {"text":"Body Building","value":"Body Building","valdn":""},
         
-            {"text":"Boxing","value":"Boxing"},
+            {"text":"Boxing","value":"Boxing","valdn":""},
         
-            {"text":"Chikat Bhopala","value":"Chikat Bhopala"},
+            {"text":"Chikat Bhopala","value":"Chikat Bhopala","valdn":""},
         
-            {"text":"Cricket","value":"Cricket"},
+            {"text":"Cricket","value":"Cricket","valdn":""},
         
-            {"text":"Cycling","value":"Cycling"},
+            {"text":"Cycling","value":"Cycling","valdn":""},
         
-            {"text":"Dori","value":"Dori"},
+            {"text":"Dori","value":"Dori","valdn":""},
         
-            {"text":"Figadi","value":"Figadi"},
+            {"text":"Figadi","value":"Figadi","valdn":""},
         
-            {"text":"Football","value":"Football"},
+            {"text":"Football","value":"Football","valdn":""},
         
-            {"text":"Gajge","value":"Gajge"},
+            {"text":"Gajge","value":"Gajge","valdn":""},
         
-            {"text":"Gymnastics","value":"Gymnastics"},
+            {"text":"Gymnastics","value":"Gymnastics","valdn":""},
         
-            {"text":"Handball","value":"Handball"},
+            {"text":"Handball","value":"Handball","valdn":""},
         
-            {"text":"Holiball","value":"Holiball"},
+            {"text":"Holiball","value":"Holiball","valdn":""},
         
-            {"text":"Hututu","value":"Hututu"},
+            {"text":"Hututu","value":"Hututu","valdn":""},
         
-            {"text":"Jor Baithak","value":"Jor Baithak"},
+            {"text":"Jor Baithak","value":"Jor Baithak","valdn":""},
         
-            {"text":"Kabadi","value":"Kabadi"},
+            {"text":"Kabadi","value":"Kabadi","valdn":""},
         
-            {"text":"Karate","value":"Karate"},
+            {"text":"Karate","value":"Karate","valdn":""},
         
-            {"text":"Kho Kho","value":"Kho Kho"},
+            {"text":"Kho Kho","value":"Kho Kho","valdn":""},
         
-            {"text":"Kusti","value":"Kusti"},
+            {"text":"Kusti","value":"Kusti","valdn":""},
         
-            {"text":"Langadi","value":"Langadi"},
+            {"text":"Langadi","value":"Langadi","valdn":""},
         
-            {"text":"Lapamdaon","value":"Lapamdaon"},
+            {"text":"Lapamdaon","value":"Lapamdaon","valdn":""},
         
-            {"text":"Lezim","value":"Lezim"},
+            {"text":"Lezim","value":"Lezim","valdn":""},
         
-            {"text":"Lompat","value":"Lompat"},
+            {"text":"Lompat","value":"Lompat","valdn":""},
         
-            {"text":"Malkham","value":"Malkham"},
+            {"text":"Malkham","value":"Malkham","valdn":""},
         
-            {"text":"Running","value":"Running"},
+            {"text":"Running","value":"Running","valdn":""},
         
-            {"text":"Stretching exercises","value":"Stretching exercises"},
+            {"text":"Stretching exercises","value":"Stretching exercises","valdn":""},
         
-            {"text":"Sur Parumba","value":"Sur Parumba"},
+            {"text":"Sur Parumba","value":"Sur Parumba","valdn":""},
         
-            {"text":"Swimming","value":"Swimming"},
+            {"text":"Swimming","value":"Swimming","valdn":""},
         
-            {"text":"Talim","value":"Talim"},
+            {"text":"Talim","value":"Talim","valdn":""},
         
-            {"text":"Tennis","value":"Tennis"},
+            {"text":"Tennis","value":"Tennis","valdn":""},
         
-            {"text":"Throw Ball","value":"Throw Ball"},
+            {"text":"Throw Ball","value":"Throw Ball","valdn":""},
         
-            {"text":"Viti Dandu","value":"Viti Dandu"},
+            {"text":"Viti Dandu","value":"Viti Dandu","valdn":""},
         
-            {"text":"Walking","value":"Walking"},
+            {"text":"Walking","value":"Walking","valdn":""},
         
-            {"text":"Weight lifting","value":"Weight lifting"},
+            {"text":"Weight lifting","value":"Weight lifting","valdn":""},
         
-            {"text":"Yoga","value":"Yoga"},
+            {"text":"Yoga","value":"Yoga","valdn":""},
         
-            {"text":"Others","value":"Others"}
+            {"text":"Others","value":"Others","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1866,7 +1869,7 @@
         {
         "name":"ageStartSportExs1Past",
         "type":"text",
-        "valdn":"between[5:69],required",
+        "valdn":"between[10:69],required",
         "label":"At what age did you start doing it? (years)",
         "flow":"data.sportsExsPast=='Yes'",
         "value":"",
@@ -1877,13 +1880,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -1896,7 +1902,7 @@
         {
         "name":"ageStopSportExs1",
         "type":"text",
-        "valdn":"between[5:{data.ageStartSportExs1Past}],required",
+        "valdn":"between[10:{data.ageStartSportExs1Past}],required",
         "label":"At what age did you stop doing it? (years)",
         "flow":"data.sportsExsPast=='Yes'",
         "value":"",
@@ -1907,13 +1913,16 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
             "entity":"member",
-            "field":"age",
+            "field":"age_value",
             "ref":"memberId",
             "condition":"between[10:{value}],required"
         
@@ -1937,6 +1946,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -1949,105 +1961,32 @@
 
 
         {
-        "name":"sportExs2Past",
-        "type":"dropdown",
-        "valdn":"",
-        "label":"Name of the Sport/exercise 2",
-        "flow":"data.sportsExsPast=='Yes'",
+        "name":"sweatHeartbeatPhyAct",
+        "type":"radio",
+        "valdn":"required",
+        "label":"In a typical week during the past 12 months, how often did you sweat or have a much faster heartbeat because of heavy physical activities/exercise?",
+        "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Aerobics","value":"Aerobics"},
+            {"text":"Never or almost never","value":"Never or almost never","valdn":""},
         
-            {"text":"Andhala topi","value":"Andhala topi"},
+            {"text":"1-3 times/month","value":"1-3 times/month","valdn":""},
         
-            {"text":"Atayapataya","value":"Atayapataya"},
+            {"text":"1-2 times/week","value":"1-2 times/week","valdn":""},
         
-            {"text":"Badminton","value":"Badminton"},
+            {"text":"3-5 times/week","value":"3-5 times/week","valdn":""},
         
-            {"text":"Basketball","value":"Basketball"},
-        
-            {"text":"Bhajani Paul","value":"Bhajani Paul"},
-        
-            {"text":"Balla Phek","value":"Balla Phek"},
-        
-            {"text":"Bhukadi","value":"Bhukadi"},
-        
-            {"text":"Body Building","value":"Body Building"},
-        
-            {"text":"Boxing","value":"Boxing"},
-        
-            {"text":"Chikat Bhopala","value":"Chikat Bhopala"},
-        
-            {"text":"Cricket","value":"Cricket"},
-        
-            {"text":"Cycling","value":"Cycling"},
-        
-            {"text":"Dori","value":"Dori"},
-        
-            {"text":"Figadi","value":"Figadi"},
-        
-            {"text":"Football","value":"Football"},
-        
-            {"text":"Gajge","value":"Gajge"},
-        
-            {"text":"Gymnastics","value":"Gymnastics"},
-        
-            {"text":"Handball","value":"Handball"},
-        
-            {"text":"Holiball","value":"Holiball"},
-        
-            {"text":"Hututu","value":"Hututu"},
-        
-            {"text":"Jor Baithak","value":"Jor Baithak"},
-        
-            {"text":"Kabadi","value":"Kabadi"},
-        
-            {"text":"Karate","value":"Karate"},
-        
-            {"text":"Kho Kho","value":"Kho Kho"},
-        
-            {"text":"Kusti","value":"Kusti"},
-        
-            {"text":"Langadi","value":"Langadi"},
-        
-            {"text":"Lapamdaon","value":"Lapamdaon"},
-        
-            {"text":"Lezim","value":"Lezim"},
-        
-            {"text":"Lompat","value":"Lompat"},
-        
-            {"text":"Malkham","value":"Malkham"},
-        
-            {"text":"Running","value":"Running"},
-        
-            {"text":"Stretching exercises","value":"Stretching exercises"},
-        
-            {"text":"Sur Parumba","value":"Sur Parumba"},
-        
-            {"text":"Swimming","value":"Swimming"},
-        
-            {"text":"Talim","value":"Talim"},
-        
-            {"text":"Tennis","value":"Tennis"},
-        
-            {"text":"Throw Ball","value":"Throw Ball"},
-        
-            {"text":"Viti Dandu","value":"Viti Dandu"},
-        
-            {"text":"Walking","value":"Walking"},
-        
-            {"text":"Weight lifting","value":"Weight lifting"},
-        
-            {"text":"Yoga","value":"Yoga"},
-        
-            {"text":"Others","value":"Others"}
+            {"text":"Daily or almost every day","value":"Daily or almost every day","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -2060,104 +1999,60 @@
 
 
         {
-        "name":"ageStartSportExs2Past",
-        "type":"text",
-        "valdn":"between[5:69]",
-        "label":"At what age did you start doing it? (years)",
-        "flow":"data.sportsExsPast=='Yes'",
+        "name":"weightChangeStatus",
+        "type":"radio",
+        "valdn":"required",
+        "label":"During the past 12 months, has your weight changed significantly?",
+        "flow":"",
         "value":"",
         "items":[
+        
+            {"text":"About the same as before","value":"About the same as before","valdn":""},
+        
+            {"text":"Yes, gained ≥2.5 kg","value":"Yes, gained ≥2.5 kg","valdn":""},
+        
+            {"text":"Yes, lost ≥2.5 kg","value":"Yes, lost ≥2.5 kg","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age",
-            "ref":"memberId",
-            "condition":"between[10:{value}],required"
-        
-        },
-        "help":"Report the age at which respondent started exercise"
-        },
-
-
-
-        {
-        "name":"ageStopSportExs2",
-        "type":"text",
-        "valdn":"between[5:{data.ageStartSportExs2Past}]",
-        "label":"At what age did you stop doing it? (years)",
-        "flow":"data.sportsExsPast=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age",
-            "ref":"memberId",
-            "condition":"between[10:{value}],required"
-        
-        },
-        "help":"Report the age at which respondent stopped exercising"
-        },
-
-
-
-        {
-        "name":"timeSportExs2WkPast",
-        "type":"text",
-        "valdn":"between[1:84]",
-        "label":"How much time in total per week? (hours)",
-        "flow":"data.sportsExsPast=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
         "crossCheck":{
         
         },
-        "help":"Report the total duration of exercise in week using frequency in hours"
+        "help":""
         },
 
 
 
         {
-        "name":"otherSportsExsPast",
-        "type":"text",
-        "valdn":"",
-        "label":"If you have done some other sports or exercise in the past (please specify)",
-        "flow":"data.sportExs1Past=='Others' || data.sportExs2Past=='Others'",
+        "name":"effortReduceWt",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Have you tried to reduce weight in the past 12 months?",
+        "flow":"",
         "value":"",
         "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -2183,6 +2078,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -2203,29 +2101,32 @@
         "value":"",
         "items":[
         
-            {"text":"1","value":"1"},
+            {"text":"1","value":"1","valdn":""},
         
-            {"text":"2","value":"2"},
+            {"text":"2","value":"2","valdn":""},
         
-            {"text":"3","value":"3"},
+            {"text":"3","value":"3","valdn":""},
         
-            {"text":"4","value":"4"},
+            {"text":"4","value":"4","valdn":""},
         
-            {"text":"5","value":"5"},
+            {"text":"5","value":"5","valdn":""},
         
-            {"text":"6","value":"6"},
+            {"text":"6","value":"6","valdn":""},
         
-            {"text":"7","value":"7"},
+            {"text":"7","value":"7","valdn":""},
         
-            {"text":"8","value":"8"},
+            {"text":"8","value":"8","valdn":""},
         
-            {"text":"9","value":"9"}
+            {"text":"9","value":"9","valdn":""}
         
         ],
         "image":"assets/pics/male.png",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'"}
@@ -2248,29 +2149,32 @@
         "value":"",
         "items":[
         
-            {"text":"1","value":"1"},
+            {"text":"1","value":"1","valdn":""},
         
-            {"text":"2","value":"2"},
+            {"text":"2","value":"2","valdn":""},
         
-            {"text":"3","value":"3"},
+            {"text":"3","value":"3","valdn":""},
         
-            {"text":"4","value":"4"},
+            {"text":"4","value":"4","valdn":""},
         
-            {"text":"5","value":"5"},
+            {"text":"5","value":"5","valdn":""},
         
-            {"text":"6","value":"6"},
+            {"text":"6","value":"6","valdn":""},
         
-            {"text":"7","value":"7"},
+            {"text":"7","value":"7","valdn":""},
         
-            {"text":"8","value":"8"},
+            {"text":"8","value":"8","valdn":""},
         
-            {"text":"9","value":"9"}
+            {"text":"9","value":"9","valdn":""}
         
         ],
         "image":"assets/pics/male.png",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'"}
@@ -2293,29 +2197,32 @@
         "value":"",
         "items":[
         
-            {"text":"1","value":"1"},
+            {"text":"1","value":"1","valdn":""},
         
-            {"text":"2","value":"2"},
+            {"text":"2","value":"2","valdn":""},
         
-            {"text":"3","value":"3"},
+            {"text":"3","value":"3","valdn":""},
         
-            {"text":"4","value":"4"},
+            {"text":"4","value":"4","valdn":""},
         
-            {"text":"5","value":"5"},
+            {"text":"5","value":"5","valdn":""},
         
-            {"text":"6","value":"6"},
+            {"text":"6","value":"6","valdn":""},
         
-            {"text":"7","value":"7"},
+            {"text":"7","value":"7","valdn":""},
         
-            {"text":"8","value":"8"},
+            {"text":"8","value":"8","valdn":""},
         
-            {"text":"9","value":"9"}
+            {"text":"9","value":"9","valdn":""}
         
         ],
         "image":"assets/pics/male.png",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'"}
@@ -2338,29 +2245,32 @@
         "value":"",
         "items":[
         
-            {"text":"1","value":"1"},
+            {"text":"1","value":"1","valdn":""},
         
-            {"text":"2","value":"2"},
+            {"text":"2","value":"2","valdn":""},
         
-            {"text":"3","value":"3"},
+            {"text":"3","value":"3","valdn":""},
         
-            {"text":"4","value":"4"},
+            {"text":"4","value":"4","valdn":""},
         
-            {"text":"5","value":"5"},
+            {"text":"5","value":"5","valdn":""},
         
-            {"text":"6","value":"6"},
+            {"text":"6","value":"6","valdn":""},
         
-            {"text":"7","value":"7"},
+            {"text":"7","value":"7","valdn":""},
         
-            {"text":"8","value":"8"},
+            {"text":"8","value":"8","valdn":""},
         
-            {"text":"9","value":"9"}
+            {"text":"9","value":"9","valdn":""}
         
         ],
         "image":"assets/pics/female.png",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"}
@@ -2383,29 +2293,32 @@
         "value":"",
         "items":[
         
-            {"text":"1","value":"1"},
+            {"text":"1","value":"1","valdn":""},
         
-            {"text":"2","value":"2"},
+            {"text":"2","value":"2","valdn":""},
         
-            {"text":"3","value":"3"},
+            {"text":"3","value":"3","valdn":""},
         
-            {"text":"4","value":"4"},
+            {"text":"4","value":"4","valdn":""},
         
-            {"text":"5","value":"5"},
+            {"text":"5","value":"5","valdn":""},
         
-            {"text":"6","value":"6"},
+            {"text":"6","value":"6","valdn":""},
         
-            {"text":"7","value":"7"},
+            {"text":"7","value":"7","valdn":""},
         
-            {"text":"8","value":"8"},
+            {"text":"8","value":"8","valdn":""},
         
-            {"text":"9","value":"9"}
+            {"text":"9","value":"9","valdn":""}
         
         ],
         "image":"assets/pics/female.png",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"}
@@ -2428,29 +2341,32 @@
         "value":"",
         "items":[
         
-            {"text":"1","value":"1"},
+            {"text":"1","value":"1","valdn":""},
         
-            {"text":"2","value":"2"},
+            {"text":"2","value":"2","valdn":""},
         
-            {"text":"3","value":"3"},
+            {"text":"3","value":"3","valdn":""},
         
-            {"text":"4","value":"4"},
+            {"text":"4","value":"4","valdn":""},
         
-            {"text":"5","value":"5"},
+            {"text":"5","value":"5","valdn":""},
         
-            {"text":"6","value":"6"},
+            {"text":"6","value":"6","valdn":""},
         
-            {"text":"7","value":"7"},
+            {"text":"7","value":"7","valdn":""},
         
-            {"text":"8","value":"8"},
+            {"text":"8","value":"8","valdn":""},
         
-            {"text":"9","value":"9"}
+            {"text":"9","value":"9","valdn":""}
         
         ],
         "image":"assets/pics/female.png",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"}

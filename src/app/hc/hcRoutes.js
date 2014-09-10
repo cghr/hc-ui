@@ -8,7 +8,8 @@ angular.module('hcRoutes', [])
                 name: 'area',
                 url: '/area',
                 tpl: 'tpls/dataGrid.html',
-                title: 'Areas'
+                title: 'Areas',
+                msg: 'Select an Area'
 
             },
             {
@@ -22,7 +23,8 @@ angular.module('hcRoutes', [])
                         name: 'house',
                         url: '/house',
                         tpl: 'tpls/dataGrid.html',
-                        title: 'Houses'
+                        title: 'Houses',
+                        msg: 'Select a House'
                     }
                 ]
             },
@@ -37,7 +39,8 @@ angular.module('hcRoutes', [])
                         name: 'household',
                         url: '/household',
                         tpl: 'tpls/dataGrid.html',
-                        title: 'Households'
+                        title: 'Households',
+                        msg: 'Select a Household'
                     }
                 ]
             },
@@ -53,14 +56,16 @@ angular.module('hcRoutes', [])
                         url: '/visit',
                         tpl: 'tpls/dataGrid.html',
                         title: 'Visits',
-                        addNew: true
+                        addNew: true,
+                        msg: 'Add a new Visit'
 
                     },
                     {
                         name: 'member',
                         url: '/member',
                         tpl: 'tpls/dataGrid.html',
-                        title: 'Members'
+                        title: 'Members',
+                        msg: 'Select a Member'
                     },
                     {
                         name: 'ffq',
@@ -81,7 +86,7 @@ angular.module('hcRoutes', [])
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyForm.html',
+                        tpl: 'tpls/surveyFormCustomNav.html',
                         title: 'Basic Inf'
                     }
                 ]
@@ -90,51 +95,89 @@ angular.module('hcRoutes', [])
             {
                 name: 'memberDetail',
                 url: '/area/:areaId/house/:houseId/household/:householdId/member/:memberId',
-                tpl: 'tpls/pageDetail.html',
+                tpl: 'tpls/pageDetailNavDisabled.html',
                 title: 'Member Detail',
                 prevState: {name: 'hc.householdDetail.member', title: 'Members'},
                 children: [
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyForm.html',
-                        title: 'Basic Inf'
+                        tpl: 'tpls/surveyFormDirective.html',
+                        title: '1.Basic Inf'
+                    },
+                    {
+                        name: 'photo',
+                        url: '/photo',
+                        tpl: 'tpls/surveyFormDirective.html',
+                        title: '2.Photo Capture'
                     },
                     {
                         name: 'bp1',
                         url: '/bp1',
-                        tpl: 'tpls/surveyForm.html',
-                        title: 'BP1-General Information'
+                        tpl: 'tpls/surveyFormDirective.html',
+                        title: '3.BP1-General Information'
                     },
                     {
                         name: 'ta',
                         url: '/ta',
-                        tpl: 'tpls/surveyForm.html',
-                        title: 'Tobacco & Alcohol'
+                        tpl: 'tpls/surveyFormCustomNav.html',
+
+
+                        title: '4.Tobacco & Alcohol'
+                    },
+                    {
+                        name: 'alcoholFreq',
+                        url: '/alcoholFreq',
+                        tpl: 'tpls/alcoholFormDirective.html',
+                        title: '5.Alcohol Freq'
+                    },
+                    {
+                        name: 'alcohol2',
+                        url: '/alcohol2',
+                        tpl: 'tpls/surveyFormDirective.html',
+                        title: '6.Alcohol 2'
                     },
                     {
                         name: 'pmh',
                         url: '/pmh',
-                        tpl: 'tpls/surveyForm.html',
-                        title: 'Personal Medical History'
+                        tpl: 'tpls/surveyFormCustomNav.html',
+                        title: '7.Personal Medical History'
+                    },
+                    {
+                        name: 'rh',
+                        url: '/rh',
+                        tpl: 'tpls/surveyFormDirective.html',
+                        title: '8.Reproductive History'
+                    },
+                    {
+                        name: 'mood',
+                        url: '/mood',
+                        tpl: 'tpls/surveyFormDirective.html',
+                        title: '9.General Mood'
                     },
                     {
                         name: 'fmh',
                         url: '/fmh',
-                        tpl: 'tpls/surveyForm.html',
-                        title: 'Family Medical History'
+                        tpl: 'tpls/surveyFormDirective.html',
+                        title: '10.Family Medical History'
+                    },
+                    {
+                        name: 'fmhDisease',
+                        url: '/fmhDisease',
+                        tpl: 'tpls/fmhDiseaseFormDirective.html',
+                        title: '11.Family Diseases'
                     },
                     {
                         name: 'pa',
                         url: '/pa',
-                        tpl: 'tpls/surveyForm.html',
-                        title: 'Physical Activities'
+                        tpl: 'tpls/surveyFormDirective.html',
+                        title: '12.Physical Activities'
                     },
                     {
                         name: 'bp2',
                         url: '/bp2',
-                        tpl: 'tpls/surveyForm.html',
-                        title: 'BP2-Physical Measurements'
+                        tpl: 'tpls/surveyFormDirective.html',
+                        title: '13.BP2-Physical Measurements'
                     }
 
                 ]
@@ -149,92 +192,87 @@ angular.module('hcRoutes', [])
                     {
                         name: 'general',
                         url: '/general',
-                        tpl: 'tpls/surveyForm.html',
-                        title: 'General Information'
+                        tpl: 'tpls/surveyFormDirective.html',
+                        title: '1.General Information'
                     },
                     {
                         name: 'bev',
                         url: '/bev',
-                        tpl: 'tpls/ffqForm.html',
-                        title: 'Beverages'
+                        tpl: 'tpls/ffqFormDirective.html',
+                        title: '2.Beverages'
                     },
                     {
                         name: 'cls',
                         url: '/cls',
-                        tpl: 'tpls/ffqForm.html',
-                        title: 'Cereals'
+                        tpl: 'tpls/ffqFormDirective.html',
+                        title: '3.Cereals'
                     },
                     {
                         name: 'pls',
                         url: '/pls',
-                        tpl: 'tpls/ffqForm.html',
-                        title: 'Pulses'
+                        tpl: 'tpls/ffqFormDirective.html',
+                        title: '4.Pulses'
                     },
                     {
                         name: 'veg',
                         url: '/veg',
-                        tpl: 'tpls/ffqForm.html',
-                        title: 'Vegetarian'
+                        tpl: 'tpls/ffqFormDirective.html',
+                        title: '5.Vegetarian'
                     },
                     {
                         name: 'raw',
                         url: '/raw',
-                        tpl: 'tpls/ffqForm.html',
-                        title: 'RAW'
+                        tpl: 'tpls/ffqFormDirective.html',
+                        title: '6.RAW'
                     },
                     {
                         name: 'fruits',
                         url: '/fruits',
-                        tpl: 'tpls/ffqForm.html',
-                        title: 'Fruits'
+                        tpl: 'tpls/ffqFormDirective.html',
+                        title: '7.Fruits'
                     },
                     {
                         name: 'juice',
                         url: '/juice',
-                        tpl: 'tpls/ffqForm.html',
-                        title: 'Juice'
+                        tpl: 'tpls/ffqFormDirective.html',
+                        title: '8.Juice'
                     },
                     {
                         name: 'nonveg',
                         url: '/nonveg',
-                        tpl: 'tpls/ffqForm.html',
-                        title: 'Non-Veg'
+                        tpl: 'tpls/ffqFormDirective.html',
+                        title: '9.Non-Veg'
                     },
                     {
                         name: 'sweets',
                         url: '/sweets',
-                        tpl: 'tpls/ffqForm.html',
-                        title: 'Sweets'
+                        tpl: 'tpls/ffqFormDirective.html',
+                        title: '10.Sweets'
                     },
                     {
                         name: 'spicemix',
                         url: '/spicemix',
-                        tpl: 'tpls/ffqForm.html',
-                        title: 'SpiceMix'
+                        tpl: 'tpls/ffqFormDirective.html',
+                        title: '11.SpiceMix'
                     },
                     {
                         name: 'snacks',
                         url: '/snacks',
-                        tpl: 'tpls/ffqForm.html',
-                        title: 'Snacks'
+                        tpl: 'tpls/ffqFormDirective.html',
+                        title: '12.Snacks'
                     },
                     {
                         name: 'foodAdditives',
                         url: '/foodAdditives',
-                        tpl: 'tpls/surveyForm.html',
-                        title: 'Food Additives'
+                        tpl: 'tpls/surveyFormDirective.html',
+                        title: '13.Food Additives'
                     },
-                    {
-                        name: 'salt',
-                        url: '/salt',
-                        tpl: 'tpls/standardForm.html',
-                        title: 'Salt Intake'
-                    },
+
                     {
                         name: 'invitationCard',
                         url: '/invitationCard',
-                        tpl: 'tpls/surveyForm.html',
-                        title: 'Invitation Card'
+                        tpl: 'tpls/surveyFormDirective.html',
+                        title: '14.Invitation Card'
                     }
                 ]
             }

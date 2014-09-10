@@ -1,6 +1,6 @@
 {
 "schemaName":"hc.memberDetail.basicInf",
-"onSave":"hc.memberDetail.bp1",
+"onSave":"hc.memberDetail.photo",
 "properties":[
 
 
@@ -18,6 +18,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -43,6 +46,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -55,7 +61,7 @@
 
 
         {
-        "name":"user",
+        "name":"surveyor",
         "type":"hidden",
         "valdn":"",
         "label":"",
@@ -68,6 +74,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -93,6 +102,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -105,23 +117,26 @@
 
 
         {
-        "name":"photoStatusInd",
+        "name":"consentStatus",
         "type":"radio",
         "valdn":"required",
-        "label":"Please take a photo of the respondent for verification",
-        "flow":"",
+        "label":"Detailed consent form signed",
+        "flow":"data.hhVisit=='Available'",
         "value":"",
         "items":[
         
-            {"text":"Yes, taken","value":"Yes, taken"},
+            {"text":"Yes","value":"Yes","valdn":""},
         
-            {"text":"Not taken","value":"Not taken"}
+            {"text":"No","value":"No","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -134,42 +149,11 @@
 
 
         {
-        "name":"reasonNoPhotoInd",
-        "type":"radio",
-        "valdn":"required",
-        "label":"If not taken please specify why?",
-        "flow":"data.photoStatusInd=='Not taken'",
-        "value":"",
-        "items":[
-        
-            {"text":"Camera not functioning","value":"Camera not functioning"},
-        
-            {"text":"Respondent refused to take picture","value":"Respondent refused to take picture"},
-        
-            {"text":"Others","value":"Others"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"otherResonNoPhoto",
+        "name":"noConsent",
         "type":"text",
         "valdn":"required",
-        "label":"If others, please specify",
-        "flow":"data.reasonNoPhotoInd=='Others'",
+        "label":"If no, please provide a reason for no consent",
+        "flow":"data.consentStatus=='No'",
         "value":"",
         "items":[
         
@@ -178,6 +162,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -198,27 +185,30 @@
         "value":"",
         "items":[
         
-            {"text":"Self","value":"Self"},
+            {"text":"Self","value":"Self","valdn":""},
         
-            {"text":"Spouse","value":"Spouse"},
+            {"text":"Spouse","value":"Spouse","valdn":""},
         
-            {"text":"Son","value":"Son"},
+            {"text":"Son","value":"Son","valdn":""},
         
-            {"text":"Brother","value":"Brother"},
+            {"text":"Brother","value":"Brother","valdn":""},
         
-            {"text":"Father","value":"Father"},
+            {"text":"Father","value":"Father","valdn":""},
         
-            {"text":"Grandson","value":"Grandson"},
+            {"text":"Grandson","value":"Grandson","valdn":""},
         
-            {"text":"Son-in-law","value":"Son-in-law"},
+            {"text":"Son-in-law","value":"Son-in-law","valdn":""},
         
-            {"text":"Others","value":"Others"}
+            {"text":"Others","value":"Others","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'"}
@@ -236,32 +226,35 @@
         "name":"relationshipFemale",
         "type":"radio",
         "valdn":"required",
-        "label":"Relationship with the head of the Family:",
+        "label":"Relationship with the head of the Family: ",
         "flow":"",
         "value":"",
         "items":[
         
-            {"text":"Self","value":"Self"},
+            {"text":"Self","value":"Self","valdn":""},
         
-            {"text":"Spouse","value":"Spouse"},
+            {"text":"Spouse","value":"Spouse","valdn":""},
         
-            {"text":"Daughter","value":"Daughter"},
+            {"text":"Daughter","value":"Daughter","valdn":""},
         
-            {"text":"Sister","value":"Sister"},
+            {"text":"Sister","value":"Sister","valdn":""},
         
-            {"text":"Mother","value":"Mother"},
+            {"text":"Mother","value":"Mother","valdn":""},
         
-            {"text":"Granddaughter","value":"Granddaughter"},
+            {"text":"Granddaughter","value":"Granddaughter","valdn":""},
         
-            {"text":"Daughter-in-law","value":"Daughter-in-law"},
+            {"text":"Daughter-in-law","value":"Daughter-in-law","valdn":""},
         
-            {"text":"Others","value":"Others"}
+            {"text":"Others","value":"Others","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"}

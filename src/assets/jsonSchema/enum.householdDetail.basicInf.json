@@ -18,6 +18,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -43,6 +46,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -68,6 +74,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -93,6 +102,37 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"required",
+        "label":"Now, I would like to ask you few details about your household",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -113,25 +153,28 @@
         "value":"",
         "items":[
         
-            {"text":"Hinduism","value":"Hinduism"},
+            {"text":"Hinduism","value":"Hinduism","valdn":""},
         
-            {"text":"Islam","value":"Islam"},
+            {"text":"Islam","value":"Islam","valdn":""},
         
-            {"text":"Christianity","value":"Christianity"},
+            {"text":"Christianity","value":"Christianity","valdn":""},
         
-            {"text":"Sikhism","value":"Sikhism"},
+            {"text":"Sikhism","value":"Sikhism","valdn":""},
         
-            {"text":"Buddhism","value":"Buddhism"},
+            {"text":"Buddhism","value":"Buddhism","valdn":""},
         
-            {"text":"Jainism","value":"Jainism"},
+            {"text":"Jainism","value":"Jainism","valdn":""},
         
-            {"text":"Others-Specify","value":"Others-Specify"}
+            {"text":"Others-Specify","value":"Others-Specify","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -157,6 +200,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -169,19 +215,38 @@
 
 
         {
-        "name":"",
-        "type":"heading",
-        "valdn":"",
-        "label":"What is the primary contact person’s permanent contact address?",
+        "name":"caste",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Specify the caste of the household",
         "flow":"",
         "value":"",
         "items":[
+        
+            {"text":"Brahman","value":"Brahman","valdn":""},
+        
+            {"text":"Dhangar","value":"Dhangar","valdn":""},
+        
+            {"text":"Lingayat","value":"Lingayat","valdn":""},
+        
+            {"text":"Mahar","value":"Mahar","valdn":""},
+        
+            {"text":"Mali","value":"Mali","valdn":""},
+        
+            {"text":"Mang","value":"Mang","valdn":""},
+        
+            {"text":"Maratha","value":"Maratha","valdn":""},
+        
+            {"text":"Others-Specify","value":"Others-Specify","valdn":""}
         
         ],
         "image":"",
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -194,11 +259,11 @@
 
 
         {
-        "name":"nameStreet",
+        "name":"otherCaste",
         "type":"text",
         "valdn":"required",
-        "label":"Street name",
-        "flow":"",
+        "label":"Specify any other caste followed if not specified in previous question",
+        "flow":"data.caste=='Others-Specify'",
         "value":"",
         "items":[
         
@@ -207,6 +272,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -219,11 +287,53 @@
 
 
         {
-        "name":"landmark",
+        "name":"benefitGovtScheme",
+        "type":"checkbox",
+        "valdn":"required",
+        "label":"Is the household benefiting from any Government sponsored scheme?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"None","value":"None","valdn":""},
+        
+            {"text":"Below Poverty Line (BPL) Card Holder","value":"Below Poverty Line (BPL) Card Holder","valdn":""},
+        
+            {"text":"Rajiv Gandhi Health Insurance Scheme","value":"Rajiv Gandhi Health Insurance Scheme","valdn":""},
+        
+            {"text":"Janani Suraksha Yojana (JSY)","value":"Janani Suraksha Yojana (JSY)","valdn":""},
+        
+            {"text":"Mahatma Gandhi National Rural Employment Guarantee Act (NREGA)","value":"Mahatma Gandhi National Rural Employment Guarantee Act (NREGA)","valdn":""},
+        
+            {"text":"Pradhan MantriRozgarYojna(PMRY)","value":"Pradhan MantriRozgarYojna(PMRY)","valdn":""},
+        
+            {"text":"Others- Specify","value":"Others- Specify","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"otherGovtScheme",
         "type":"text",
         "valdn":"required",
-        "label":"Landmark",
-        "flow":"",
+        "label":"If any other Government scheme then please specify",
+        "flow":"data.benefitGovtScheme!='None' && data.benefitGovtScheme=='Others- Specify'",
         "value":"",
         "items":[
         
@@ -232,6 +342,9 @@
         "lookup":{
         
         },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
@@ -244,10 +357,10 @@
 
 
         {
-        "name":"mobile1",
+        "name":"totalMembers",
         "type":"text",
-        "valdn":"number,rangelength[10:10],required",
-        "label":"What is the primary contact person’s permanent contact Mobile Number?",
+        "valdn":"between[1:99],required",
+        "label":"Total Number of members living together in a household",
         "flow":"",
         "value":"",
         "items":[
@@ -257,181 +370,9 @@
         "lookup":{
         
         },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"mobile2",
-        "type":"text",
-        "valdn":"number,rangelength[10:10]",
-        "label":"Please provide a second Mobile Number of the primary contact person?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"secondPersonName",
-        "type":"text",
-        "valdn":"alpha,minlength[3],required",
-        "label":"Please name a second contact person for reference?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"",
-        "type":"heading",
-        "valdn":"",
-        "label":"What is the permanent contact address of the second contact person?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"houseNsNo2",
-        "type":"text",
-        "valdn":"number",
-        "label":"House No. (or) NS- No.",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"nameStreet2",
-        "type":"text",
-        "valdn":"",
-        "label":"Street name",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"landmark2",
-        "type":"text",
-        "valdn":"",
-        "label":"Landmark",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"secondPersonMobile",
-        "type":"text",
-        "valdn":"number,rangelength[10:10]",
-        "label":"What is the second contact person’s permanent contact Mobile Number?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
+        "metadata":{
+                
+                },
         "crossFlow":[
         
         ],
