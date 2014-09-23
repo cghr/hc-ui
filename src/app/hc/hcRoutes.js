@@ -86,7 +86,7 @@ angular.module('hcRoutes', [])
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyFormCustomNav.html',
+                        tpl: 'tpls/surveyForm.html',
                         title: 'Basic Inf'
                     }
                 ]
@@ -102,7 +102,7 @@ angular.module('hcRoutes', [])
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyFormCustomNav.html',
+                        tpl: 'tpls/surveyForm.html',
                         title: '1.Basic Inf'
                     },
                     {
@@ -127,7 +127,7 @@ angular.module('hcRoutes', [])
                     {
                         name: 'ta',
                         url: '/ta',
-                        tpl: 'tpls/surveyFormCustomNav.html',
+                        tpl: 'tpls/surveyForm.html',
 
 
                         title: '5.Tobacco & Alcohol'
@@ -147,7 +147,7 @@ angular.module('hcRoutes', [])
                     {
                         name: 'pmh',
                         url: '/pmh',
-                        tpl: 'tpls/surveyFormCustomNav.html',
+                        tpl: 'tpls/surveyForm.html',
                         title: '8.Personal Medical History'
                     },
                     {

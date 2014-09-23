@@ -71,7 +71,7 @@ angular.module('enumRoutes', [])
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyFormCustomNav.html',
+                        tpl: 'tpls/surveyForm.html',
                         title: 'Basic Information'
                     },
                     {
@@ -96,7 +96,7 @@ angular.module('enumRoutes', [])
                     {
                         name: 'hospInf',
                         url: '/hospInf',
-                        tpl: 'tpls/surveyFormCustomNav.html',
+                        tpl: 'tpls/surveyForm.html',
                         title: 'Hospitalization Inf'
                     },
                     {
@@ -109,7 +109,7 @@ angular.module('enumRoutes', [])
                     {
                         name: 'deathInf',
                         url: '/deathInf',
-                        tpl: 'tpls/surveyFormCustomNav.html',
+                        tpl: 'tpls/surveyForm.html',
                         title: 'Death Inf'
                     },
                     {
@@ -138,7 +138,7 @@ angular.module('enumRoutes', [])
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyFormCustomNav.html',
+                        tpl: 'tpls/surveyForm.html',
                         title: 'Basic Inf'
                     }
                 ]
