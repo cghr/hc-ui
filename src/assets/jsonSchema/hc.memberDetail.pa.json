@@ -1,6 +1,10 @@
 {
 "schemaName":"hc.memberDetail.pa",
 "onSave":"hc.memberDetail.bp2",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 
@@ -257,10 +261,6 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
-        
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
-        
         ],
         "crossCheck":{
         
@@ -293,9 +293,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
-        
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
         
         ],
         "crossCheck":{
@@ -325,9 +323,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
-        
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
         
         ],
         "crossCheck":{
@@ -357,9 +353,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
-        
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
         
         ],
         "crossCheck":{
@@ -395,9 +389,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
-        
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
         
         ],
         "crossCheck":{
@@ -427,9 +419,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
-        
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
         
         ],
         "crossCheck":{
@@ -459,9 +449,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
-        
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
         
         ],
         "crossCheck":{
@@ -491,9 +479,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
-        
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
         
         ],
         "crossCheck":{
@@ -527,9 +513,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
-        
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
         
         ],
         "crossCheck":{
@@ -545,7 +529,7 @@
         "type":"radio",
         "valdn":"required",
         "label":"How active were you at work with other job?",
-        "flow":"",
+        "flow":"data.otherJob=='Yes'",
         "value":"",
         "items":[
         
@@ -567,9 +551,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
-        
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
         
         ],
         "crossCheck":{
@@ -599,7 +581,327 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"},
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"farmingWorkChange1",
+        "type":"radio",
+        "valdn":"required",
+        "label":"During the past 12 months, did your farming work change seasonally?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"",
+        "type":"heading",
+        "valdn":"",
+        "label":"During the farming season in the last 12 months",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"noMonthsFarmLast1",
+        "type":"text",
+        "valdn":"between[0:12],required",
+        "label":"How many months did the farm season last? (In months)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"typeWork1",
+        "type":"radio",
+        "valdn":"required",
+        "label":"What types of work did it usually involve?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Manual","value":"Manual","valdn":""},
+        
+            {"text":"Semi- Mechanized","value":"Semi- Mechanized","valdn":""},
+        
+            {"text":"Fully Mechanized","value":"Fully Mechanized","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"noHoursFarm1",
+        "type":"text",
+        "valdn":"between[0:20],required",
+        "label":"How many hours did you usually work in the farm each day? (In hours)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"sweatFastHeartbeat1",
+        "type":"text",
+        "valdn":"between[0:20],required",
+        "label":"Of your working hours, how many hours did you sweat or have a much faster heartbeat? (In hours)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"noHoursFieldWeek1",
+        "type":"text",
+        "valdn":"between[1:120],required",
+        "label":"In a typical week, how many hours did you usually work in the field? (In hours)",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"otherJob1",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Apart from agriculture work, did you have any other job?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"activeOtherJob1",
+        "type":"radio",
+        "valdn":"required",
+        "label":"How active were you at work with other job?",
+        "flow":"data.otherJob=='Yes'",
+        "value":"",
+        "items":[
+        
+            {"text":"Mainly sedentary","value":"Mainly sedentary","valdn":""},
+        
+            {"text":"Mainly standing","value":"Mainly standing","valdn":""},
+        
+            {"text":"Mainly general manual work","value":"Mainly general manual work","valdn":""},
+        
+            {"text":"Mainly heavy manual work","value":"Mainly heavy manual work","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"noHoursOtherJob1",
+        "type":"text",
+        "valdn":"between[1:120],required",
+        "label":"In a typical week, about how many hours did you work at other job?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
         
         {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
         
@@ -1014,7 +1316,7 @@
 
         {
         "name":"othersActivityTime",
-        "type":"dropdown",
+        "type":"text",
         "valdn":"between[0:999],required",
         "label":"If others, please specify time spent on that activity (mins)",
         "flow":"data.othersActivity=='Yes'",
@@ -1481,7 +1783,7 @@
             "entity":"member",
             "field":"age_value",
             "ref":"memberId",
-            "condition":"between[10:{value}],required"
+            "condition":"between[1:{value}],required"
         
         },
         "help":"Report the age at which respondent started exercise"
@@ -1656,7 +1958,7 @@
             "entity":"member",
             "field":"age_value",
             "ref":"memberId",
-            "condition":"between[10:{value}],required"
+            "condition":"between[1:{value}],required"
         
         },
         "help":"Report the age at which respondent started exercise"
@@ -1891,7 +2193,7 @@
             "entity":"member",
             "field":"age_value",
             "ref":"memberId",
-            "condition":"between[10:{value}],required"
+            "condition":"between[1:{value}],required"
         
         },
         "help":"Report the age at which respondent started exercise"
@@ -1902,7 +2204,7 @@
         {
         "name":"ageStopSportExs1",
         "type":"text",
-        "valdn":"between[10:{data.ageStartSportExs1Past}],required",
+        "valdn":"between[{data.ageStartSportExs1Past}:69],required",
         "label":"At what age did you stop doing it? (years)",
         "flow":"data.sportsExsPast=='Yes'",
         "value":"",
@@ -1924,7 +2226,7 @@
             "entity":"member",
             "field":"age_value",
             "ref":"memberId",
-            "condition":"between[10:{value}],required"
+            "condition":"between[1:{value}],required"
         
         },
         "help":"Report the age at which respondent stopped exercising"

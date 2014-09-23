@@ -1,6 +1,10 @@
 {
 "schemaName":"hc.ffqDetail.snacks",
 "onSave":"hc.ffqDetail.foodAdditives",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 

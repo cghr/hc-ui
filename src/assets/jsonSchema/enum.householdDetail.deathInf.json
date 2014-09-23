@@ -1,6 +1,10 @@
 {
 "schemaName":"enum.householdDetail.deathInf",
 "onSave":"",
+"condition":"data.deathStatus == 'Yes'",
+"success":"enum.householdDetail.death",
+"fail":"enum.householdDetail.contact",
+"crossEntity":"",
 "properties":[
 
 

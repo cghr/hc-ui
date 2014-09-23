@@ -1,6 +1,10 @@
 {
 "schemaName":"hc.ffqDetail.nonveg",
 "onSave":"hc.ffqDetail.sweets",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 

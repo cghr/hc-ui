@@ -1,6 +1,10 @@
 {
 "schemaName":"hc.ffqDetail.spicemix",
 "onSave":"hc.ffqDetail.snacks",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 

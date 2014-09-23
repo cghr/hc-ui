@@ -1,6 +1,10 @@
 {
 "schemaName":"hc.memberDetail.ta",
 "onSave":"",
+"condition":"data.consumeAlcohol == 'Yes'",
+"success":"hc.memberDetail.alcoholFreq",
+"fail":"hc.memberDetail.alcohol2",
+"crossEntity":"",
 "properties":[
 
 
@@ -384,7 +388,7 @@
         {
         "name":"freqOtherTobaccoDay",
         "type":"text",
-        "valdn":"between[0:40],required",
+        "valdn":"{(data.freqCigarettesDay==0 && data.freqBidisDay==0)?'between[1:49],required':'between[0:49],required'}",
         "label":"Frequency of any other tobacco smoked (Nos.)/Day",
         "flow":"data.smokeTobacco=='Daily'",
         "value":"",
@@ -412,7 +416,7 @@
         {
         "name":"freqOtherTobaccoWeek",
         "type":"text",
-        "valdn":"between[0:200],required",
+        "valdn":"{(data.freqCigarettesWeek==0 && data.freqBidisWeek==0)?'between[1:200],required':'between[0:200],required'}",
         "label":"Frequency of any other tobacco smoked (Nos.)/Week",
         "flow":"data.smokeTobacco=='Less than daily'",
         "value":"",
@@ -657,7 +661,7 @@
             "entity":"member",
             "field":"age_value",
             "ref":"memberId",
-            "condition":"between[10:{value}],required"
+            "condition":"between[1:{value}],required"
         
         },
         "help":""
@@ -934,7 +938,7 @@
         "name":"",
         "type":"heading",
         "valdn":"",
-        "label":"On average, how many of the following products do you smoke per day?",
+        "label":"On average, how many of the following products do you use per day?",
         "flow":"data.smokelessTobacco=='Daily'",
         "value":"",
         "items":[
@@ -962,7 +966,7 @@
         "name":"",
         "type":"heading",
         "valdn":"",
-        "label":"On average, how many of the following products do you smoke per week?",
+        "label":"On average, how many of the following products do you use per week?",
         "flow":"data.smokelessTobacco=='Less than daily'",
         "value":"",
         "items":[
@@ -1325,7 +1329,7 @@
         {
         "name":"freqOtherSmokelessTobaccoDay",
         "type":"text",
-        "valdn":"between[0:40],required",
+        "valdn":"{(data.freqChewTobaccoDay==0 && data.freqKhainiLimemixDay==0 && data.freqGhutkaDay==0 && data.freqOralTobaccoDay==0 && data.freqPanmasalaBetelquidDay==0 && data.freqNasalSnuffDay)?'between[1:49],required':'between[0:49],required'}",
         "label":"Frequency of other smokeless tobacco product used?(Nos.)/Day",
         "flow":"data.smokelessTobacco=='Daily'",
         "value":"",
@@ -1353,7 +1357,7 @@
         {
         "name":"freqOtherSmokelessTobaccoWeek",
         "type":"text",
-        "valdn":"between[0:200],required",
+        "valdn":"{(data.freqChewTobaccoWeek==0 && data.freqKhainiLimemixWeek==0 && data.freqGhutkaWeek==0 && data.freqOralTobaccoWeek==0 && data.freqPanmasalaBetelquidWeek==0 && data.freqNasalSnuffWeek==0)?'between[1:200],required':'between[0:200],required'}",
         "label":"Frequency of other smokeless tobacco product used?(Nos.)/Week",
         "flow":"data.smokelessTobacco=='Less than daily'",
         "value":"",
@@ -1498,7 +1502,7 @@
             "entity":"member",
             "field":"age_value",
             "ref":"memberId",
-            "condition":"between[10:{value}],required"
+            "condition":"between[1:{value}],required"
         
         },
         "help":""

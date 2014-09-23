@@ -1,6 +1,10 @@
 {
 "schemaName":"enum.householdDetail.hospInf",
 "onSave":"",
+"condition":"data.hospStatus == 'Yes'",
+"success":"enum.householdDetail.hosp",
+"fail":"enum.householdDetail.deathInf",
+"crossEntity":"",
 "properties":[
 
 
@@ -113,6 +117,11 @@
         
         ],
         "crossCheck":{
+        
+            "entity":"household",
+            "field":"totalMembers",
+            "ref":"householdId",
+            "condition":"between[1:{value}],required"
         
         },
         "help":""

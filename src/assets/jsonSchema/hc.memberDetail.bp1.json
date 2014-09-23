@@ -1,6 +1,10 @@
 {
 "schemaName":"hc.memberDetail.bp1",
 "onSave":"hc.memberDetail.ta",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 
@@ -374,6 +378,50 @@
             {"text":"Farmers","value":"Farmers","valdn":""},
         
             {"text":"Agriculture labour","value":"Agriculture labour","valdn":""},
+        
+            {"text":"Non worker","value":"Non worker","valdn":""},
+        
+            {"text":"Salaried","value":"Salaried","valdn":""},
+        
+            {"text":"Professional business","value":"Professional business","valdn":""},
+        
+            {"text":"Others","value":"Others","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"occupationNeverMarried",
+        "type":"radio",
+        "valdn":"required",
+        "label":"What is your current occupation?",
+        "flow":"data.mstatus=='Never Married'",
+        "value":"",
+        "items":[
+        
+            {"text":"Farmers","value":"Farmers","valdn":""},
+        
+            {"text":"Agriculture labour","value":"Agriculture labour","valdn":""},
+        
+            {"text":"Wage earner","value":"Wage earner","valdn":""},
         
             {"text":"Non worker","value":"Non worker","valdn":""},
         

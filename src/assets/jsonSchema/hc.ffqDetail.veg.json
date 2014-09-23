@@ -1,6 +1,10 @@
 {
 "schemaName":"hc.ffqDetail.veg",
 "onSave":"hc.ffqDetail.raw",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 

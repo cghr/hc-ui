@@ -1,37 +1,42 @@
-angular.module('ngcamera', ['omr.directives', 'appDefaultConfig'])
+angular.module('ngcamera', ['ui.bootstrap','omr.directives','toaster'])
     .config(function ($stateProvider) {
 
         $stateProvider.state('cam', {
             url: '/hc/area/:areaId/house/:houseId/household/:householdId/member/:memberId/cam/:category/:imgSuffix',
-            templateUrl: 'ngcamera/ngcamera.tpl.html'
+            templateUrl: 'ngcamera/ngcamera.html'
         });
     })
-    .controller('camCtrl', function ($scope, AppDefaultConfig, $stateParams, $state) {
+    .controller('camCtrl', function ($scope, $stateParams, toaster) {
 
-        console.log('inside cam ctrl');
+
+        $scope.ok = function () {
+            $scope.$close();
+        };
+
+        $scope.cancel = function () {
+            $scope.$close();
+        };
+
         $scope.$watch('media', function (media) {
-            console.log(media);
             var file = dataURLtoBlob(media);
             // Create new form data
 
             var fd = new FormData();
-            fd.append("data", '{"'+$stateParams.imgSuffix+'":"' + $stateParams.memberId + '_' + $stateParams.imgSuffix + '","filestore":"memberImage","fileId":' + $stateParams.category + ',"filename":' + $stateParams.memberId + '_' + $stateParams.imgSuffix + ',"memberId":' + '"' + $stateParams.memberId + '"    ' + '}');
+            fd.append("data", '{"' + $stateParams.imgSuffix + '":"' + $stateParams.memberId + '_' + $stateParams.imgSuffix + '","filestore":"memberImage","category":' + $stateParams.category + ',"filename":' + $stateParams.memberId + '_' + $stateParams.imgSuffix + ',"memberId":' + '"' + $stateParams.memberId + '"    ' + '}');
 
             // Append our image
-            fd.append("image", file);
+            fd.append("file", file);
 
             $.ajax({
-                url: AppDefaultConfig.serviceBaseUrl + 'api/file/fileStoreService',
+                url: 'api/file/fileStoreService',
                 type: "POST",
                 data: fd,
                 processData: false,
                 contentType: false
             }).done(function (response) {
 
-                    console.log('successfully uploaded');
-                    //$state.transitionTo('enum.householdDetail.member', $stateParams);
-                    //$scope.$apply();
-                    $state.go('hc.householdDetail.member', $stateParams);
+                    toaster.pop('success','','Captured Successfully')
+                    //$state.go('hc.memberDetail.cam', $stateParams);
 
                 });
         });

@@ -1,6 +1,10 @@
 {
 "schemaName":"hc.memberDetail.fmh",
 "onSave":"hc.memberDetail.fmhDisease",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 
@@ -203,7 +207,7 @@
         {
         "name":"noOfSons",
         "type":"text",
-        "valdn":"between[0:10],required",
+        "valdn":"between[1:10],required",
         "label":"How many children (son) do you have?",
         "flow":"",
         "value":"",
@@ -219,6 +223,10 @@
                 },
         "crossFlow":[
         
+        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married' "},
+        
+        {"entity":"memberReproductiveHistory","field":"noTimesPregnantPast","ref":"memberId","condition":"noTimesPregnantPast>0"}
+        
         ],
         "crossCheck":{
         
@@ -231,7 +239,7 @@
         {
         "name":"noOfDaugthers",
         "type":"text",
-        "valdn":"between[0:10],required",
+        "valdn":"between[1:10],required",
         "label":"How many children (daugthers) do you have?",
         "flow":"",
         "value":"",
@@ -246,6 +254,10 @@
                 
                 },
         "crossFlow":[
+        
+        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married' "},
+        
+        {"entity":"memberReproductiveHistory","field":"noTimesPregnantPast","ref":"memberId","condition":"noTimesPregnantPast>0"}
         
         ],
         "crossCheck":{
@@ -293,75 +305,75 @@
         "value":"",
         "items":[
         
-            {"text":"Andaman & Nicobar Islands","value":"1","valdn":""},
+            {"text":"Maharashtra","value":"1","valdn":""},
         
-            {"text":"Andhra Pradesh","value":"2","valdn":""},
+            {"text":"Madhya Pradesh","value":"2","valdn":""},
         
-            {"text":"Arunachal Pradesh","value":"3","valdn":""},
+            {"text":"Karnataka","value":"3","valdn":""},
         
-            {"text":"Assam","value":"4","valdn":""},
+            {"text":"Andhra Pradesh","value":"4","valdn":""},
         
-            {"text":"Bihar","value":"5","valdn":""},
+            {"text":"Gujarat","value":"5","valdn":""},
         
-            {"text":"Chandigarh","value":"6","valdn":""},
+            {"text":"Rajasthan","value":"6","valdn":""},
         
-            {"text":"Chhattisgarh","value":"7","valdn":""},
+            {"text":"Uttar Pradesh","value":"7","valdn":""},
         
-            {"text":"Dadra & Nagar Haveli","value":"8","valdn":""},
+            {"text":"Orissa","value":"8","valdn":""},
         
-            {"text":"Daman & Diu","value":"9","valdn":""},
+            {"text":"Bihar","value":"9","valdn":""},
         
-            {"text":"Delhi","value":"10","valdn":""},
+            {"text":"West Bengal","value":"10","valdn":""},
         
-            {"text":"Goa","value":"11","valdn":""},
+            {"text":"Uttarakhand","value":"11","valdn":""},
         
-            {"text":"Gujarat","value":"12","valdn":""},
+            {"text":"Jharkhand","value":"12","valdn":""},
         
-            {"text":"Haryana","value":"13","valdn":""},
+            {"text":"Manipur","value":"13","valdn":""},
         
-            {"text":"Himachal Pradesh","value":"14","valdn":""},
+            {"text":"Meghalaya","value":"14","valdn":""},
         
-            {"text":"Jammu & Kashmir","value":"15","valdn":""},
+            {"text":"Mizoram","value":"15","valdn":""},
         
-            {"text":"Jharkhand","value":"16","valdn":""},
+            {"text":"Nagaland","value":"16","valdn":""},
         
-            {"text":"Karnataka","value":"17","valdn":""},
+            {"text":"Arunachal Pradesh","value":"17","valdn":""},
         
-            {"text":"Kerala","value":"18","valdn":""},
+            {"text":"Assam","value":"18","valdn":""},
         
-            {"text":"Lakshadweep","value":"19","valdn":""},
+            {"text":"Chhattisgarh","value":"19","valdn":""},
         
-            {"text":"Madhya Pradesh","value":"20","valdn":""},
+            {"text":"Sikkim","value":"20","valdn":""},
         
-            {"text":"Maharashtra","value":"21","valdn":""},
+            {"text":"Punjab","value":"21","valdn":""},
         
-            {"text":"Manipur","value":"22","valdn":""},
+            {"text":"Haryana","value":"22","valdn":""},
         
-            {"text":"Meghalaya","value":"23","valdn":""},
+            {"text":"Himachal Pradesh","value":"23","valdn":""},
         
-            {"text":"Mizoram","value":"24","valdn":""},
+            {"text":"Jammu & Kashmir","value":"24","valdn":""},
         
-            {"text":"Nagaland","value":"25","valdn":""},
+            {"text":"Tripura","value":"25","valdn":""},
         
-            {"text":"Orissa","value":"26","valdn":""},
+            {"text":"Kerala","value":"26","valdn":""},
         
-            {"text":"Pondicherry","value":"27","valdn":""},
+            {"text":"Tamil Nadu","value":"27","valdn":""},
         
-            {"text":"Punjab","value":"28","valdn":""},
+            {"text":"Delhi","value":"28","valdn":""},
         
-            {"text":"Rajasthan","value":"29","valdn":""},
+            {"text":"Chandigarh","value":"29","valdn":""},
         
-            {"text":"Sikkim","value":"30","valdn":""},
+            {"text":"Dadra & Nagar Haveli","value":"30","valdn":""},
         
-            {"text":"Tamil Nadu","value":"31","valdn":""},
+            {"text":"Daman & Diu","value":"31","valdn":""},
         
-            {"text":"Tripura","value":"32","valdn":""},
+            {"text":"Goa","value":"32","valdn":""},
         
-            {"text":"Uttar Pradesh","value":"33","valdn":""},
+            {"text":"Pondicherry","value":"33","valdn":""},
         
-            {"text":"Uttarakhand","value":"34","valdn":""},
+            {"text":"Andaman & Nicobar Islands","value":"34","valdn":""},
         
-            {"text":"West Bengal","value":"35","valdn":""}
+            {"text":"Lakshadweep","value":"35","valdn":""}
         
         ],
         "image":"",
@@ -489,12 +501,28 @@
 
         {
         "name":"motherTongue",
-        "type":"suggest",
+        "type":"dropdown",
         "valdn":"required",
         "label":"What is the mother-tongue of your mother?",
         "flow":"",
         "value":"",
         "items":[
+        
+            {"text":"Marathi","value":"Marathi","valdn":""},
+        
+            {"text":"Hindi","value":"Hindi","valdn":""},
+        
+            {"text":"Konkani","value":"Konkani","valdn":""},
+        
+            {"text":"Varhadi","value":"Varhadi","valdn":""},
+        
+            {"text":"Urdu","value":"Urdu","valdn":""},
+        
+            {"text":"Kannada","value":"Kannada","valdn":""},
+        
+            {"text":"Gujarati","value":"Gujarati","valdn":""},
+        
+            {"text":"Telugu","value":"Telugu","valdn":""},
         
             {"text":"Adi","value":"Adi","valdn":""},
         
@@ -534,23 +562,15 @@
         
             {"text":"Garo","value":"Garo","valdn":""},
         
-            {"text":"Gondi","value":"Gondi","valdn":""},
-        
-            {"text":"Gujarati","value":"Gujarati","valdn":""},
-        
             {"text":"Halabi","value":"Halabi","valdn":""},
         
             {"text":"Halam","value":"Halam","valdn":""},
-        
-            {"text":"Hindi","value":"Hindi","valdn":""},
         
             {"text":"Hmar","value":"Hmar","valdn":""},
         
             {"text":"Ho","value":"Ho","valdn":""},
         
             {"text":"Kabui","value":"Kabui","valdn":""},
-        
-            {"text":"Kannada","value":"Kannada","valdn":""},
         
             {"text":"Karbi / Mikir","value":"Karbi / Mikir","valdn":""},
         
@@ -571,8 +591,6 @@
             {"text":"Koch","value":"Koch","valdn":""},
         
             {"text":"Koda/Kora","value":"Koda/Kora","valdn":""},
-        
-            {"text":"Konkani","value":"Konkani","valdn":""},
         
             {"text":"Korku","value":"Korku","valdn":""},
         
@@ -605,8 +623,6 @@
             {"text":"Manipuri ","value":"Manipuri ","valdn":""},
         
             {"text":"Maram","value":"Maram","valdn":""},
-        
-            {"text":"Marathi","value":"Marathi","valdn":""},
         
             {"text":"Mishmi","value":"Mishmi","valdn":""},
         
@@ -652,8 +668,6 @@
         
             {"text":"Tamil","value":"Tamil","valdn":""},
         
-            {"text":"Telugu","value":"Telugu","valdn":""},
-        
             {"text":"Thado","value":"Thado","valdn":""},
         
             {"text":"Tibetan","value":"Tibetan","valdn":""},
@@ -661,8 +675,6 @@
             {"text":"Tripuri","value":"Tripuri","valdn":""},
         
             {"text":"Tulu","value":"Tulu","valdn":""},
-        
-            {"text":"Urdu","value":"Urdu","valdn":""},
         
             {"text":"Zou","value":"Zou","valdn":""}
         
@@ -720,7 +732,7 @@
         {
         "name":"motherAge",
         "type":"text",
-        "valdn":"required",
+        "valdn":"between[30:99],required",
         "label":"If Yes, what is her current age",
         "flow":"data.motherAliveStatus=='Yes'",
         "value":"",
@@ -738,6 +750,11 @@
         
         ],
         "crossCheck":{
+        
+            "entity":"member",
+            "field":"age_value",
+            "ref":"memberId",
+            "condition":"between[{value}:100],required"
         
         },
         "help":""
@@ -808,7 +825,7 @@
         {
         "name":"fatherAge",
         "type":"text",
-        "valdn":"required",
+        "valdn":"between[30:99],required",
         "label":"If Yes, what is his current age",
         "flow":"data.fatherAliveStatus=='Yes'",
         "value":"",
@@ -826,6 +843,11 @@
         
         ],
         "crossCheck":{
+        
+            "entity":"member",
+            "field":"age_value",
+            "ref":"memberId",
+            "condition":"between[{value}:100],required"
         
         },
         "help":""

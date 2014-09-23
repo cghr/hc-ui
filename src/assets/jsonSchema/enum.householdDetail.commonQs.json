@@ -1,6 +1,10 @@
 {
 "schemaName":"enum.householdDetail.commonQs",
 "onSave":"enum.householdDetail.foodItems",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 
@@ -63,8 +67,8 @@
         {
         "name":"roomCount",
         "type":"text",
-        "valdn":"between[0:20],required",
-        "label":"How many rooms are there in your house? (excluding kitchen)",
+        "valdn":"between[1:20],required",
+        "label":"How many rooms are there in your house? (Including kitchen)",
         "flow":"",
         "value":"",
         "items":[
@@ -329,7 +333,8 @@
         
             "entity":"member",
             "field":"name",
-            "ref":"householdId"
+            "ref":"householdId",
+            "condition":"age_value>=15 AND age_unit='Years'"
         
         },
         "metadata":{
@@ -342,46 +347,6 @@
         
         },
         "help":"Please specify who does most of the cooking in the household, other members can attend/help in the cooking"
-        },
-
-
-
-        {
-        "name":"cookingOil",
-        "type":"checkbox",
-        "valdn":"required",
-        "label":"What kind of cooking oil is used in the household?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"Gingelly Oil","value":"Gingelly Oil","valdn":""},
-        
-            {"text":"Groundnut Oil","value":"Groundnut Oil","valdn":""},
-        
-            {"text":"Mustartd Oil","value":"Mustartd Oil","valdn":""},
-        
-            {"text":"Palm Oil","value":"Palm Oil","valdn":""},
-        
-            {"text":"Sunflower oil","value":"Sunflower oil","valdn":""},
-        
-            {"text":"Others","value":"Others","valdn":""}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
         }
 
 

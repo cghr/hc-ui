@@ -102,20 +102,27 @@ angular.module('hcRoutes', [])
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyFormDirective.html',
+                        tpl: 'tpls/surveyFormCustomNav.html',
                         title: '1.Basic Inf'
                     },
+                    {
+                        name: 'cam',
+                        url: '/cam',
+                        tpl: 'tpls/cam.html',
+                        title: '2.Photo Capture'
+                    },
+
                     {
                         name: 'photo',
                         url: '/photo',
                         tpl: 'tpls/surveyFormDirective.html',
-                        title: '2.Photo Capture'
+                        title: '3.Photo Capture Details'
                     },
                     {
                         name: 'bp1',
                         url: '/bp1',
                         tpl: 'tpls/surveyFormDirective.html',
-                        title: '3.BP1-General Information'
+                        title: '4.BP1-General Information'
                     },
                     {
                         name: 'ta',
@@ -123,61 +130,61 @@ angular.module('hcRoutes', [])
                         tpl: 'tpls/surveyFormCustomNav.html',
 
 
-                        title: '4.Tobacco & Alcohol'
+                        title: '5.Tobacco & Alcohol'
                     },
                     {
                         name: 'alcoholFreq',
                         url: '/alcoholFreq',
                         tpl: 'tpls/alcoholFormDirective.html',
-                        title: '5.Alcohol Freq'
+                        title: '6.Alcohol Freq'
                     },
                     {
                         name: 'alcohol2',
                         url: '/alcohol2',
                         tpl: 'tpls/surveyFormDirective.html',
-                        title: '6.Alcohol 2'
+                        title: '7.Alcohol 2'
                     },
                     {
                         name: 'pmh',
                         url: '/pmh',
                         tpl: 'tpls/surveyFormCustomNav.html',
-                        title: '7.Personal Medical History'
+                        title: '8.Personal Medical History'
                     },
                     {
                         name: 'rh',
                         url: '/rh',
                         tpl: 'tpls/surveyFormDirective.html',
-                        title: '8.Reproductive History'
+                        title: '9.Reproductive History'
                     },
                     {
                         name: 'mood',
                         url: '/mood',
                         tpl: 'tpls/surveyFormDirective.html',
-                        title: '9.General Mood'
+                        title: '10.General Mood'
                     },
                     {
                         name: 'fmh',
                         url: '/fmh',
                         tpl: 'tpls/surveyFormDirective.html',
-                        title: '10.Family Medical History'
+                        title: '11.Family Medical History'
                     },
                     {
                         name: 'fmhDisease',
                         url: '/fmhDisease',
                         tpl: 'tpls/fmhDiseaseFormDirective.html',
-                        title: '11.Family Diseases'
+                        title: '12.Family Diseases'
                     },
                     {
                         name: 'pa',
                         url: '/pa',
                         tpl: 'tpls/surveyFormDirective.html',
-                        title: '12.Physical Activities'
+                        title: '13.Physical Activities'
                     },
                     {
                         name: 'bp2',
                         url: '/bp2',
                         tpl: 'tpls/surveyFormDirective.html',
-                        title: '13.BP2-Physical Measurements'
+                        title: '14.BP2-Physical Measurements'
                     }
 
                 ]
@@ -217,7 +224,7 @@ angular.module('hcRoutes', [])
                         name: 'veg',
                         url: '/veg',
                         tpl: 'tpls/ffqFormDirective.html',
-                        title: '5.Vegetarian'
+                        title: '5.Vegetables'
                     },
                     {
                         name: 'raw',

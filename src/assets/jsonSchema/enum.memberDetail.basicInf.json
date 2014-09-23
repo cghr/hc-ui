@@ -1,6 +1,10 @@
 {
 "schemaName":"enum.memberDetail.basicInf",
 "onSave":"enum.householdDetail.member",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 
@@ -218,38 +222,6 @@
             {"text":"Months","value":"Months","valdn":"between[1:12],required"},
         
             {"text":"Years","value":"Years","valdn":"between[1:99],required"}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"head",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Is Head of the Household?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"No","value":"No","valdn":""},
-        
-            {"text":"Yes","value":"Yes","valdn":""}
         
         ],
         "image":"",

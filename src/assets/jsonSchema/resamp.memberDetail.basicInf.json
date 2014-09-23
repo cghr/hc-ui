@@ -1,6 +1,10 @@
 {
 "schemaName":"resamp.memberDetail.basicInf",
 "onSave":"resamp.houseDetail.household",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 
@@ -340,12 +344,28 @@
 
         {
         "name":"motherTongue",
-        "type":"suggest",
+        "type":"dropdown",
         "valdn":"required",
         "label":"What is the mother-tongue of your mother?",
         "flow":"",
         "value":"",
         "items":[
+        
+            {"text":"Marathi","value":"Marathi","valdn":""},
+        
+            {"text":"Hindi","value":"Hindi","valdn":""},
+        
+            {"text":"Konkani","value":"Konkani","valdn":""},
+        
+            {"text":"Varhadi","value":"Varhadi","valdn":""},
+        
+            {"text":"Urdu","value":"Urdu","valdn":""},
+        
+            {"text":"Kannada","value":"Kannada","valdn":""},
+        
+            {"text":"Gujarati","value":"Gujarati","valdn":""},
+        
+            {"text":"Telugu","value":"Telugu","valdn":""},
         
             {"text":"Adi","value":"Adi","valdn":""},
         
@@ -385,23 +405,15 @@
         
             {"text":"Garo","value":"Garo","valdn":""},
         
-            {"text":"Gondi","value":"Gondi","valdn":""},
-        
-            {"text":"Gujarati","value":"Gujarati","valdn":""},
-        
             {"text":"Halabi","value":"Halabi","valdn":""},
         
             {"text":"Halam","value":"Halam","valdn":""},
-        
-            {"text":"Hindi","value":"Hindi","valdn":""},
         
             {"text":"Hmar","value":"Hmar","valdn":""},
         
             {"text":"Ho","value":"Ho","valdn":""},
         
             {"text":"Kabui","value":"Kabui","valdn":""},
-        
-            {"text":"Kannada","value":"Kannada","valdn":""},
         
             {"text":"Karbi / Mikir","value":"Karbi / Mikir","valdn":""},
         
@@ -422,8 +434,6 @@
             {"text":"Koch","value":"Koch","valdn":""},
         
             {"text":"Koda/Kora","value":"Koda/Kora","valdn":""},
-        
-            {"text":"Konkani","value":"Konkani","valdn":""},
         
             {"text":"Korku","value":"Korku","valdn":""},
         
@@ -456,8 +466,6 @@
             {"text":"Manipuri ","value":"Manipuri ","valdn":""},
         
             {"text":"Maram","value":"Maram","valdn":""},
-        
-            {"text":"Marathi","value":"Marathi","valdn":""},
         
             {"text":"Mishmi","value":"Mishmi","valdn":""},
         
@@ -503,8 +511,6 @@
         
             {"text":"Tamil","value":"Tamil","valdn":""},
         
-            {"text":"Telugu","value":"Telugu","valdn":""},
-        
             {"text":"Thado","value":"Thado","valdn":""},
         
             {"text":"Tibetan","value":"Tibetan","valdn":""},
@@ -512,8 +518,6 @@
             {"text":"Tripuri","value":"Tripuri","valdn":""},
         
             {"text":"Tulu","value":"Tulu","valdn":""},
-        
-            {"text":"Urdu","value":"Urdu","valdn":""},
         
             {"text":"Zou","value":"Zou","valdn":""}
         
@@ -1136,7 +1140,7 @@
         "name":"roomCount",
         "type":"text",
         "valdn":"required",
-        "label":"How many rooms are there in your house? (excluding kitchen)",
+        "label":"How many rooms are there in your house? (Including kitchen)",
         "flow":"",
         "value":"",
         "items":[
@@ -1249,7 +1253,8 @@
         
             "entity":"member",
             "field":"name",
-            "ref":"householdId"
+            "ref":"householdId",
+            "condition":""
         
         },
         "metadata":{

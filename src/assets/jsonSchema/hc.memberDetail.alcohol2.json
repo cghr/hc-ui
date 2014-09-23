@@ -1,6 +1,10 @@
 {
 "schemaName":"hc.memberDetail.alcohol2",
 "onSave":"hc.memberDetail.pmh",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 
@@ -492,7 +496,7 @@
             "entity":"member",
             "field":"age_value",
             "ref":"memberId",
-            "condition":"between[10:{value}],required"
+            "condition":"between[1:{value}],required"
         
         },
         "help":""
@@ -615,7 +619,7 @@
         {
         "name":"freqDrinkHusband",
         "type":"text",
-        "valdn":"between[0:7],required",
+        "valdn":"between[1:7],required",
         "label":"How many days per week does your husband drinks?",
         "flow":"data.drinkStatusHusband!='Does not drink at all'",
         "value":"",

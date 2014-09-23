@@ -1,6 +1,10 @@
 {
 "schemaName":"enum.householdDetail.contact",
 "onSave":"enum.houseDetail.household",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 

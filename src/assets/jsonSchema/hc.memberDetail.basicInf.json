@@ -1,6 +1,10 @@
 {
 "schemaName":"hc.memberDetail.basicInf",
-"onSave":"hc.memberDetail.photo",
+"onSave":"",
+"condition":"data.consentStatus=='Yes'",
+"success":"hc.memberDetail.cam",
+"fail":"hc.householdDetail.member",
+"crossEntity":"",
 "properties":[
 
 
@@ -180,7 +184,7 @@
         "name":"relationshipMale",
         "type":"radio",
         "valdn":"required",
-        "label":"Relationship with the head of the Family:",
+        "label":"Relationship with the head of the Family: ",
         "flow":"",
         "value":"",
         "items":[

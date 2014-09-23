@@ -2,7 +2,7 @@
  * cgForm
  * 
 
- * Version: 0.1.0 - 2014-09-10
+ * Version: 0.1.0 - 2014-09-23
  * License: MIT
  */
 angular.module('cgForm', [
@@ -191,7 +191,7 @@ angular.module('cgForm.formService', [
             }
             function getResource(entity) {
                 var params = $location.url().split('/');
-                var entityId = _.last(params);
+                var entityId = params[params.length - 2];
                 var dataUrl = FormConfig.resourceBaseUrl + entity + '/' + entityId;
                 return getData(dataUrl);
             }
@@ -521,9 +521,25 @@ angular.module('cgForm.surveyForm', [
             /* Posts  data to Sever */
             function postData() {
                 var done = function () {
-                    if ($scope.schema.onSave !== '') {
+                    if ($scope.schema.onSave !== '')
                         $state.go($scope.schema.onSave, $stateParams);
+                    else if ($scope.schema.condtion !== '' && $scope.schema.crossEntity === '') {
+                        console.log('evaluating condtion');
+                        var data = $scope.data;
+                        var transition = eval($scope.schema.condition) ? $scope.schema.success : $scope.schema.fail;
+                        $state.go(transition, $stateParams);
+                    } else if ($scope.schema.crossEntity !== '') {
+                        console.log('evaluating cross entity condtion');
+                        var params = $scope.schema.crossEntity.split(';');
+                        var entity = params[0];
+                        var entityId = params[1];
+                        FormService.getResource(entity, $stateParams[entityId]).then(function (resp) {
+                            var data = resp.data;
+                            var transition = eval($scope.schema.condition) ? $scope.schema.success : $scope.schema.fail;
+                            $state.go(transition, $stateParams);
+                        });
                     } else {
+                        console.log('calling external function');
                         $scope.fnct({ data: $scope.data });
                     }  //$rootScope.$eval($scope.schema.onSave);
                 };
@@ -553,10 +569,12 @@ angular.module('cgForm.surveyForm', [
                 if ($scope.flowIndex < $scope.schema.properties.length - 1) {
                     handleFlow();
                     var nextCondition = $scope.schema.properties[$scope.flowIndex]['valdn'];
+                    console.log('next Condition ' + nextCondition);
                     var matches = nextCondition.match(/{.*}/);
+                    console.log('matches ' + matches);
                     if (matches) {
                         var evalValue = $scope.$eval(matches[0].replace('{', '').replace('}', ''));
-                        $scope.flow.properties[$scope.flowIndex].valdn = nextCondition.replace(/{.*}/, evalValue);
+                        _.last($scope.flow.properties).valdn = nextCondition.replace(/{.*}/, evalValue);
                     }
                 } else {
                     postData();
@@ -724,6 +742,12 @@ angular.module('cgForm.surveyForm', [
                     });
                     /* Store datastore value in scope to use in controller */
                     scope.datastore = _.find(scope.schema.properties, { name: 'datastore' }).value;
+                    /* Get form data if already populated */
+                    FormService.getResource(scope.datastore).then(function (resp) {
+                        delete resp.data.timelog;
+                        delete resp.data.endtime;
+                        angular.extend(scope.data, resp.data);
+                    });
                     /* Bind Enter as Tab and Validation to form */
                     element.bValidator();
                     scope.flow = { properties: [] };
@@ -924,7 +948,7 @@ angular.module('template/formElement/suggest.html', []).run([
 angular.module('template/formElement/text.html', []).run([
     '$templateCache',
     function ($templateCache) {
-        $templateCache.put('template/formElement/text.html', '<input type="text"  data-bvalidator="{{config.valdn}}"\n' + '       ng-model="data[config.name]" init-focus="{{config.initFocus}}" />');
+        $templateCache.put('template/formElement/text.html', '<input type="text" data-bvalidator="{{config.valdn}}" id="{{config.name}}"\n' + '       ng-model="data[config.name]" init-focus="{{config.initFocus}}"/>');
     }
 ]);
 angular.module('template/formElement/text_select.html', []).run([

@@ -7,7 +7,7 @@ angular.module('schemaLoader', ['lodash'])
         SchemaLoader.loadAllSchemas = function (schemaNames, schemaPath) {
 
             var promises = _.map(schemaNames, function (schema) {
-                return $http.get(schemaPath + schema + '.json')
+                return $http.get(schemaPath + schema)
             })
 
             return $q.all(promises)
@@ -15,6 +15,7 @@ angular.module('schemaLoader', ['lodash'])
                     _.each(responses, function (response, index) {
                         SchemaLoader.allSchemas.push(response.data)
                     })
+                    console.log(SchemaLoader.allSchemas);
 
                 }, function () {
                     $log.error('Failed to load json schemas')

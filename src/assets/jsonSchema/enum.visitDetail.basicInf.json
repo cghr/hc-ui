@@ -1,6 +1,10 @@
 {
 "schemaName":"enum.visitDetail.basicInf",
 "onSave":"",
+"condition":"data.hhAvailability == 'Respondents Available'",
+"success":"enum.householdDetail.basicInf",
+"fail":"enum.houseDetail.household",
+"crossEntity":"",
 "properties":[
 
 

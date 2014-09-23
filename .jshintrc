@@ -5,6 +5,7 @@
     "sub": true,
     "boss": true,
     "asi":true,
+    "evil":true,
     "eqnull": true,
     "expr": true,
     "trailing": true,

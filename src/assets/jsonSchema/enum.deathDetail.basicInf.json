@@ -1,6 +1,10 @@
 {
 "schemaName":"enum.deathDetail.basicInf",
 "onSave":"enum.householdDetail.death",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 
@@ -157,9 +161,9 @@
         {
         "name":"reasonWomenDeath",
         "type":"radio",
-        "valdn":"required",
+        "valdn":"between[10:49],required",
         "label":"If female, was this death for any of the following reasons?",
-        "flow":"data.gender=='Female'",
+        "flow":"data.gender=='Female' && data.age_value>10 && data.age_unit=='Years'",
         "value":"",
         "items":[
         

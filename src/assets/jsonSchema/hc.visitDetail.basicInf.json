@@ -1,6 +1,10 @@
 {
 "schemaName":"hc.visitDetail.basicInf",
 "onSave":"",
+"condition":"data.hhVisit == 'Available'",
+"success":"hc.householdDetail.member",
+"fail":"hc.houseDetail.household",
+"crossEntity":"",
 "properties":[
 
 

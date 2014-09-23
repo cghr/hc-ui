@@ -1,6 +1,10 @@
 {
 "schemaName":"hc.memberDetail.pmh",
 "onSave":"",
+"condition":"data.gender=='Female'",
+"success":"hc.memberDetail.rh",
+"fail":"hc.memberDetail.mood",
+"crossEntity":"member;memberId",
 "properties":[
 
 
@@ -415,7 +419,7 @@
         {
         "name":"ageHtn",
         "type":"text",
-        "valdn":"between[0:69],required",
+        "valdn":"required",
         "label":"How long ago were you diagnosed (In completed years)",
         "flow":"data.htn=='Yes, on medications' || data.htn=='Yes, but not on medications'",
         "value":"",
@@ -437,7 +441,7 @@
             "entity":"member",
             "field":"age_value",
             "ref":"memberId",
-            "condition":"between[10:{value}],required"
+            "condition":"between[1:{value}],required"
         
         },
         "help":""
@@ -512,7 +516,7 @@
         {
         "name":"ageDm",
         "type":"text",
-        "valdn":"between[0:69],required",
+        "valdn":"between[1:69],required",
         "label":"How long ago were you diagnosed (In completed years)",
         "flow":"data.dm=='Yes, on medications' || data.dm=='Yes, but not on medications'",
         "value":"",
@@ -534,7 +538,7 @@
             "entity":"member",
             "field":"age_value",
             "ref":"memberId",
-            "condition":"between[10:{value}],required"
+            "condition":"between[1:{value}],required"
         
         },
         "help":""
@@ -609,7 +613,7 @@
         {
         "name":"ageHd",
         "type":"text",
-        "valdn":"between[0:69],required",
+        "valdn":"between[1:69],required",
         "label":"How long ago were you diagnosed (In completed years)",
         "flow":"data.hd=='Yes, on medications' || data.hd=='Yes, but not on medications'",
         "value":"",
@@ -631,7 +635,7 @@
             "entity":"member",
             "field":"age_value",
             "ref":"memberId",
-            "condition":"between[10:{value}],required"
+            "condition":"between[1:{value}],required"
         
         },
         "help":""
@@ -706,7 +710,7 @@
         {
         "name":"ageStroke",
         "type":"text",
-        "valdn":"between[0:69],required",
+        "valdn":"between[1:69],required",
         "label":"How long ago were you diagnosed (In completed years)",
         "flow":"data.stroke=='Yes, on medications' || data.stroke=='Yes, but not on medications'",
         "value":"",
@@ -728,7 +732,7 @@
             "entity":"member",
             "field":"age_value",
             "ref":"memberId",
-            "condition":"between[10:{value}],required"
+            "condition":"between[1:{value}],required"
         
         },
         "help":""
@@ -773,67 +777,6 @@
 
 
         {
-        "name":"rhdMed",
-        "type":"text",
-        "valdn":"required",
-        "label":"Medication details ",
-        "flow":"data.rhd=='Yes, on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"ageRhd",
-        "type":"text",
-        "valdn":"between[0:69],required",
-        "label":"How long ago were you diagnosed (In completed years)",
-        "flow":"data.rhd=='Yes, on medications' || data.rhd=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age_value",
-            "ref":"memberId",
-            "condition":"between[10:{value}],required"
-        
-        },
-        "help":""
-        },
-
-
-
-        {
         "name":"tb",
         "type":"radio",
         "valdn":"required",
@@ -862,67 +805,6 @@
         
         ],
         "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"tbMed",
-        "type":"text",
-        "valdn":"required",
-        "label":"Medication details ",
-        "flow":"data.tb=='Yes, on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"ageTb",
-        "type":"text",
-        "valdn":"between[0:69],required",
-        "label":"How long ago were you diagnosed (In completed years)",
-        "flow":"data.tb=='Yes, on medications' || data.tb=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age_value",
-            "ref":"memberId",
-            "condition":"between[10:{value}],required"
         
         },
         "help":""
@@ -967,67 +849,6 @@
 
 
         {
-        "name":"asthmaMed",
-        "type":"text",
-        "valdn":"required",
-        "label":"Medication details ",
-        "flow":"data.asthma=='Yes, on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"ageAsthma",
-        "type":"text",
-        "valdn":"between[0:69],required",
-        "label":"How long ago were you diagnosed (In completed years)",
-        "flow":"data.asthma=='Yes, on medications' || data.asthma=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age_value",
-            "ref":"memberId",
-            "condition":"between[10:{value}],required"
-        
-        },
-        "help":""
-        },
-
-
-
-        {
         "name":"bronchitis",
         "type":"radio",
         "valdn":"required",
@@ -1056,67 +877,6 @@
         
         ],
         "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"bronchitisMed",
-        "type":"text",
-        "valdn":"required",
-        "label":"Medication details ",
-        "flow":"data.bronchitis=='Yes, on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"ageBronchitis",
-        "type":"text",
-        "valdn":"between[0:69],required",
-        "label":"How long ago were you diagnosed (In completed years)",
-        "flow":"data.bronchitis=='Yes, on medications' || data.bronchitis=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age_value",
-            "ref":"memberId",
-            "condition":"between[10:{value}],required"
         
         },
         "help":""
@@ -1161,67 +921,6 @@
 
 
         {
-        "name":"hepatitisMed",
-        "type":"text",
-        "valdn":"required",
-        "label":"Medication details ",
-        "flow":"data.hepatitis=='Yes, on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"ageHepatitis",
-        "type":"text",
-        "valdn":"between[0:69],required",
-        "label":"How long ago were you diagnosed (In completed years)",
-        "flow":"data.hepatitis=='Yes, on medications' || data.hepatitis=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age_value",
-            "ref":"memberId",
-            "condition":"between[10:{value}],required"
-        
-        },
-        "help":""
-        },
-
-
-
-        {
         "name":"pepticUlcer",
         "type":"radio",
         "valdn":"required",
@@ -1250,67 +949,6 @@
         
         ],
         "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"pepticUlcerMed",
-        "type":"text",
-        "valdn":"required",
-        "label":"Medication details ",
-        "flow":"data.pepticUlcer=='Yes, on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"agePepticUlcer",
-        "type":"text",
-        "valdn":"between[0:69],required",
-        "label":"How long ago were you diagnosed (In completed years)",
-        "flow":"data.pepticUlcer=='Yes, on medications' || data.pepticUlcer=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age_value",
-            "ref":"memberId",
-            "condition":"between[10:{value}],required"
         
         },
         "help":""
@@ -1355,67 +993,6 @@
 
 
         {
-        "name":"gallBladderDisMed",
-        "type":"text",
-        "valdn":"required",
-        "label":"Medication details ",
-        "flow":"data.gallBladderDis=='Yes, on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"ageGallBladderDis",
-        "type":"text",
-        "valdn":"between[0:69],required",
-        "label":"How long ago were you diagnosed (In completed years)",
-        "flow":"data.gallBladderDis=='Yes, on medications' || data.gallBladderDis=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age_value",
-            "ref":"memberId",
-            "condition":"between[10:{value}],required"
-        
-        },
-        "help":""
-        },
-
-
-
-        {
         "name":"kidneyDis",
         "type":"radio",
         "valdn":"required",
@@ -1444,67 +1021,6 @@
         
         ],
         "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"kidneyDisMed",
-        "type":"text",
-        "valdn":"required",
-        "label":"Medication details ",
-        "flow":"data.kidneyDis=='Yes, on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"ageKidneyDis",
-        "type":"text",
-        "valdn":"between[0:69],required",
-        "label":"How long ago were you diagnosed (In completed years)",
-        "flow":"data.kidneyDis=='Yes, on medications' || data.kidneyDis=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age_value",
-            "ref":"memberId",
-            "condition":"between[10:{value}],required"
         
         },
         "help":""
@@ -1549,67 +1065,6 @@
 
 
         {
-        "name":"fractureMed",
-        "type":"text",
-        "valdn":"required",
-        "label":"Medication details ",
-        "flow":"data.fracture=='Yes, on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"ageFracture",
-        "type":"text",
-        "valdn":"between[0:69],required",
-        "label":"How long ago were you diagnosed (In completed years)",
-        "flow":"data.fracture=='Yes, on medications' || data.fracture=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age_value",
-            "ref":"memberId",
-            "condition":"between[10:{value}],required"
-        
-        },
-        "help":""
-        },
-
-
-
-        {
         "name":"ra",
         "type":"radio",
         "valdn":"required",
@@ -1638,67 +1093,6 @@
         
         ],
         "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"raMed",
-        "type":"text",
-        "valdn":"required",
-        "label":"Medication details ",
-        "flow":"data.ra=='Yes, on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"ageRa",
-        "type":"text",
-        "valdn":"between[0:69],required",
-        "label":"How long ago were you diagnosed (In completed years)",
-        "flow":"data.ra=='Yes, on medications' || data.ra=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age_value",
-            "ref":"memberId",
-            "condition":"between[10:{value}],required"
         
         },
         "help":""
@@ -1743,67 +1137,6 @@
 
 
         {
-        "name":"psychiatricDisMed",
-        "type":"text",
-        "valdn":"required",
-        "label":"Medication details ",
-        "flow":"data.psychiatricDis=='Yes, on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"agePsyDis",
-        "type":"text",
-        "valdn":"between[0:69],required",
-        "label":"How long ago were you diagnosed (In completed years)",
-        "flow":"data.psychiatricDis=='Yes, on medications' || data.psychiatricDis=='Yes, but not on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-            "entity":"member",
-            "field":"age_value",
-            "ref":"memberId",
-            "condition":"between[10:{value}],required"
-        
-        },
-        "help":""
-        },
-
-
-
-        {
         "name":"cancer",
         "type":"radio",
         "valdn":"required",
@@ -1840,37 +1173,9 @@
 
 
         {
-        "name":"cancerMed",
-        "type":"text",
-        "valdn":"required",
-        "label":"Medication details ",
-        "flow":"data.cancer=='Yes, on medications'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
         "name":"ageCancer",
         "type":"text",
-        "valdn":"between[0:69],required",
+        "valdn":"between[1:69],required",
         "label":"How long ago were you diagnosed (In completed years)",
         "flow":"data.cancer=='Yes, on medications' || data.cancer=='Yes, but not on medications'",
         "value":"",
@@ -1892,7 +1197,7 @@
             "entity":"member",
             "field":"age_value",
             "ref":"memberId",
-            "condition":"between[10:{value}],required"
+            "condition":"between[1:{value}],required"
         
         },
         "help":""
@@ -2098,7 +1403,7 @@
         "name":"bloodTransfusion",
         "type":"text",
         "valdn":"between[0:50],required",
-        "label":"Have many blood transfusions have you ever received?",
+        "label":"How many blood transfusions have you ever received?",
         "flow":"",
         "value":"",
         "items":[

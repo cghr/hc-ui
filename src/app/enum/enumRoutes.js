@@ -55,7 +55,7 @@ angular.module('enumRoutes', [])
             {
                 name: 'householdDetail',
                 url: '/area/:areaId/house/:houseId/household/:householdId',
-                tpl: 'tpls/pageDetail.html',
+                tpl: 'tpls/pageDetailNavDisabled.html',
                 defaultState: 'member',
                 title: 'Members',
                 prevState: {name: 'enum.houseDetail.household', title: 'Households'},
@@ -71,16 +71,15 @@ angular.module('enumRoutes', [])
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyFormDirective.html',
+                        tpl: 'tpls/surveyFormCustomNav.html',
                         title: 'Basic Information'
                     },
                     {
                         name: 'member',
                         url: '/member',
-                        tpl: 'tpls/dataGrid.html',
+                        tpl: 'enum/member/member.html',
                         title: 'Members',
-                        addNew: true,
-                        msg: 'Add new members'
+                        addNew: true
                     },
                     {
                         name: 'commonQs',
@@ -105,8 +104,7 @@ angular.module('enumRoutes', [])
                         url: '/hosp',
                         tpl: 'enum/hosp/hosp.html',
                         title: 'Hospitalization',
-                        addNew: true,
-                        msg: 'Add new Hospitalized members'
+                        addNew: true
                     },
                     {
                         name: 'deathInf',
@@ -119,8 +117,7 @@ angular.module('enumRoutes', [])
                         url: '/death',
                         tpl: 'enum/death/death.html',
                         title: 'Deaths',
-                        addNew: true,
-                        msg: 'Add deaths in the household'
+                        addNew: true
                     },
                     {
                         name: 'contact',

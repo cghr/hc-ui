@@ -15,6 +15,7 @@ angular.module('routeConfigHandler', [])
                     stateChangeStartMsg: child.stateChangeStartMsg,
                     data: child.children ? self.getData(child, children, parentState) : {}
                 });
+
                 if (child.children) {
                     self.configureRoutesForChildren($stateProvider, parentState + '.' + child.name, child.children);
                 }

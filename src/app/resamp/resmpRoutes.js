@@ -2,7 +2,7 @@ angular.module('resampRoutes', [])
     .constant('resampRoutes', {
         name: 'resamp',
         url: '/resamp',
-        tpl: 'resamp/resamp.tpl.html',
+        tpl: 'resamp/resamp.html',
         children: [
             {
                 name: 'area',

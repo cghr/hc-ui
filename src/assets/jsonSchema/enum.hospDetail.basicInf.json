@@ -1,6 +1,10 @@
 {
 "schemaName":"enum.hospDetail.basicInf",
 "onSave":"enum.householdDetail.hosp",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 
@@ -75,7 +79,8 @@
         
             "entity":"member",
             "field":"name",
-            "ref":"householdId"
+            "ref":"householdId",
+            "condition":""
         
         },
         "metadata":{

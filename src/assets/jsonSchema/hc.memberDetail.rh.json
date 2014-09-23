@@ -1,6 +1,10 @@
 {
 "schemaName":"hc.memberDetail.rh",
 "onSave":"hc.memberDetail.mood",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 
@@ -341,79 +345,11 @@
 
 
         {
-        "name":"abortion",
-        "type":"radio",
-        "valdn":"required",
-        "label":"Have any of your pregnancies resulted in an abortion?",
-        "flow":"",
-        "value":"",
-        "items":[
-        
-            {"text":"Yes","value":"Yes","valdn":""},
-        
-            {"text":"No","value":"No","valdn":""}
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
-        "name":"noOfAbortion",
-        "type":"text",
-        "valdn":"between[1:20],required",
-        "label":"If yes, then how many?",
-        "flow":"data.abortion=='Yes'",
-        "value":"",
-        "items":[
-        
-        ],
-        "image":"",
-        "lookup":{
-        
-        },
-        "metadata":{
-                
-                },
-        "crossFlow":[
-        
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
-        
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
-        
-        ],
-        "crossCheck":{
-        
-        },
-        "help":""
-        },
-
-
-
-        {
         "name":"miscarriage",
         "type":"radio",
         "valdn":"required",
         "label":"Have any of your pregnancies resulted in a miscarriage?",
-        "flow":"",
+        "flow":"data.noTimesPregnantPast>0",
         "value":"",
         "items":[
         
@@ -477,9 +413,77 @@
 
 
         {
+        "name":"abortion",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Have any of your pregnancies resulted in an abortion?",
+        "flow":"data.noTimesPregnantPast>0",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"noOfAbortion",
+        "type":"text",
+        "valdn":"between[1:20],required",
+        "label":"If yes, then how many?",
+        "flow":"data.abortion=='Yes'",
+        "value":"",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
         "name":"age1stPregnant",
         "type":"text",
-        "valdn":"between[10:50],required",
+        "valdn":"between[{data.ageMenarche}:49],required",
         "label":"Age at first pregnancy? (Age in completed years)",
         "flow":"data.noTimesPregnantPast>0",
         "value":"",
@@ -737,7 +741,7 @@
         {
         "name":"ageStartContraceptives",
         "type":"text",
-        "valdn":"required",
+        "valdn":"",
         "label":"How old were you when you first used oral contraceptives? (in years)",
         "flow":"data.contraceptives=='Oral contraceptive/pills'",
         "value":"",
@@ -759,6 +763,11 @@
         
         ],
         "crossCheck":{
+        
+            "entity":"member",
+            "field":"age_value",
+            "ref":"memberId",
+            "condition":"between[1:{value}],required"
         
         },
         "help":""

@@ -1,5 +1,6 @@
 angular.module("myApp", [
         'schemaLoader',
+        'jsonSchemaListService',
         'lodash',
         'chieffancypants.loadingBar',
         'ui.bootstrap',
@@ -19,7 +20,7 @@ angular.module("myApp", [
         'enum',
         'hc',
         'resamp',
-        //'ngcamera',
+        'ngcamera',
         'toaster',
         'fixedHeader']
     )
@@ -28,15 +29,14 @@ angular.module("myApp", [
         var reqInterceptor = function () {
             return {
                 'request': function (config) {
-                    var url = config.url
-                    if (url.indexOf("api/") !== -1)
-                        config.url = 'http://localhost:8080/' + url
+                    config.url = (config.url.indexOf("api/") !== -1) ? ('http://localhost:8080/' + config.url) : config.url
                     return config;
                 }
             };
 
         }
-      // $httpProvider.interceptors.push(reqInterceptor);
+        if (window.location.href.indexOf('build') != -1)
+            $httpProvider.interceptors.push(reqInterceptor);
 
         $urlRouterProvider.otherwise('/enum/area')
     })

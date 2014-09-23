@@ -1,6 +1,10 @@
 {
 "schemaName":"hc.ffqDetail.invitationCard",
 "onSave":"hc.householdDetail.member",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 
@@ -119,7 +123,7 @@
         {
         "name":"rePhn",
         "type":"text",
-        "valdn":"number,rangelength[6:6],required",
+        "valdn":"equalto[phn],required",
         "label":"Re-enter Personal Health Number",
         "flow":"",
         "value":"",

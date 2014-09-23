@@ -1,6 +1,10 @@
 {
 "schemaName":"hc.ffqDetail.fruits",
 "onSave":"hc.ffqDetail.juice",
+"condition":"",
+"success":"",
+"fail":"",
+"crossEntity":"",
 "properties":[
 
 
