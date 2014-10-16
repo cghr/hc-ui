@@ -10,7 +10,7 @@ describe('AppCtrl', function () {
             AppCtrl = $controller('AppCtrl', { $location: $location, $scope: $scope });
         }));
 
-        it('should pass a dummy test', inject(function () {
+        it('should load the AppCtrl', inject(function () {
             expect(!!AppCtrl).toBeTruthy();
         }));
     });

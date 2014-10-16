@@ -21,18 +21,20 @@ angular.module('dashboard', ['ui.router', 'angularCharts', 'lodash', 'chartServi
 
         $interval(function () {
             updateDashboard()
-        }, 5000)
+        }, 2000)
 
         function updateDashboard() {
 
             ChartService.getPendingDownloads()
                 .then(function () {
-                    vm.pendingDownloads = ChartService.pendingDownloads
-                })
+                    if (!isEqualTo(vm.pendingDownloads, ChartService.data.pendingDownloads))
+                        vm.pendingDownloads = ChartService.data.pendingDownloads
+                });
             ChartService.getTotalProgress()
                 .then(function () {
-                    vm.totalProgress = ChartService.totalProgress
-                })
+                    if (!isEqualTo(vm.totalProgress, ChartService.data.totalProgress))
+                        vm.totalProgress = ChartService.data.totalProgress
+                });
         }
 
         function getChartConfig(title) {
@@ -42,6 +44,11 @@ angular.module('dashboard', ['ui.router', 'angularCharts', 'lodash', 'chartServi
                 "innerRadius": 0,
                 "lineLegend": "lineEnd"
             };
+        }
+
+        function isEqualTo(obj1, obj2) {
+
+            return JSON.stringify(obj1) == JSON.stringify(obj2)
         }
 
 

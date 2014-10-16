@@ -9,7 +9,8 @@ angular.module('enumRoutes', [])
                 url: '/area',
                 tpl: 'tpls/dataGrid.html',
                 title: 'Areas',
-                msg: 'Select an Area'
+                msg: 'Select an Area',
+                children:[]
 
             },
             {
@@ -71,13 +72,13 @@ angular.module('enumRoutes', [])
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyForm.html',
+                        tpl: 'tpls/surveyFormDirective.html',
                         title: 'Basic Information'
                     },
                     {
                         name: 'member',
                         url: '/member',
-                        tpl: 'enum/member/member.html',
+                        tpl: 'enum/dataGrid/dataGridCustom.html',
                         title: 'Members',
                         addNew: true
                     },
@@ -96,26 +97,26 @@ angular.module('enumRoutes', [])
                     {
                         name: 'hospInf',
                         url: '/hospInf',
-                        tpl: 'tpls/surveyForm.html',
+                        tpl: 'tpls/surveyFormDirective.html',
                         title: 'Hospitalization Inf'
                     },
                     {
                         name: 'hosp',
                         url: '/hosp',
-                        tpl: 'enum/hosp/hosp.html',
+                        tpl: 'enum/dataGrid/dataGridCustom.html',
                         title: 'Hospitalization',
                         addNew: true
                     },
                     {
                         name: 'deathInf',
                         url: '/deathInf',
-                        tpl: 'tpls/surveyForm.html',
+                        tpl: 'tpls/surveyFormDirective.html',
                         title: 'Death Inf'
                     },
                     {
                         name: 'death',
                         url: '/death',
-                        tpl: 'enum/death/death.html',
+                        tpl: 'enum/dataGrid/dataGridCustom.html',
                         title: 'Deaths',
                         addNew: true
                     },
@@ -138,7 +139,7 @@ angular.module('enumRoutes', [])
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyForm.html',
+                        tpl: 'tpls/surveyFormDirective.html',
                         title: 'Basic Inf'
                     }
                 ]

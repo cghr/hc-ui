@@ -1,6 +1,6 @@
 {
 "schemaName":"hc.memberDetail.photo",
-"onSave":"hc.memberDetail.bp1",
+"onSave":"hc.memberDetail.ta",
 "condition":"",
 "success":"",
 "fail":"",

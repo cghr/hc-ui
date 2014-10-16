@@ -1,4 +1,4 @@
-angular.module('enum', ['ui.router', 'routeConfigHandler', 'enumRoutes', 'cgGrid', 'toaster', 'idService', 'stateTransitions', 'death', 'hosp','member'])
+angular.module('enum', ['ui.router', 'routeConfigHandler', 'enumRoutes', 'cgGrid', 'toaster', 'idService', 'stateTransitions', 'dataGridCustom'])
     .config(function ($stateProvider, enumRoutes, RouteConfigHandler) {
 
         $stateProvider

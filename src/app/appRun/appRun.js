@@ -18,9 +18,9 @@ angular.module('myApp')
                 toaster.pop('info', '', $rootScope.$state.current.stateChangeStartMsg)
 
         });
+
         JsonSchemaListService.getSchemaList()
             .then(function () {
-
                 var states = JsonSchemaListService.schemaList
                 SchemaLoader
                     .loadAllSchemas(states, 'assets/jsonSchema/')
@@ -28,7 +28,6 @@ angular.module('myApp')
                         _.each(SchemaLoader.allSchemas, function (schema, index) {
                             SchemaFactory.put(states[index].replace(".json", ""), schema)
                         })
-
                     })
             })
 

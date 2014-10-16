@@ -1,4 +1,4 @@
-angular.module('ngcamera', ['ui.bootstrap','omr.directives','toaster'])
+angular.module('ngcamera', ['ui.bootstrap', 'omr.directives', 'toaster', 'dataUrltoBlob', 'fileUploadService'])
     .config(function ($stateProvider) {
 
         $stateProvider.state('cam', {
@@ -6,52 +6,25 @@ angular.module('ngcamera', ['ui.bootstrap','omr.directives','toaster'])
             templateUrl: 'ngcamera/ngcamera.html'
         });
     })
-    .controller('camCtrl', function ($scope, $stateParams, toaster) {
+    .controller('camCtrl', function ($scope, $stateParams, toaster, $http, DataUrlToBlob, FileUploadService) {
 
 
-        $scope.ok = function () {
-            $scope.$close();
-        };
-
-        $scope.cancel = function () {
-            $scope.$close();
-        };
-
+        $scope.ok = closeDialog
+        $scope.cancel = closeDialog
+        
         $scope.$watch('media', function (media) {
-            var file = dataURLtoBlob(media);
-            // Create new form data
 
+            var file = DataUrlToBlob.convert(media);
             var fd = new FormData();
             fd.append("data", '{"' + $stateParams.imgSuffix + '":"' + $stateParams.memberId + '_' + $stateParams.imgSuffix + '","filestore":"memberImage","category":' + $stateParams.category + ',"filename":' + $stateParams.memberId + '_' + $stateParams.imgSuffix + ',"memberId":' + '"' + $stateParams.memberId + '"    ' + '}');
-
-            // Append our image
             fd.append("file", file);
 
-            $.ajax({
-                url: 'api/file/fileStoreService',
-                type: "POST",
-                data: fd,
-                processData: false,
-                contentType: false
-            }).done(function (response) {
+            FileUploadService.upload(fd);
 
-                    toaster.pop('success','','Captured Successfully')
-                    //$state.go('hc.memberDetail.cam', $stateParams);
 
-                });
         });
-        function dataURLtoBlob(dataURL) {
-            // Decode the dataURL
-            var binary = atob(dataURL.split(',')[1]);
-            // Create 8-bit unsigned array
-            var array = [];
-            for (var i = 0; i < binary.length; i++) {
-                array.push(binary.charCodeAt(i));
-            }
-            // Return our Blob object
-            return new Blob([new Uint8Array(array)], {
-                type: 'image/png'
-            });
+        function closeDialog() {
+            $scope.$close();
         }
 
     });

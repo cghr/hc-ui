@@ -1,0 +1,18 @@
+<div class='container' ng-controller="DataGridCustomCtrl">
+    <!--Grid Heading-->
+    <h4>
+        <span ng-show="$state.current.addNew" ng-if="canAddMore">
+            <button ng-click='addNew()' class='btn btn-info btn-small' focus="true">
+                <i class='icon-plus-sign icon-white'></i> Add
+            </button>
+        </span>
+
+        {{$state.current.title}}
+    </h4>
+    <!--Grid Report-->
+    <dhtmlx-grid></dhtmlx-grid>
+
+    <h4>
+        <a focus="true" ui-sref="{{nextState}}" ng-if="!canAddMore">Next &#187;</a>
+    </h4>
+</div>

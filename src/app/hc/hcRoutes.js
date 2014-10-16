@@ -9,7 +9,8 @@ angular.module('hcRoutes', [])
                 url: '/area',
                 tpl: 'tpls/dataGrid.html',
                 title: 'Areas',
-                msg: 'Select an Area'
+                msg: 'Select an Area',
+                children:[]
 
             },
             {
@@ -86,7 +87,7 @@ angular.module('hcRoutes', [])
                     {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyForm.html',
+                        tpl: 'tpls/surveyFormDirective.html',
                         title: 'Basic Inf'
                     }
                 ]
@@ -100,34 +101,35 @@ angular.module('hcRoutes', [])
                 prevState: {name: 'hc.householdDetail.member', title: 'Members'},
                 children: [
                     {
+                        name: 'bp1',
+                        url: '/bp1',
+                        tpl: 'tpls/surveyFormDirective.html',
+                        title: '1.BP1-General Information'
+                    },
+                    {
                         name: 'basicInf',
                         url: '/basicInf',
-                        tpl: 'tpls/surveyForm.html',
-                        title: '1.Basic Inf'
+                        tpl: 'tpls/surveyFormDirective.html',
+                        title: '2.Basic Inf'
                     },
                     {
                         name: 'cam',
                         url: '/cam',
-                        tpl: 'tpls/cam.html',
-                        title: '2.Photo Capture'
+                        tpl: 'photoConsent/photoConsent.html',
+                        title: '3.Photo Capture'
                     },
 
                     {
                         name: 'photo',
                         url: '/photo',
                         tpl: 'tpls/surveyFormDirective.html',
-                        title: '3.Photo Capture Details'
+                        title: '4.Photo Capture Details'
                     },
-                    {
-                        name: 'bp1',
-                        url: '/bp1',
-                        tpl: 'tpls/surveyFormDirective.html',
-                        title: '4.BP1-General Information'
-                    },
+
                     {
                         name: 'ta',
                         url: '/ta',
-                        tpl: 'tpls/surveyForm.html',
+                        tpl: 'tpls/surveyFormDirective.html',
 
 
                         title: '5.Tobacco & Alcohol'
@@ -147,7 +149,7 @@ angular.module('hcRoutes', [])
                     {
                         name: 'pmh',
                         url: '/pmh',
-                        tpl: 'tpls/surveyForm.html',
+                        tpl: 'tpls/surveyFormDirective.html',
                         title: '8.Personal Medical History'
                     },
                     {

@@ -606,7 +606,7 @@
         {
         "name":"ageStartSmokingPast",
         "type":"text",
-        "valdn":"between[10:69],required",
+        "valdn":"",
         "label":"What age did you first start smoking on most days? (In completed years)",
         "flow":"data.smokeTobacco=='Not at all' && data.smokeTobaccoPast=='Yes'",
         "value":"",
@@ -741,7 +741,7 @@
         "name":"livedSmokersHome",
         "type":"radio",
         "valdn":"required",
-        "label":"Have you ever lived with smoker in the same house for at least 6 months?",
+        "label":"Have you ever lived with smoker in the same house for at least 6  months?",
         "flow":"",
         "value":"",
         "items":[

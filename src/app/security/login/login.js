@@ -1,4 +1,4 @@
-angular.module('login', ['ui.router', 'auth', 'toaster', 'angular-md5'])
+angular.module('login', ['ui.router', 'auth', 'toaster', 'angular-md5','focus'])
     .config(function ($stateProvider, routingConfig) {
 
         var access = routingConfig.accessLevels()

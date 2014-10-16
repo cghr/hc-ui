@@ -11,7 +11,7 @@ angular.module('idService', [])
                     IDService.nextID = data.id
                 })
                 .error(function (err) {
-                    $log.error('Failed to getNextID')
+                    $log.error('Error getting nextId')
                 })
 
         }

@@ -7,12 +7,9 @@
     <div>
         <table class="table table-striped table-bordered">
             <thead>
-            <tr style="background-color:darkgrey;color:#f5f5f5">
-                <th>Product</th>
-                <th>Days per Week 1 to 7(actual no of days)</th>
-                <th>On a typical day</th>
-                <th>On a special day</th>
-                <th>Last Time</th>
+            <tr style="background-color:darkgrey;color:#f5f5f5"
+                ng-init="headings=['Product','Days per week 1 to 7(actual no of days)','Quantity (On a typical day)']">
+                <th ng-repeat="heading in headings">{{heading}}</th>
             </tr>
             </thead>
             <tbody>
@@ -21,14 +18,16 @@
 
                 <td ng-if="alcohol.type!='heading'">{{alcohol.label}}</td>
                 <td ng-if="alcohol.type!='heading'">
-                    <input type="text" ng-model="data[alcohol.name+'_frequency']" name="{{alcohol.name}}_freq"
-                           class="input input-mini" data-bvalidator="between[0:7],required">
+                    <input focus="{{mainIndex==1}}" type="text" ng-model="data[alcohol.name+'_frequency']" name="{{alcohol.name}}_frequency"
+                           class="input input-mini" data-bvalidator="between[0:7],required"
+                           id="{{alcohol.name}}" ng-focus="alcoholFreqFocus(data)" ng-blur="alcoholFreqFocus(data)">
                 </td>
-                <td ng-if="alcohol.type!='heading'" ng-repeat="day in ['typicalDay','lastTime']">
+                <td ng-if="alcohol.type!='heading'" ng-repeat="day in ['typicalDay']">
                     <label>
                         <input class="input input-mini" ng-model="data[alcohol.name+'_'+day]" type="text"
-                               value="" data-bvalidator="between[0:10],required"/>
-                        {{unit[mainIndex-1]}}</label>
+                               value="" data-bvalidator="between[0:10],required"
+                               ng-disabled="data[alcohol.name+'_frequency']==0"/> {{unit[mainIndex-1]}}
+                    </label>
                 </td>
 
             </tr>

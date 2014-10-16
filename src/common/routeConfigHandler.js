@@ -10,7 +10,7 @@ angular.module('routeConfigHandler', [])
                     templateUrl: child.tpl,
                     title: child.title,
                     addNew: child.addNew,
-                    abstract: angular.isDefined(child.children) ? true : false,
+                    abstract: (child.children) ? ((child.children.length > 0) ? true : false) : false,
                     msg: child.msg,
                     stateChangeStartMsg: child.stateChangeStartMsg,
                     data: child.children ? self.getData(child, children, parentState) : {}

@@ -2,11 +2,13 @@
  * cgForm
  * 
 
- * Version: 0.1.0 - 2014-09-23
+ * Version: 0.1.0 - 2014-10-16
  * License: MIT
  */
 angular.module('cgForm', [
     'cgForm.tpls',
+    'cgForm.lodash',
+    'cgForm.formConfig',
     'cgForm.templateFactory',
     'cgForm.initFocus',
     'cgForm.jQuery',
@@ -14,15 +16,12 @@ angular.module('cgForm', [
     'cgForm.ngEnter',
     'cgForm.myFocus',
     'cgForm.formElement',
-    'cgForm.lodash',
-    'cgForm.formConfig',
     'cgForm.formService',
-    'cgForm.schemaFactory',
     'cgForm.joelpurra',
-    'cgForm.timelog',
+    'cgForm.schemaFactory',
     'cgForm.schemaResolver',
-    'cgForm.ffqForm',
     'cgForm.standardForm',
+    'cgForm.timelog',
     'cgForm.surveyForm',
     'cgForm.tableForm'
 ]);
@@ -45,10 +44,22 @@ angular.module('cgForm.tpls', [
     'template/formElement/text.html',
     'template/formElement/text_select.html',
     'template/formElement/textarea.html',
-    'template/ffqForm/ffqForm.html',
     'template/standardForm/standardForm.html',
     'template/surveyForm/surveyForm.html'
 ]);
+angular.module('cgForm.lodash', []).constant('_', window._);
+angular.module('cgForm.formConfig', ['cgForm.lodash']).factory('FormConfig', function () {
+    return {
+        submitUrl: 'api/data/dataStoreService/',
+        resourceBaseUrl: 'api/data/dataAccessService/',
+        lookupBaseUrl: 'api/LookupService/',
+        crossFlowBaseUrl: 'api/CrossFlowService',
+        crossCheckBaseUrl: 'api/CrossCheckService',
+        dynamicDropdownBaseUrl: 'api/dynamicDropdownService',
+        submitLabel: 'Save',
+        style: 'well'
+    };
+});
 angular.module('cgForm.templateFactory', []).factory('TemplateFactory', [
     '$http',
     '$templateCache',
@@ -158,19 +169,6 @@ angular.module('cgForm.formElement', [
             };
         }
     ]);
-angular.module('cgForm.lodash', []).constant('_', window._);
-angular.module('cgForm.formConfig', ['cgForm.lodash']).factory('FormConfig', function () {
-    return {
-        submitUrl: 'api/data/dataStoreService/',
-        resourceBaseUrl: 'api/data/dataAccessService/',
-        lookupBaseUrl: 'api/LookupService/',
-        crossFlowBaseUrl: 'api/CrossFlowService',
-        crossCheckBaseUrl: 'api/CrossCheckService',
-        dynamicDropdownBaseUrl: 'api/dynamicDropdownService',
-        submitLabel: 'Save',
-        style: 'well'
-    };
-});
 angular.module('cgForm.formService', [
         'cgForm.formConfig',
         'cgForm.lodash',
@@ -225,6 +223,14 @@ angular.module('cgForm.formService', [
             };
         }
     ]);
+angular.module('cgForm.joelpurra', []).factory('JoelPurra', [
+    '$window',
+    function ($window) {
+        var JoelPurra = $window.JoelPurra;
+        JoelPurra.PlusAsTab.setOptions({ key: 13 });
+        return JoelPurra;
+    }
+]);
 angular.module('cgForm.schemaFactory', ['cgForm.lodash']).factory('SchemaFactory', [
     '_',
     function (_) {
@@ -242,31 +248,6 @@ angular.module('cgForm.schemaFactory', ['cgForm.lodash']).factory('SchemaFactory
         };
     }
 ]);
-angular.module('cgForm.joelpurra', []).factory('JoelPurra', [
-    '$window',
-    function ($window) {
-        var JoelPurra = $window.JoelPurra;
-        JoelPurra.PlusAsTab.setOptions({ key: 13 });
-        return JoelPurra;
-    }
-]);
-angular.module('cgForm.timelog', []).factory('TimeLogFactory', function () {
-    function twoDigits(d) {
-        if (0 <= d && d < 10)
-            return '0' + d.toString();
-        if (-10 < d && d < 0)
-            return '-0' + (-1 * d).toString();
-        return d.toString();
-    }
-    Date.prototype.toMysqlFormat = function () {
-        return this.getUTCFullYear() + '-' + twoDigits(1 + this.getUTCMonth()) + '-' + twoDigits(this.getUTCDate()) + ' ' + twoDigits(this.getUTCHours() + 5) + ':' + twoDigits(this.getUTCMinutes() + 30) + ':' + twoDigits(this.getUTCSeconds());
-    };
-    return {
-        getCurrentTime: function () {
-            return new Date().toMysqlFormat();
-        }
-    };
-});
 angular.module('cgForm.schemaResolver', [
         'cgForm.schemaFactory',
         'cgForm.lodash',
@@ -285,81 +266,6 @@ angular.module('cgForm.schemaResolver', [
                 return _.extend(schema, FormConfig);
             }
             return { resolve: resolveSchema };
-        }
-    ]);
-angular.module('cgForm.ffqForm', [
-        'cgForm.formElement',
-        'cgForm.formConfig',
-        'cgForm.formService',
-        'cgForm.lodash',
-        'cgForm.schemaFactory',
-        'ui.router',
-        'cgForm.joelpurra',
-        'cgForm.timelog',
-        'cgForm.schemaResolver'
-    ]).directive('ffqForm', [
-        'FormConfig',
-        '_',
-        'SchemaFactory',
-        '$state',
-        'FormService',
-        '$rootScope',
-        'JoelPurra',
-        'TimeLogFactory',
-        'SchemaResolver',
-        function (FormConfig, _, SchemaFactory, $state, FormService, $rootScope, JoelPurra, TimeLogFactory, SchemaResolver) {
-            function postLink(scope, element) {
-                $rootScope.timestamp = TimeLogFactory.getCurrentTime();
-                /* Initialize form data */
-                scope.data = {};
-                /* Load Json Schema for current state if not supplied through attributes */
-                scope.schema = SchemaResolver.resolve(scope);
-                /* Evaluate information in hidden fields */
-                _.each(scope.schema.properties, function (elem) {
-                    if (elem.name !== 'datastore' && elem.type === 'hidden')
-                        elem.value = $rootScope.$eval(elem.value);
-                    if (elem.type === 'hidden')
-                        scope.data[elem.name] = elem.value;
-                });
-                /* Initialize checkbox element's data with empty objects in scope.data */
-                var multipleSelectElements = _.filter(scope.schema.properties, { type: 'checkbox' });
-                _.each(multipleSelectElements, function (item) {
-                    scope.data[item.name] = {};
-                });
-                /* Store datastore value in scope to use in controller */
-                scope.data.datastore = _.find(scope.schema.properties, { name: 'datastore' }).value;
-                /* Create a separate collection for hidden elements  */
-                scope.schema.hiddenElements = _.filter(scope.schema.properties, { type: 'hidden' });
-                /* Remove hidden items from schema */
-                _.remove(scope.schema.properties, { type: 'hidden' });
-                /* Bind Enter as Tab and Validation to form */
-                element.plusAsTab();
-                element.bValidator();
-            }
-            function controllerFn($scope, $element, $state, $stateParams) {
-                $scope.onSubmit = function (data) {
-                    /* Validate form before submit */
-                    if (isValidForm())
-                        postData(data);
-                };
-                function isValidForm() {
-                    return $element.data('bValidator').validate();
-                }
-                /* Posts form data to Sever */
-                function postData(data) {
-                    FormService.postResource().then(function () {
-                        $state.go($scope.schema.onSave, $stateParams);
-                    });
-                }
-            }
-            return {
-                templateUrl: 'template/ffqForm/ffqForm.html',
-                restrict: 'E',
-                replace: true,
-                scope: { options: ' = ' },
-                link: postLink,
-                controller: controllerFn
-            };
         }
     ]);
 angular.module('cgForm.standardForm', [
@@ -503,13 +409,31 @@ angular.module('cgForm.standardForm', [
             };
         }
     ]);
+angular.module('cgForm.timelog', []).factory('TimeLogFactory', function () {
+    function twoDigits(d) {
+        if (0 <= d && d < 10)
+            return '0' + d.toString();
+        if (-10 < d && d < 0)
+            return '-0' + (-1 * d).toString();
+        return d.toString();
+    }
+    Date.prototype.toMysqlFormat = function () {
+        return this.getUTCFullYear() + '-' + twoDigits(1 + this.getUTCMonth()) + '-' + twoDigits(this.getUTCDate()) + ' ' + twoDigits(this.getUTCHours() + 5) + ':' + twoDigits(this.getUTCMinutes() + 30) + ':' + twoDigits(this.getUTCSeconds());
+    };
+    return {
+        getCurrentTime: function () {
+            return new Date().toMysqlFormat();
+        }
+    };
+});
 angular.module('cgForm.surveyForm', [
         'cgForm.formElement',
         'cgForm.formConfig',
         'cgForm.schemaFactory',
         'cgForm.formService',
         'cgForm.lodash',
-        'ui.router'
+        'ui.router',
+        'cgForm.timelog'
     ]).controller('surveyFormCtrl', [
         '$scope',
         '$element',
@@ -517,19 +441,18 @@ angular.module('cgForm.surveyForm', [
         '$state',
         '$stateParams',
         '_',
-        function ($scope, $element, FormService, $state, $stateParams, _) {
+        '$log',
+        function ($scope, $element, FormService, $state, $stateParams, _, $log) {
             /* Posts  data to Sever */
             function postData() {
                 var done = function () {
                     if ($scope.schema.onSave !== '')
                         $state.go($scope.schema.onSave, $stateParams);
                     else if ($scope.schema.condtion !== '' && $scope.schema.crossEntity === '') {
-                        console.log('evaluating condtion');
                         var data = $scope.data;
                         var transition = eval($scope.schema.condition) ? $scope.schema.success : $scope.schema.fail;
                         $state.go(transition, $stateParams);
                     } else if ($scope.schema.crossEntity !== '') {
-                        console.log('evaluating cross entity condtion');
                         var params = $scope.schema.crossEntity.split(';');
                         var entity = params[0];
                         var entityId = params[1];
@@ -538,10 +461,8 @@ angular.module('cgForm.surveyForm', [
                             var transition = eval($scope.schema.condition) ? $scope.schema.success : $scope.schema.fail;
                             $state.go(transition, $stateParams);
                         });
-                    } else {
-                        console.log('calling external function');
-                        $scope.fnct({ data: $scope.data });
-                    }  //$rootScope.$eval($scope.schema.onSave);
+                    } else
+                        $scope.fnct({ data: $scope.data });  //$rootScope.$eval($scope.schema.onSave);
                 };
                 var fail = function () {
                     throw new Error('Failed to post data');
@@ -569,9 +490,7 @@ angular.module('cgForm.surveyForm', [
                 if ($scope.flowIndex < $scope.schema.properties.length - 1) {
                     handleFlow();
                     var nextCondition = $scope.schema.properties[$scope.flowIndex]['valdn'];
-                    console.log('next Condition ' + nextCondition);
                     var matches = nextCondition.match(/{.*}/);
-                    console.log('matches ' + matches);
                     if (matches) {
                         var evalValue = $scope.$eval(matches[0].replace('{', '').replace('}', ''));
                         _.last($scope.flow.properties).valdn = nextCondition.replace(/{.*}/, evalValue);
@@ -596,7 +515,7 @@ angular.module('cgForm.surveyForm', [
                             $scope.flow.properties.splice($scope.flow.properties.length - 1, 1);
                             $scope.flow.properties.push($scope.schema.properties[dynamicDropdownIndex]);
                         }, function () {
-                            console.log('error fetching data');
+                            $log.error('Failed to fetch data');
                         });
                     }
                 }
@@ -642,7 +561,8 @@ angular.module('cgForm.surveyForm', [
         '$rootScope',
         '$timeout',
         '$q',
-        function (FormConfig, _, SchemaFactory, $state, FormService, $rootScope, $timeout, $q) {
+        'TimeLogFactory',
+        function (FormConfig, _, SchemaFactory, $state, FormService, $rootScope, $timeout, $q, TimeLogFactory) {
             return {
                 templateUrl: 'template/surveyForm/surveyForm.html',
                 restrict: 'E',
@@ -652,14 +572,7 @@ angular.module('cgForm.surveyForm', [
                     fnct: '&onSave'
                 },
                 link: function postLink(scope, element) {
-                    Date.prototype.today = function () {
-                        return this.getFullYear() + '-' + (this.getMonth() + 1 < 10 ? '0' : '') + (this.getMonth() + 1) + '-' + (this.getDate() < 10 ? '0' : '') + this.getDate();
-                    };
-                    Date.prototype.timeNow = function () {
-                        return (this.getHours() < 10 ? '0' : '') + this.getHours() + ':' + (this.getMinutes() < 10 ? '0' : '') + this.getMinutes() + ':' + (this.getSeconds() < 10 ? '0' : '') + this.getSeconds();
-                    };
-                    var newDate = new Date();
-                    $rootScope.timestamp = newDate.today() + ' ' + newDate.timeNow();
+                    $rootScope.timestamp = TimeLogFactory.getCurrentTime();
                     /* Load Json Schema for current state if not supplied through attributes */
                     scope.schema = angular.copy(scope.options) || angular.copy(SchemaFactory.get($state.current.name));
                     /* Prompt before form submit */
@@ -673,7 +586,7 @@ angular.module('cgForm.surveyForm', [
                     scope.data = {};
                     /* Merge schema with default config */
                     scope.schema = _.extend(scope.schema, FormConfig);
-                    /* Load lookup data and Cross Flow dynamic validation */
+                    /* Load lookup data and Cross Check dynamic validation */
                     angular.forEach(scope.schema.properties, function (elem) {
                         if (elem.type === 'lookup') {
                             FormService.getLookupData(elem.lookup).then(function (resp) {
@@ -710,15 +623,13 @@ angular.module('cgForm.surveyForm', [
                     var elemIndex = 0;
                     $q.all(crossFlowPromises).then(function (responses) {
                         angular.forEach(responses, function (resp) {
-                            if (resp.data.check === false) {
-                                scope.schema.properties[indexes[elemIndex]].crossFlowCheck = false;  //scope.schema.properties.splice(indexes[elemIndex],1);
-                            }
+                            if (resp.data.check === false)
+                                scope.schema.properties[indexes[elemIndex]].crossFlowCheck = false;
                             elemIndex++;
                         });
                         scope.schema.properties = _.remove(scope.schema.properties, function (element) {
-                            if (angular.isUndefined(element.crossFlowCheck)) {
+                            if (angular.isUndefined(element.crossFlowCheck))
                                 return true;
-                            }
                             return element.crossFlowCheck !== false;
                         });
                         /* Render Initial Item in the flow after all hidden elements(without conditions) */
@@ -728,12 +639,10 @@ angular.module('cgForm.surveyForm', [
                     });
                     /* Evaluate values in hidden fields */
                     angular.forEach(scope.schema.properties, function (elem) {
-                        if (elem.name !== 'datastore' && elem.type === 'hidden') {
+                        if (elem.name !== 'datastore' && elem.type === 'hidden')
                             elem.value = $rootScope.$eval(elem.value);
-                        }
-                        if (elem.type === 'hidden') {
+                        if (elem.type === 'hidden')
                             scope.data[elem.name] = elem.value;
-                        }
                     });
                     /* Initialize checkbox element's data with empty objects in scope.data */
                     var multipleSelectElements = _.filter(scope.schema.properties, { type: 'checkbox' });
@@ -763,9 +672,8 @@ angular.module('cgForm.surveyForm', [
                             hiddenCount++;
                             scope.flowSeq++;
                             scope.flowIndex++;
-                        } else {
+                        } else
                             break;
-                        }
                     }
                 },
                 controller: 'surveyFormCtrl'
@@ -794,6 +702,8 @@ angular.module('cgForm.tableForm', [
                 if (isValidForm())
                     postData(data);
             };
+            $scope.alcoholFreqFocus = function (data) {
+            };
             function isValidForm() {
                 return $element.data('bValidator').validate();
             }
@@ -820,7 +730,7 @@ angular.module('cgForm.tableForm', [
                 /* Initialize form data */
                 scope.data = {};
                 /* Load Json Schema for current state if not supplied through attributes */
-                scope.schema = SchemaResolver.resolve(scope);
+                scope.schema = angular.copy(scope.options) || angular.copy(SchemaFactory.get($state.current.name));
                 /* Evaluate information in hidden fields */
                 _.each(scope.schema.properties, function (elem) {
                     if (elem.name !== 'datastore' && elem.type === 'hidden')
@@ -834,11 +744,18 @@ angular.module('cgForm.tableForm', [
                     scope.data[item.name] = {};
                 });
                 /* Store datastore value in scope to use in controller */
-                scope.data.datastore = _.find(scope.schema.properties, { name: 'datastore' }).value;
+                //scope.data.datastore = _.find(scope.schema.properties, {name: 'datastore'}).value;
+                scope.datastore = _.find(scope.schema.properties, { name: 'datastore' }).value;
                 /* Create a separate collection for hidden elements  */
                 scope.schema.hiddenElements = _.filter(scope.schema.properties, { type: 'hidden' });
                 /* Remove hidden items from schema */
                 _.remove(scope.schema.properties, { type: 'hidden' });
+                /* Get form data if already populated */
+                FormService.getResource(scope.datastore).then(function (resp) {
+                    delete resp.data.timelog;
+                    delete resp.data.endtime;
+                    angular.extend(scope.data, resp.data);
+                });
                 /* Bind Enter as Tab and Validation to form */
                 element.plusAsTab();
                 element.bValidator();
@@ -961,12 +878,6 @@ angular.module('template/formElement/textarea.html', []).run([
     '$templateCache',
     function ($templateCache) {
         $templateCache.put('template/formElement/textarea.html', '<textarea  data-bvalidator="{{config.valdn}}" ng-model="data[config.name]" init-focus="{{config.initFocus}}" > </textarea>');
-    }
-]);
-angular.module('template/ffqForm/ffqForm.html', []).run([
-    '$templateCache',
-    function ($templateCache) {
-        $templateCache.put('template/ffqForm/ffqForm.html', '<form ng-submit="onSubmit(data)" action="javascript:void(0)" class="well">\n' + '\n' + '    <input ng-repeat="elm in schema.hiddenElements" type="hidden" id="{{elm.name}}" name="{{elm.name}}" value="{{elm.value}}" ng-model="data[elm.name]"/>\n' + '\n' + '    <table class="table table-bordered" style="margin-top:20px">\n' + '        <tr style="background-color:gray;color:#ffffff">\n' + '            <th>Foods and Amounts</th>\n' + '\n' + '            <th colspan="9" style="text-align:center">Average Use Last year</th>\n' + '\n' + '        </tr>\n' + '\n' + '        <tr style="background-color:gray;color:#ffffff">\n' + '            <th class="span2">Food/Drink Item</th>\n' + '\n' + '            <th class="span2">Never or less than once/month</th>\n' + '\n' + '            <th class="span2">1-3 per month</th>\n' + '\n' + '            <th class="span2">Once a week</th>\n' + '\n' + '            <th class="span2">2-4 per week</th>\n' + '\n' + '            <th class="span2">5-6 per week</th>\n' + '\n' + '            <th class="span2">Once a day</th>\n' + '\n' + '            <th class="span2">2-3 per day</th>\n' + '\n' + '            <th class="span2">Measure</th>\n' + '\n' + '            <th class="span2">Unit</th>\n' + '\n' + '        </tr>\n' + '\n' + '\n' + '        <tr ng-repeat="element in schema.properties">\n' + '            <td>{{element.label}}</td>\n' + '\n' + '            <td ng-repeat="item in [0,1,2,3,4,5,6]">\n' + '\n' + '                <label class="radio inline">\n' + '                    <div ng-if="$index==0">\n' + '\n' + '                        <input type="radio"\n' + '                               id="{{element.name}}_frequency"\n' + '                               name="{{element.name}}_frequency"\n' + '                               data-bvalidator="required"\n' + '                               data-bvalidator-msg="Please select an option"\n' + '                               value="{{item}}"\n' + '                               ng-model="data[element.name+\'_frequency\']"/>\n' + '                    </div>\n' + '\n' + '                    <div ng-if="$index!=0">\n' + '\n' + '                        <input type="radio"\n' + '                               name="{{element.name}}_frequency"\n' + '                               value="{{item}}"\n' + '                               ng-model="data[element.name+\'_frequency\']"/>\n' + '                    </div>\n' + '                    </label>\n' + '            </td>\n' + '\n' + '            <td><input type="text" placeholder="Measure" class="input input-mini" data-bvalidator="between[1:99],required"\n' + '                       name="{{element.name}}_measure" ng-model="data[element.name+\'_measure\']" ng-disabled="data[element.name+\'_frequency\']==0" />\n' + '            </td>\n' + '\n' + '            <td><select class="input-medium" data-bvalidator="required" name="{{element.name}}_unit"\n' + '                        ng-model="data[element.name+\'_unit\']" data-bvalidator-msg="Please select an option" ng-disabled="data[element.name+\'_frequency\']==0">\n' + '                <option ng-repeat="item in element.items" value="{{item.value}}">{{item.text}}</option>\n' + '            </select>\n' + '            </td>\n' + '\n' + '        </tr>\n' + '        </tr>\n' + '    </table>\n' + '\n' + '\n' + '    <div class="controls">\n' + '        <button class="btn  btn-primary"\n' + '                type="submit" data-plus-as-tab="false">Save\n' + '        </button>\n' + '    </div>\n' + '</form>\n' + '\n' + '\n' + '\n' + '');
     }
 ]);
 angular.module('template/standardForm/standardForm.html', []).run([

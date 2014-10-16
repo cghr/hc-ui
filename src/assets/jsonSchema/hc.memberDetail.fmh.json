@@ -223,9 +223,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married' "},
+        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married' ","whereCondition":""},
         
-        {"entity":"memberReproductiveHistory","field":"noTimesPregnantPast","ref":"memberId","condition":"noTimesPregnantPast>0"}
+        {"entity":"memberReproductiveHistory","field":"noTimesPregnantPast","ref":"memberId","condition":"noTimesPregnantPast>0","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -255,9 +255,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married' "},
+        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married' ","whereCondition":""},
         
-        {"entity":"memberReproductiveHistory","field":"noTimesPregnantPast","ref":"memberId","condition":"noTimesPregnantPast>0"}
+        {"entity":"memberReproductiveHistory","field":"noTimesPregnantPast","ref":"memberId","condition":"noTimesPregnantPast>0","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -395,10 +395,10 @@
 
 
         {
-        "name":"motherdistrict ",
+        "name":"motherdistrict",
         "type":"dynamic_dropdown",
         "valdn":"required",
-        "label":"What is the district of origin of your Mother?",
+        "label":"What is the district of origin of your mother?",
         "flow":"",
         "value":"",
         "items":[
@@ -428,11 +428,53 @@
 
 
         {
+        "name":"motherReligion",
+        "type":"radio",
+        "valdn":"required",
+        "label":"What is your mother’s religion?",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Hinduism","value":"Hinduism","valdn":""},
+        
+            {"text":"Islam","value":"Islam","valdn":""},
+        
+            {"text":"Christianity","value":"Christianity","valdn":""},
+        
+            {"text":"Sikhism","value":"Sikhism","valdn":""},
+        
+            {"text":"Buddhism","value":"Buddhism","valdn":""},
+        
+            {"text":"Jainism","value":"Jainism","valdn":""},
+        
+            {"text":"Others-Specify","value":"Others-Specify","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
         "name":"motherCaste",
         "type":"radio",
         "valdn":"required",
         "label":"What is the caste of your mother?",
-        "flow":"",
+        "flow":"data.motherReligion=='Hinduism'",
         "value":"",
         "items":[
         

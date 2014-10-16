@@ -161,7 +161,7 @@
         {
         "name":"reasonWomenDeath",
         "type":"radio",
-        "valdn":"between[10:49],required",
+        "valdn":"required",
         "label":"If female, was this death for any of the following reasons?",
         "flow":"data.gender=='Female' && data.age_value>10 && data.age_unit=='Years'",
         "value":"",

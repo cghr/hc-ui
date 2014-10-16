@@ -1,4 +1,6 @@
 angular.module("myApp", [
+        'photoConsent',
+        'focus',
         'schemaLoader',
         'jsonSchemaListService',
         'lodash',
@@ -26,17 +28,17 @@ angular.module("myApp", [
     )
     .config(function ($urlRouterProvider, $httpProvider) {
 
-        var reqInterceptor = function () {
-            return {
-                'request': function (config) {
-                    config.url = (config.url.indexOf("api/") !== -1) ? ('http://localhost:8080/' + config.url) : config.url
-                    return config;
-                }
-            };
-
-        }
         if (window.location.href.indexOf('build') != -1)
             $httpProvider.interceptors.push(reqInterceptor);
+
+        function reqInterceptor() {
+            return { 'request': reqConfig };
+        }
+
+        function reqConfig(config) {
+            config.url = (config.url.indexOf("api/") !== -1) ? ('http://localhost:8080/' + config.url) : config.url
+            return config;
+        }
 
         $urlRouterProvider.otherwise('/enum/area')
     })

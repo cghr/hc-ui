@@ -139,7 +139,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"}
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -169,7 +169,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'"}
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'","whereCondition":""}
         
         ],
         "crossCheck":{

@@ -165,7 +165,7 @@
 
 
         {
-        "name":"nameSpouse ",
+        "name":"nameSpouse",
         "type":"text",
         "valdn":"required",
         "label":"What is your spouse name? ",

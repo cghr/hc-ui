@@ -293,7 +293,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -323,7 +323,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -353,7 +353,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -389,7 +389,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -419,7 +419,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -449,7 +449,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -479,7 +479,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -513,7 +513,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -551,8 +551,6 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
-        
         ],
         "crossCheck":{
         
@@ -567,7 +565,7 @@
         "type":"text",
         "valdn":"between[1:120],required",
         "label":"In a typical week, about how many hours did you work at other job?",
-        "flow":"",
+        "flow":"data.otherJob=='Yes'",
         "value":"",
         "items":[
         
@@ -580,8 +578,6 @@
                 
                 },
         "crossFlow":[
-        
-        {"entity":"memberBp1","field":"occupationMale","ref":"memberId","condition":"occupationMale=='Agriculture labour' || occupationMale=='Farmers'"}
         
         ],
         "crossCheck":{
@@ -615,7 +611,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -645,7 +641,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -675,7 +671,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -711,7 +707,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -741,7 +737,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -771,7 +767,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -801,7 +797,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -835,7 +831,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
+        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -851,7 +847,7 @@
         "type":"radio",
         "valdn":"required",
         "label":"How active were you at work with other job?",
-        "flow":"data.otherJob=='Yes'",
+        "flow":"data.otherJob1=='Yes'",
         "value":"",
         "items":[
         
@@ -873,8 +869,6 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
-        
         ],
         "crossCheck":{
         
@@ -889,7 +883,7 @@
         "type":"text",
         "valdn":"between[1:120],required",
         "label":"In a typical week, about how many hours did you work at other job?",
-        "flow":"",
+        "flow":"data.otherJob1=='Yes'",
         "value":"",
         "items":[
         
@@ -902,8 +896,6 @@
                 
                 },
         "crossFlow":[
-        
-        {"entity":"memberBp1","field":"occupationFemale","ref":"memberId","condition":"occupationFemale=='Agriculture labour' || occupationFemale=='Farmers'"}
         
         ],
         "crossCheck":{
@@ -2431,7 +2423,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'"}
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -2479,7 +2471,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'"}
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -2527,7 +2519,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'"}
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -2575,7 +2567,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"}
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -2623,7 +2615,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"}
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -2671,7 +2663,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"}
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""}
         
         ],
         "crossCheck":{

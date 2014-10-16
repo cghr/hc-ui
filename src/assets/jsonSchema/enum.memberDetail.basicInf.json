@@ -238,6 +238,40 @@
         
         },
         "help":""
+        },
+
+
+
+        {
+        "name":"head",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Is head of the household? ",
+        "flow":"data.age_value>29 && data.age_unit=='Years'",
+        "value":"",
+        "items":[
+        
+            {"text":"Yes","value":"Yes","valdn":""},
+        
+            {"text":"No","value":"No","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"member","field":"count(*) headCount","ref":"householdId","condition":"headCount==0","whereCondition":"head='Yes'"}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
         }
 
 

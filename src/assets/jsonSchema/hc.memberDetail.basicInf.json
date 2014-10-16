@@ -65,6 +65,34 @@
 
 
         {
+        "name":"householdId",
+        "type":"hidden",
+        "valdn":"",
+        "label":"",
+        "flow":"",
+        "value":"$stateParams.householdId",
+        "items":[
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
         "name":"surveyor",
         "type":"hidden",
         "valdn":"",
@@ -181,7 +209,7 @@
 
 
         {
-        "name":"relationshipMale",
+        "name":"relationship",
         "type":"radio",
         "valdn":"required",
         "label":"Relationship with the head of the Family: ",
@@ -215,7 +243,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'"}
+        {"entity":"hcMember","field":"count(*) headCount","ref":"householdId","condition":"headCount==0","whereCondition":"relationship='Self'"},
+        
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -227,7 +257,53 @@
 
 
         {
-        "name":"relationshipFemale",
+        "name":"relationship",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Relationship with the head of the Family: ",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Spouse","value":"Spouse","valdn":""},
+        
+            {"text":"Son","value":"Son","valdn":""},
+        
+            {"text":"Brother","value":"Brother","valdn":""},
+        
+            {"text":"Father","value":"Father","valdn":""},
+        
+            {"text":"Grandson","value":"Grandson","valdn":""},
+        
+            {"text":"Son-in-law","value":"Son-in-law","valdn":""},
+        
+            {"text":"Others","value":"Others","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"hcMember","field":"count(*) headCount","ref":"householdId","condition":"headCount!=0","whereCondition":"relationship='Self'"},
+        
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'","whereCondition":""}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"relationship",
         "type":"radio",
         "valdn":"required",
         "label":"Relationship with the head of the Family: ",
@@ -261,7 +337,55 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"}
+        {"entity":"hcMember","field":"count(*) headCount","ref":"householdId","condition":"headCount==0","whereCondition":"relationship='Self'"},
+        
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""}
+        
+        ],
+        "crossCheck":{
+        
+        },
+        "help":""
+        },
+
+
+
+        {
+        "name":"relationship",
+        "type":"radio",
+        "valdn":"required",
+        "label":"Relationship with the head of the Family: ",
+        "flow":"",
+        "value":"",
+        "items":[
+        
+            {"text":"Spouse","value":"Spouse","valdn":""},
+        
+            {"text":"Daughter","value":"Daughter","valdn":""},
+        
+            {"text":"Sister","value":"Sister","valdn":""},
+        
+            {"text":"Mother","value":"Mother","valdn":""},
+        
+            {"text":"Granddaughter","value":"Granddaughter","valdn":""},
+        
+            {"text":"Daughter-in-law","value":"Daughter-in-law","valdn":""},
+        
+            {"text":"Others","value":"Others","valdn":""}
+        
+        ],
+        "image":"",
+        "lookup":{
+        
+        },
+        "metadata":{
+                
+                },
+        "crossFlow":[
+        
+        {"entity":"hcMember","field":"count(*) headCount","ref":"householdId","condition":"headCount!=0","whereCondition":"relationship='Self'"},
+        
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""}
         
         ],
         "crossCheck":{

@@ -117,7 +117,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='Yes'"}
+        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='Yes'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -155,7 +155,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='Yes'"}
+        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='Yes'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -185,7 +185,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='Yes'"}
+        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='Yes'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -219,7 +219,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='Yes'"}
+        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='Yes'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -231,7 +231,7 @@
 
 
         {
-        "name":"depressedDrinking ",
+        "name":"depressedDrinking",
         "type":"radio",
         "valdn":"required",
         "label":"Felt depressed, irritated or couldn’t control yourself after drinking",
@@ -253,7 +253,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='Yes'"}
+        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='Yes'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -287,7 +287,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='Yes'"}
+        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='Yes'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -321,7 +321,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='Yes'"}
+        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='Yes'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -357,7 +357,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='Yes'"}
+        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='Yes'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -387,7 +387,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='No'"}
+        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='No'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -423,7 +423,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='No'"}
+        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='No'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -453,7 +453,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='No'"}
+        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='No'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -488,7 +488,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='No'"}
+        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='No'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -535,7 +535,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='No'"}
+        {"entity":"memberTobaccoAlcohol","field":"consumeAlcohol","ref":"memberId","condition":"consumeAlcohol=='No'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -565,9 +565,11 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married'"}
+        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married'","whereCondition":""},
+        
+        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -603,9 +605,11 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married'"}
+        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married'","whereCondition":""},
+        
+        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -635,9 +639,11 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married'"}
+        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married'","whereCondition":""},
+        
+        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Married'","whereCondition":""}
         
         ],
         "crossCheck":{

@@ -1,0 +1,16 @@
+<div class="well" ng-controller="PhotoConsentCtrl">
+    <ol>
+        <li><a ng-click="open('photo')" href="">Click here to capture Member Photo</a> <span class="label label-success"
+                                                                                             ng-show="memberImage.photo">Captured</span>
+            <span ng-hide="memberImage.photo" class="label label-important">Pending</span></li>
+
+        <li><a ng-click="open('photoConsent')" href="">Click here to capture Member With Consent</a> <span
+                class="label label-success" ng-show="memberImage.photoConsent">Captured</span> <span
+                ng-hide="memberImage.photoConsent" class="label label-important">Pending</span></li>
+
+        <li><a ng-click="open('consent')" href="">Click here to capture Member Consent</a> <span
+                class="label label-success" ng-show="memberImage.consent">Captured</span> <span
+                ng-hide="memberImage.consent" class="label label-important">Pending</span></li>
+    </ol>
+    <a class="btn btn-primary" ui-sref="hc.memberDetail.photo">Next &#187;</a>
+</div>

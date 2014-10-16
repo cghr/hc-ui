@@ -1,6 +1,6 @@
 {
 "schemaName":"hc.memberDetail.bp1",
-"onSave":"hc.memberDetail.ta",
+"onSave":"hc.memberDetail.basicInf",
 "condition":"",
 "success":"",
 "fail":"",
@@ -291,7 +291,7 @@
 
 
         {
-        "name":"nameSpouse ",
+        "name":"nameSpouse",
         "type":"text",
         "valdn":"required",
         "label":"If married, please provide your spouse’s name?",
@@ -323,7 +323,7 @@
         "type":"radio",
         "valdn":"required",
         "label":"What is your current occupation?",
-        "flow":"",
+        "flow":"data.mstatus=='Married'",
         "value":"",
         "items":[
         
@@ -351,7 +351,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'"}
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Male'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -367,7 +367,7 @@
         "type":"radio",
         "valdn":"required",
         "label":"What is your current occupation?",
-        "flow":"",
+        "flow":"data.mstatus=='Married'",
         "value":"",
         "items":[
         
@@ -397,7 +397,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"}
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -441,7 +441,7 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"}
+        {"entity":"memberBp1","field":"mstatus","ref":"memberId","condition":"mstatus=='Never Married'","whereCondition":""}
         
         ],
         "crossCheck":{

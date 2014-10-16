@@ -1,29 +1,25 @@
 angular.module('chartService', [])
     .service('ChartService', function ChartService($http, $log) {
 
-        ChartService.totalProgress = []
-        ChartService.pendingDownloads = []
+        ChartService.data = {totalProgress: [], pendingDownloads: []}
 
-        function getData(servicePath) {
-            return $http.get(servicePath)
-        }
 
         this.getPendingDownloads = function () {
 
-            return getData('api/chart/pendingDownloads')
-                .success(function (data) {
-                    ChartService.pendingDownloads = data
-                })
-                .error(fail)
+            return getData('api/chart/pendingDownloads', 'pendingDownloads')
         }
 
         this.getTotalProgress = function () {
 
-            return getData('api/chart/totalProgress')
+            return getData('api/chart/totalProgress', 'totalProgress')
+
+        }
+        function getData(url, objProperty) {
+
+            return $http.get(url)
                 .success(function (data) {
-                    ChartService.totalProgress = data
-                })
-                .error(fail)
+                    ChartService.data[objProperty] = data
+                }).error(fail)
         }
 
 

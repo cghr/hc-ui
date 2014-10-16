@@ -195,9 +195,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -227,9 +227,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -267,9 +267,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -299,9 +299,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -331,9 +331,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -367,9 +367,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -399,9 +399,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -435,9 +435,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -467,9 +467,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -499,9 +499,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -541,9 +541,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -573,9 +573,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -605,9 +605,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -647,9 +647,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -679,9 +679,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -725,9 +725,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -757,9 +757,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
@@ -794,9 +794,9 @@
                 },
         "crossFlow":[
         
-        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'"},
+        {"entity":"member","field":"gender","ref":"memberId","condition":"gender=='Female'","whereCondition":""},
         
-        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50"}
+        {"entity":"member","field":"age_value","ref":"memberId","condition":"age_value>29 && age_value<50","whereCondition":""}
         
         ],
         "crossCheck":{
