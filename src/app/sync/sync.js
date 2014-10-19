@@ -9,99 +9,47 @@ angular.module('sync', [ 'ui.bootstrap', 'toaster', 'progressService'])
     })
     .controller('syncCtrl', function ($scope, ProgressService, $interval, toaster, $timeout) {
 
-        $scope.hasTotal = {
-            downloads: false,
-            uploads: false,
-            fileUploads: false
-        }
-        $scope.total = {
-            downloads: undefined,
-            uploads: undefined,
-            fileUploads: undefined
-        }
+        $scope.total = {}
+        $scope.pending = {}
+        $scope.progress = {}
 
-        $scope.pending = {
-            downloads: undefined,
-            uploads: undefined,
-            fileUploads: undefined
+
+        this.startSync = function () {
+            ProgressService.startSync()
+                .then(syncSuccess);
         }
 
-
-        ProgressService.startSync()
-            .then(function () {
-                $timeout.cancel($scope.progressUpdater)
-                toaster.pop('success', '', 'Sync Completed')
-
-            }, function () {
-                $timeout.cancel($scope.progressUpdater)
-                toaster.pop('error', '', 'Failed to Synchronize')
-
-            });
+        function syncSuccess() {
+            $timeout.cancel($scope.progressUpdater)
+        }
 
         $scope.progressUpdater = $interval(function () {
             updateProgress()
         }, 1500)
 
         function updateProgress() {
-
-            updateDownloadStatus()
-            updateUploadStatus()
-            updateFileUploadStatus()
-
+            updateStatusOf('download')
+            updateStatusOf('upload')
+            updateStatusOf('fileupload')
         }
 
-        function updateDownloadStatus() {
+        function updateStatusOf(statusType) {
 
-            ProgressService.getDownloadStatus()
+            ProgressService.getStatus(statusType)
                 .then(function () {
-
-                    if (!$scope.hasTotal.downloads)
-                        updateTotalDownloads()
-                    else
-                        $scope.pending.downloads = ($scope.total.downloads) - (ProgressService.downloadStatus)
-
+                    !$scope.total[statusType] ? updateTotalFor(statusType) : updateProgressFor(statusType)
                 })
         }
 
-        function updateTotalDownloads() {
-            $scope.total.downlodas = ProgressService.downloadStatus
-            $scope.hasTotal.downloads = true
+        function updateTotalFor(statusType) {
+            $scope.total[statusType] = ProgressService.status[statusType]
+        }
+
+        function updateProgressFor(statusType) {
+            $scope.pending[statusType] = ($scope.total[statusType]) - (ProgressService.status[statusType])
+            $scope.progress[statusType] = (($scope.total[statusType]) - $scope.pending[statusType]) / 100
         }
 
 
-        function updateUploadStatus() {
+    })
 
-            ProgressService.getUploadStatus()
-                .then(function () {
-                    if (!$scope.total.uploads)
-                        updateTotalUploads()
-                    else
-                        $scope.pending.uplodas = ($scope.total.uploads) - (ProgressService.uploadStatus)
-                })
-        }
-
-        function updateTotalUploads() {
-            $scope.total.uploads = ProgressService.uploadStatus
-            $scope.hasTotal.uploads = true
-        }
-
-        function updateFileUploadStatus() {
-
-            ProgressService.getFileUploadStatus()
-                .then(function () {
-                    if (!$scope.total.fileUploads)
-                        updateTotalFileUploads()
-                    else
-                        $scope.pending.FileUploads = ($scope.total.fileUploads) - (ProgressService.fileuploadStatus)
-                })
-
-        }
-
-
-        function updateTotalFileUploads() {
-            $scope.totalFileUploads = ProgressService.fileuploadStatus
-            $scope.total.fileUploads = true
-        }
-
-
-    });

@@ -16,12 +16,12 @@
             <td ng-if="person.type!='heading'"
                 ng-repeat="disease in ['stroke','heartAttack','diabetes','cancer']">
 
-                <label class="radio"><input focus="{{mainIndex==1 && $index==0}}" value="Yes" type="radio"
+                <label class="radio"><input data-bvalidator="required" focus="{{mainIndex==1 && $index==0}}" value="Yes" type="radio"
                                             name="{{person.name+'_'+disease}}"
                                             ng-model="data[person.name+'_'+disease]">Yes</label>
-                <label class="radio"><input value="No" type="radio" name="{{person.name+'_'+disease}}"
+                <label class="radio"><input data-bvalidator="required" value="No" type="radio" name="{{person.name+'_'+disease}}"
                                             ng-model="data[person.name+'_'+disease]">No</label>
-                <label class="radio"><input value="Unknown" type="radio" name="{{person.name+'_'+disease}}"
+                <label class="radio"><input data-bvalidator="required" value="Unknown" type="radio" name="{{person.name+'_'+disease}}"
                                             ng-model="data[person.name+'_'+disease]">Unknown</label>
             </td>
         </tr>

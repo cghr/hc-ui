@@ -3,19 +3,21 @@
     <div class="container">
 
         <p>Download</p>
-        <progressbar class="progress-striped active" value="pendingDownloads" max="totalDownloads"
+        <progressbar class="progress-striped active" value="pending.download" max="total.download"
                      type="info">
-            <i>{{downloadProgress}} %</i>
+            <i>{{progress.download}} %</i>
         </progressbar>
 
         <p>Upload</p>
-        <progressbar class="progress-striped active" value="pendingUploads" max="totalUploads"
-                     type="info"><i>{{uploadProgress}} %</i>
+        <progressbar class="progress-striped active" value="pending.upload" max="total.upload"
+                     type="info">
+            <i>{{progress.upload}} %</i>
         </progressbar>
 
         <p>Images Upload</p>
-        <progressbar class="progress-striped active" value="pendingFileUploads" max="totalFileUploads"
-                     type="info"><i>{{fileUploadProgress}} %</i>
+        <progressbar class="progress-striped active" value="pending.fileupload" max="total.fileupload"
+                     type="info">
+            <i>{{progress.fileupload}} %</i>
         </progressbar>
 
     </div>

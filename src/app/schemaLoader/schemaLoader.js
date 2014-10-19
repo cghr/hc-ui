@@ -12,7 +12,7 @@ angular.module('schemaLoader', ['lodash', 'toaster'])
             })
 
 
-            $q.all(promises)
+            return $q.all(promises)
                 .then(function (responses) {
                     _.each(responses, function (response, index) {
                         SchemaLoader.allSchemas.push(response.data)
